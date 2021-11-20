@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -97,6 +99,73 @@ namespace GUI_QLNH.FORMS
             this.txtMatKhau.PasswordChar = '\0';
             btnAn.Show();
             btnHien.Hide();
+        }
+        public string RandomString(int size, bool lowerCase)
+        {
+            StringBuilder buider = new StringBuilder();
+            Random random = new Random();
+            char ch;
+            for (int i = 0; i < size; i++)
+            {
+                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
+                buider.Append(ch);
+
+            }
+            if (lowerCase)
+                return buider.ToString().ToLower();
+            return buider.ToString();
+        }
+        public int randomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
+        public static void sendEmail(string email, string matkhau) // gửi email
+        {
+            try
+            {
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                client.EnableSsl = true;
+                NetworkCredential cred = new NetworkCredential("sonnqps18832@fpt.edu.vn", "son080320");
+                MailMessage Msg = new MailMessage();
+                Msg.From = new MailAddress("sonnqps18832@fpt.edu.vn");
+                Msg.To.Add(email);
+                Msg.Subject = "Cập nhật mật khẩu";
+                Msg.Body = "Chào anh/chị. Mật khẩu để truy cập phần mềm là :" + matkhau;
+                client.Credentials = cred;
+                client.Send(Msg);
+                MessageBox.Show("Một Email mật khẩu đã được gởi đi!");
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show(a.Message);
+            }
+        }
+        private void lbQuenMatKhau_Click(object sender, EventArgs e)
+        {
+            if (txtEmail.Text != "")
+            {
+                if (busNhanVien.NhanVienQuenMatKhau(txtEmail.Text))
+                {
+                    StringBuilder builder = new StringBuilder();
+                    builder.Append(RandomString(4, true));
+                    builder.Append(randomNumber(1000, 9999));
+                    builder.Append(RandomString(2, false));
+                    string matkhaumoi = Utils.MaHoa(builder.ToString());
+                    busNhanVien.TaoMatKhau(txtEmail.Text, matkhaumoi);
+                    sendEmail(txtEmail.Text, builder.ToString());
+
+                }
+                else
+                {
+                    MessageBox.Show("email không tồn tại, vui lòng nhập lại email !");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("bạn cần nhập email nhận thông tin khôi phục mật khẩu");
+            }
         }
     }
 }

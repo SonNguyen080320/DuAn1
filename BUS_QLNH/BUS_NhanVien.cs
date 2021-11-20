@@ -60,6 +60,14 @@ namespace BUS_QLNH
         public bool CapNhatProFile(string Email, string TenNV, DateTime? NgaySinh, string DiaChi, string sdt, string Hinh)
         {
             return dalNhanVien.CapNhatProFile(Email, TenNV, NgaySinh, DiaChi, sdt, Hinh);
-        }    
+        }
+        public bool NhanVienQuenMatKhau(string Email)
+        {
+            return dalNhanVien.NhanVienQuenMatKhau(Email);
+        }
+        public bool TaoMatKhau(string Email, string Matkhaumoi)
+        {
+            return dalNhanVien.TaoMatKhau(Email, Matkhaumoi);
+        }
     }
 }
