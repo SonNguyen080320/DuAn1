@@ -298,5 +298,53 @@ namespace DAL_QLNH
             finally { conn.Close(); }
             return false;
         }
+        public bool NhanVienQuenMatKhau(string email)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_KiêmTraNhanVien";
+                cmd.Parameters.AddWithValue("Email", email);
+               // cmd.Parameters.AddWithValue("MatKhau", email);
+                if (Convert.ToInt16(cmd.ExecuteScalar()) > 0)
+                    return true;
+            }
+            catch (Exception n)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public bool TaoMatKhau(string email, string matkhaumoi)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_TaoMatKhauMoi";
+                cmd.Parameters.AddWithValue("Email", email);
+                cmd.Parameters.AddWithValue("Matkhau", matkhaumoi);
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
     }
 }
