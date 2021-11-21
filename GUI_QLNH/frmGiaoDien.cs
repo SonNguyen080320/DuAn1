@@ -116,13 +116,7 @@ namespace GUI_QLNH
             HienPanel(pnlthongke);
         }
 
-        private void btnthongketonghop_Click(object sender, EventArgs e)
-        {
-            lbtitel.Text = "THỐNG KÊ TỔNG HỢP";
-            MoForm(new FORMS.frmthongketonghop());
-            //code
-            //panelmacdinhkhiloadform();
-        }
+       
 
         private void btnthongketheongay_Click(object sender, EventArgs e)
         {
@@ -130,22 +124,6 @@ namespace GUI_QLNH
             MoForm(new FORMS.frmThongKeTheoNgay());
             //code
            // panelmacdinhkhiloadform();
-        }
-
-        private void btnthongketheothang_Click(object sender, EventArgs e)
-        {
-            lbtitel.Text = "THỐNG KÊ THEO THÁNG";
-            MoForm(new FORMS.frmThongkeTheoThang());
-            //code
-         //   panelmacdinhkhiloadform();
-        }
-
-        private void btnthongketheonhanvien_Click(object sender, EventArgs e)
-        {
-            lbtitel.Text = "THỐNG KÊ THEO NHÂN VIÊN";
-            MoForm(new FORMS.frmThongKeTheoNhanVien());
-            //code
-          //  panelmacdinhkhiloadform();
         }
 
         private void btnquanlynhanvien_Click(object sender, EventArgs e)

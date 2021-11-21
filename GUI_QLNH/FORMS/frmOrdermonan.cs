@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,8 +31,6 @@ namespace GUI_QLNH.FORMS
 
         private void frmOrderMonAn_Load(object sender, EventArgs e)
         {
-            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             load();
         }
 
@@ -58,12 +57,13 @@ namespace GUI_QLNH.FORMS
         {
             if(Utils.XacNhan("Bạn muốn thanh toán hóa đơn?"))
             {
-                if (busHoaDon.ThanhToan(maBanHienTai,txtTongTien.Text,txtThanhTien.Text))
+                if (busHoaDon.ThanhToan(maBanHienTai,float.Parse(txtTongTien.Text),float.Parse(txtThanhTien.Text)))
                 {
                     Utils.HienThongBao("Thanh toán thành công");
                     load();
                     flpTable.Controls.Clear();
                     HienButtonBan();
+                    isCoNguoi = false;
                 }
             }    
         }
@@ -72,13 +72,12 @@ namespace GUI_QLNH.FORMS
         {
             if (isCoNguoi) // cập nhật hoá đơn
             {
-                busHoaDonCT.CapNhatHoaDon(maBanHienTai, cbMonAn.Text, Convert.ToInt32(numSoLuong.Text), txtTongTien.Text);
+                busHoaDonCT.CapNhatHoaDon(maBanHienTai, cbMonAn.Text, Convert.ToInt32(numSoLuong.Text),float.Parse(txtTongTien.Text));
                 loadDtgvOrder();
             }
             else // thêm mới hoá đơn
             {
-                isCoNguoi = true;
-                DTO_HoaDon hd = new DTO_HoaDon("0", maBanHienTai, frmGiaoDien._Email, 0, 10);
+                DTO_HoaDon hd = new DTO_HoaDon(txtTongTien.Text, maBanHienTai, frmGiaoDien._Email, 0, 10);
                 if (busHoaDon.ThemHoaDon(hd))
                 {
                     busban.BanCoNguoi(maBanHienTai);
@@ -87,8 +86,10 @@ namespace GUI_QLNH.FORMS
                     loadDtgvOrder();
                     flpTable.Controls.Clear();
                     HienButtonBan();
+                    
                 }
             }
+           isCoNguoi = true;
         }
 
         void load()
@@ -108,6 +109,8 @@ namespace GUI_QLNH.FORMS
             dtgvOrder.Columns.Add("ThanhTien", "Thành tiền");
             txtTongTien.Text = "0";
             txtThanhTien.Text = "0";
+            btnCapNhatMon.Enabled = false;
+            btnXoaMon.Enabled = false;
         }
         void loadDtgvOrder()
         {
@@ -119,8 +122,8 @@ namespace GUI_QLNH.FORMS
                 double tien = Convert.ToDouble(dtgvOrder.Rows[i].Cells["Thành tiền"].Value);
                 tongtien += tien;
             }
-            txtThanhTien.Text = tongtien.ToString();
-            txtTongTien.Text = (tongtien + tongtien * 0.1).ToString();
+            txtThanhTien.Text = tongtien.ToString("#,#", CultureInfo.InvariantCulture) ;
+            txtTongTien.Text = (tongtien + tongtien * 0.1).ToString("#,#", CultureInfo.InvariantCulture);
         }
         private void cbDanhMucMonAn_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -161,6 +164,10 @@ namespace GUI_QLNH.FORMS
 
         private void btnBan_Click(object sender, EventArgs e)
         {
+            
+            btnXoaMon.Enabled = false;
+            btnCapNhatMon.Enabled = false;
+            btnThemMon.Enabled = true;
             pnlDatMon.Enabled = true;
 
             var buttonHienTai = ((sender as Button).Tag as DTO_Ban);
@@ -179,11 +186,84 @@ namespace GUI_QLNH.FORMS
 
         private void btnGopBan_Click(object sender, EventArgs e)
         {
-            //busHoaDon.GopBan(IDBan, cbBan.Text);
-            //flpTable.Controls.Clear();
-            //HienButtonBan();
-            //load();
-            //loadgridview();
+            busHoaDon.GopBan(maBanHienTai, cbBan.Text);
+            flpTable.Controls.Clear();
+            HienButtonBan();
+            load();
+            loadDtgvOrder();
+        }
+
+        private void dtgvOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                DataGridViewRow rows = this.dtgvOrder.Rows[e.RowIndex];
+                if (rows.Cells[0].Value == null)
+                {
+                    MessageBox.Show("Không tồn tại dữ liệu");
+                }
+                else
+                {
+                    btnThemMon.Enabled = false;
+                    btnCapNhatMon.Enabled = true;
+                    btnXoaMon.Enabled = true;
+                    cbMonAn.Text = rows.Cells[0].Value.ToString();
+                    numSoLuong.Text = rows.Cells[1].Value.ToString();
+                    busMonAn.TenDM(cbMonAn.Text);
+                    cbDanhMucMonAn.DisplayMember = "TenDM";
+                    cbDanhMucMonAn.DataSource = busMonAn.TenDM(cbMonAn.Text);
+                }
+            }
+        }
+
+        private void cbMonAn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnBoQua_Click(object sender, EventArgs e)
+        {
+            btnThemMon.Enabled = true;
+            btnXoaMon.Enabled = false;
+            btnCapNhatMon.Enabled = false;
+            cbDanhMucMonAn.DisplayMember = "TenDM";
+            cbDanhMucMonAn.ValueMember = "MaDM";
+            cbDanhMucMonAn.DataSource = busDanhMucMonAn.HienThiDanhMucMonAN();
+        }
+
+        private void btnXoaMon_Click(object sender, EventArgs e)
+        {
+            if (Utils.XacNhan("Bạn muốn xóa món ăn này khỏi hóa đơn?"))
+            {
+                if (busHoaDon.XoaMonAn(cbMonAn.Text, maBanHienTai))
+                {
+                    if (dtgvOrder.Rows.Count == 2)
+                    {
+                        Utils.HienThongBao("Xóa món ăn thành công");
+                        flpTable.Controls.Clear();
+                        HienButtonBan();
+                        load();
+                    }
+                    else
+                    {
+                        Utils.HienThongBao("Xóa món ăn thành công");
+                        loadDtgvOrder();
+                    }
+                }
+
+            }
+        }
+
+        private void btnCapNhatMon_Click(object sender, EventArgs e)
+        {
+            if(Utils.XacNhan("Bạn muốn sửa số lượng món ăn?"))
+            {
+                if(busHoaDon.CapNhatMonAn(cbMonAn.Text,maBanHienTai,Convert.ToInt32(numSoLuong.Value)))
+                {
+                    Utils.HienThongBao("Cập nhật thành công");
+                    loadDtgvOrder();
+                }    
+            }    
         }
     }
 }

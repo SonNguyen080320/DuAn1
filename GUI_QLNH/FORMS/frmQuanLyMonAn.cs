@@ -211,7 +211,7 @@ namespace GUI_QLNH.FORMS
                     }
                     else
                     {
-                        MessageBox.Show("thêm thất bại");
+                        Utils.HienWarning("Tên món đã tồn tại. Vui lòng nhập tên mới");
                     }
                 }
             }
@@ -292,7 +292,7 @@ namespace GUI_QLNH.FORMS
                     }
                     else
                     {
-                        MessageBox.Show("update không thành công");
+                        Utils.HienWarning("Tên món đã tồn tại. Vui lòng nhập tên mới");
                     }
                 }
                 else

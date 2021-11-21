@@ -144,6 +144,24 @@ namespace DAL_QLNH
             }
             finally { conn.Close(); }
         }
+        public DataTable TenDM(string tenMon)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand()
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "sp_TenDMByTenMon"
+                };
+                cmd.Parameters.AddWithValue("TenMon", tenMon);
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+            }
+            finally { conn.Close(); }
+        }
         public string GiaMon(string tenMon)
         {
             try

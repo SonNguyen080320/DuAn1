@@ -54,7 +54,7 @@ namespace DAL_QLNH
             }
             finally { conn.Close(); }
         }
-        public bool ThemMon(int maBan,string tenMon,int soLuong,string tong)
+        public bool ThemMon(int maBan,string tenMon,int soLuong,float tong)
         {
             try
             {

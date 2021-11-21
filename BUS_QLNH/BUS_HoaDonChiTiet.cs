@@ -20,7 +20,7 @@ namespace BUS_QLNH
         {
             return dalHoaDonCT.BillInfo(maBan);
         }
-        public bool CapNhatHoaDon(int maBan, string tenMon, int soLuong,string tong)
+        public bool CapNhatHoaDon(int maBan, string tenMon, int soLuong,float tong)
         {
             return dalHoaDonCT.ThemMon(maBan, tenMon, soLuong,tong);
         }

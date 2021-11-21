@@ -85,7 +85,7 @@ namespace GUI_QLNH.FORMS
                     }
                     else
                     {
-                        MessageBox.Show("Thêm thất bại");
+                        Utils.HienWarning("Tên danh mục đã tồn tại. Vui lòng nhập tên mới");
                     }
                 }
             }
@@ -156,7 +156,7 @@ namespace GUI_QLNH.FORMS
                     }
                     else
                     {
-                        MessageBox.Show("Update không thành công");
+                        Utils.HienWarning("Tên danh mục đã tồn tại. Vui lòng nhập tên mới");
                     }
                 }
                 else

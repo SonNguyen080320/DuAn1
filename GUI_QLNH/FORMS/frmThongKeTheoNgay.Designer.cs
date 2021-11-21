@@ -32,9 +32,16 @@ namespace GUI_QLNH.FORMS
             this.dtgvThongKeTheoNgay = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnChiTiet = new System.Windows.Forms.Button();
+            this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
+            this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnXem = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnXuatExcel = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.btnTongHop = new System.Windows.Forms.Button();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThongKeTheoNgay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,81 +50,162 @@ namespace GUI_QLNH.FORMS
             this.dtgvThongKeTheoNgay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvThongKeTheoNgay.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvThongKeTheoNgay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvThongKeTheoNgay.Location = new System.Drawing.Point(54, 180);
-            this.dtgvThongKeTheoNgay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvThongKeTheoNgay.Location = new System.Drawing.Point(12, 288);
+            this.dtgvThongKeTheoNgay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgvThongKeTheoNgay.Name = "dtgvThongKeTheoNgay";
             this.dtgvThongKeTheoNgay.RowHeadersWidth = 51;
             this.dtgvThongKeTheoNgay.RowTemplate.Height = 24;
-            this.dtgvThongKeTheoNgay.Size = new System.Drawing.Size(736, 337);
+            this.dtgvThongKeTheoNgay.Size = new System.Drawing.Size(1368, 334);
             this.dtgvThongKeTheoNgay.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Mistral", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 18);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(67, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 29);
+            this.label2.Size = new System.Drawing.Size(106, 35);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Thống kê theo ngày";
+            this.label2.Text = "Thống kê";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(238, 91);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(103, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 18);
+            this.label3.Size = new System.Drawing.Size(86, 24);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Chọn ngày";
+            this.label3.Text = "Từ ngày";
+            // 
+            // btnChiTiet
+            // 
+            this.btnChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChiTiet.Image = global::GUI_QLNH.Properties.Resources._7247303;
+            this.btnChiTiet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChiTiet.Location = new System.Drawing.Point(1100, 196);
+            this.btnChiTiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChiTiet.Name = "btnChiTiet";
+            this.btnChiTiet.Size = new System.Drawing.Size(254, 54);
+            this.btnChiTiet.TabIndex = 6;
+            this.btnChiTiet.Text = "Thống kê chi tiết";
+            this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChiTiet.UseVisualStyleBackColor = true;
+            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
+            // 
+            // dtpTuNgay
+            // 
+            this.dtpTuNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpTuNgay.Location = new System.Drawing.Point(210, 110);
+            this.dtpTuNgay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpTuNgay.Name = "dtpTuNgay";
+            this.dtpTuNgay.Size = new System.Drawing.Size(271, 27);
+            this.dtpTuNgay.TabIndex = 4;
+            // 
+            // dtpDenNgay
+            // 
+            this.dtpDenNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDenNgay.Location = new System.Drawing.Point(697, 110);
+            this.dtpDenNgay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpDenNgay.Name = "dtpDenNgay";
+            this.dtpDenNgay.Size = new System.Drawing.Size(271, 27);
+            this.dtpDenNgay.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(238, 120);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(572, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Chọn ngày để xem thống kê chi tiết";
+            this.label1.Size = new System.Drawing.Size(99, 24);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Đến ngày";
             // 
-            // btnXem
+            // btnXuatExcel
             // 
-            this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXem.Image = global::GUI_QLNH.Properties.Resources._7247303;
-            this.btnXem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXem.Location = new System.Drawing.Point(596, 80);
-            this.btnXem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(91, 44);
-            this.btnXem.TabIndex = 6;
-            this.btnXem.Text = "Xem";
-            this.btnXem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuatExcel.Location = new System.Drawing.Point(1207, 22);
+            this.btnXuatExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(158, 54);
+            this.btnXuatExcel.TabIndex = 9;
+            this.btnXuatExcel.Text = "Xuất file excel";
+            this.btnXuatExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXuatExcel.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
-            // dateTimePicker1
+            // label4
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(350, 92);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(218, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(103, 196);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(136, 24);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Mã nhân viên";
+            // 
+            // txtMaNV
+            // 
+            this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNV.Location = new System.Drawing.Point(273, 193);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(208, 27);
+            this.txtMaNV.TabIndex = 11;
+            // 
+            // btnTongHop
+            // 
+            this.btnTongHop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTongHop.Image = global::GUI_QLNH.Properties.Resources._7247303;
+            this.btnTongHop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTongHop.Location = new System.Drawing.Point(1100, 115);
+            this.btnTongHop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTongHop.Name = "btnTongHop";
+            this.btnTongHop.Size = new System.Drawing.Size(254, 54);
+            this.btnTongHop.TabIndex = 12;
+            this.btnTongHop.Text = "Thống kê tổng hợp";
+            this.btnTongHop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTongHop.UseVisualStyleBackColor = true;
+            this.btnTongHop.Click += new System.EventHandler(this.btnTongHop_Click);
+            // 
+            // txtTongTien
+            // 
+            this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTien.Location = new System.Drawing.Point(1146, 662);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(208, 34);
+            this.txtTongTien.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(895, 667);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(195, 29);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Tổng doanh thu";
             // 
             // frmThongKeTheoNgay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 596);
-            this.Controls.Add(this.btnXem);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1392, 734);
+            this.Controls.Add(this.txtTongTien);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnTongHop);
+            this.Controls.Add(this.txtMaNV);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnXuatExcel);
+            this.Controls.Add(this.dtpDenNgay);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btnChiTiet);
+            this.Controls.Add(this.dtpTuNgay);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtgvThongKeTheoNgay);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmThongKeTheoNgay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form thống kê theo ngày";
@@ -133,8 +221,15 @@ namespace GUI_QLNH.FORMS
         private System.Windows.Forms.DataGridView dtgvThongKeTheoNgay;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnChiTiet;
+        private System.Windows.Forms.DateTimePicker dtpTuNgay;
+        private System.Windows.Forms.DateTimePicker dtpDenNgay;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnXem;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnXuatExcel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.Button btnTongHop;
+        private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.Label label5;
     }
 }

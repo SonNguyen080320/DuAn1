@@ -189,9 +189,6 @@ D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.FORMS.frmQuan
 D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.FORMS.frmQuanLyMonAn.resources
 D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.FORMS.frmQuanLyNhanVien.resources
 D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.FORMS.frmThongKeTheoNgay.resources
-D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.FORMS.frmThongKeTheoNhanVien.resources
-D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.FORMS.frmThongkeTheoThang.resources
-D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.FORMS.frmthongketonghop.resources
 D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.frmGiaoDien.resources
 D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.Properties.Resources.resources
 D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.csproj.GenerateResource.cache
@@ -228,3 +225,4 @@ E:\DUAN_1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.csproj.CoreCompil
 E:\DUAN_1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.csproj.CopyComplete
 E:\DUAN_1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.exe
 E:\DUAN_1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.pdb
+D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.csproj.ResolveComReference.cache

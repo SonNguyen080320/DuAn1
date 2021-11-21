@@ -15,7 +15,7 @@ namespace BUS_QLNH
         {
             return dalHoaDon.ThemHoaDon(hd);
         }
-        public bool ThanhToan(int maBan, string TongTien, string ThanhTien)
+        public bool ThanhToan(int maBan, float TongTien, float ThanhTien)
         {
             return dalHoaDon.ThanhToan(maBan,TongTien,ThanhTien);
         }
@@ -23,9 +23,25 @@ namespace BUS_QLNH
         {
             return dalHoaDon.ChuyenBan(banmacdinh,banmuonchuyen);
         }
-        public bool GopBan(int banmacdinh, string banmuongop)
+        public bool GopBan(int MaBanHienTai, string TenBanMuonGop)
         {
-            return dalHoaDon.GopBan(banmacdinh, banmuongop);
+            return dalHoaDon.GopBan(MaBanHienTai, TenBanMuonGop);
+        }
+        public DataTable ThongKeTongHop(DateTime TuNgay, DateTime DenNgay, string MaNV)
+        {
+            return dalHoaDon.ThongKeTongHop(TuNgay, DenNgay, MaNV);
+        }
+        public DataTable ThongKeChiTiet(DateTime TuNgay, DateTime DenNgay, string MaNV)
+        {
+            return dalHoaDon.ThongKeChiTiet(TuNgay, DenNgay, MaNV);
+        }
+        public bool XoaMonAn(string TenMon, int MaBan)
+        {
+            return dalHoaDon.XoaMonAn(TenMon,MaBan);
+        }
+        public bool CapNhatMonAn(string TenMon, int MaBan, int SoLuong)
+        {
+            return dalHoaDon.CapNhatMonAn(TenMon, MaBan, SoLuong);
         }
     }
 }

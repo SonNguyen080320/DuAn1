@@ -39,7 +39,52 @@ namespace DAL_QLNH
             finally { conn.Close(); }
             return false;
         }
-        public bool ThanhToan(int maBan,string TongTien, string ThanhTien)
+        public bool XoaMonAn(string TenMon,int MaBan)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand()
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "sp_XoaMon"
+                };
+
+                cmd.Parameters.AddWithValue("TenMon", TenMon);
+                cmd.Parameters.AddWithValue("MaBanHienTai", MaBan);
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+            }
+            finally { conn.Close(); }
+            return false;
+        }
+        public bool CapNhatMonAn(string TenMon, int MaBan,int SoLuong)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand()
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "sp_CapNhatMon"
+                };
+
+                cmd.Parameters.AddWithValue("TenMon", TenMon);
+                cmd.Parameters.AddWithValue("MaBan", MaBan);
+                cmd.Parameters.AddWithValue("SoLuong", SoLuong);
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+            }
+            finally { conn.Close(); }
+            return false;
+        }
+        public bool ThanhToan(int maBan,float TongTien, float ThanhTien)
         {
             try
             {
@@ -84,7 +129,7 @@ namespace DAL_QLNH
         }
 
         /////////////////////////////
-        public bool GopBan(int banmacdinh, string banmuongop)
+        public bool GopBan(int MaBanHienTai, string TenBanMuonGop)
         {
             try
             {
@@ -93,10 +138,10 @@ namespace DAL_QLNH
                 {
                     Connection = conn,
                     CommandType = CommandType.StoredProcedure,
-                    CommandText = "USP_GroupTable"
+                    CommandText = "sp_GopBan"
                 };
-                cmd.Parameters.AddWithValue("idtable1", banmacdinh);
-                cmd.Parameters.AddWithValue("tenBan2", banmuongop);
+                cmd.Parameters.AddWithValue("maBanHienTai", MaBanHienTai);
+                cmd.Parameters.AddWithValue("tenBanMuonGop", TenBanMuonGop);
                 if (cmd.ExecuteNonQuery() > 0)
                 {
                     return true;
@@ -104,6 +149,46 @@ namespace DAL_QLNH
             }
             finally { conn.Close(); }
             return false;
+        }
+        public DataTable ThongKeTongHop(DateTime TuNgay, DateTime DenNgay,string MaNV)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand()
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "sp_ThongKeTongHop"
+                };
+                cmd.Parameters.AddWithValue("TuNgay", TuNgay);
+                cmd.Parameters.AddWithValue("DenNgay", DenNgay);
+                cmd.Parameters.AddWithValue("MaNV", MaNV);
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+            }
+            finally { conn.Close(); }
+        }
+        public DataTable ThongKeChiTiet(DateTime TuNgay, DateTime DenNgay, string MaNV)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand()
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "sp_ThongKeChiTiet"
+                };
+                cmd.Parameters.AddWithValue("TuNgay", TuNgay);
+                cmd.Parameters.AddWithValue("DenNgay", DenNgay);
+                cmd.Parameters.AddWithValue("MaNV", MaNV);
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+            }
+            finally { conn.Close(); }
         }
     }
 }

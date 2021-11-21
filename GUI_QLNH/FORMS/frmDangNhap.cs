@@ -32,11 +32,9 @@ namespace GUI_QLNH.FORMS
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            
             // Kiểm tra textbox có rỗng hay không ?
             if (!Utils.KiemTraTextBox(txtEmail, "email")
                 || !Utils.KiemTraTextBox(txtMatKhau, "mật khẩu")) return;
-            
             DTO_NhanVien nv = new DTO_NhanVien
             {
                 Email = txtEmail.Text,
@@ -57,13 +55,10 @@ namespace GUI_QLNH.FORMS
                 Properties.Settings.Default.Save();
             }
             bool result_from_bus = busNhanVien.NhanVienDangNhap(nv);
-            
             if (result_from_bus)
             {
-                
                 Email = txtEmail.Text;
                 frmGiaoDien fGiaoDien = new frmGiaoDien(txtEmail.Text);
-
                 this.Hide();
                 fGiaoDien.ShowDialog();
                 this.Show();
@@ -141,6 +136,8 @@ namespace GUI_QLNH.FORMS
                 MessageBox.Show(a.Message);
             }
         }
+
+      
         private void lbQuenMatKhau_Click(object sender, EventArgs e)
         {
             if (txtEmail.Text != "")

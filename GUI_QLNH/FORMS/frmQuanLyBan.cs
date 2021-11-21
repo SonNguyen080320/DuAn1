@@ -98,13 +98,13 @@ namespace GUI_QLNH.FORMS
                 {
                     if (busBan.ThemBan(b))
                     {
-                        MessageBox.Show("Thêm thành công");
+                        MessageBox.Show("Thêm bàn thành công");
                         ResetValues();
                         loadgridview_Ban();
                     }
                     else
                     {
-                        MessageBox.Show("Thêm thất bại");
+                        Utils.HienWarning("Tên bàn đã tồn tại. Vui lòng nhập tên khác");
                     }
                 }
             }
@@ -169,7 +169,7 @@ namespace GUI_QLNH.FORMS
                     }
                     else
                     {
-                        MessageBox.Show("update không thành công");
+                        Utils.HienWarning("Tên bàn đã tồn tại. Vui lòng nhập tên mới");
                     }
                 }
                 else

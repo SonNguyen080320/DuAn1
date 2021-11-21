@@ -146,6 +146,7 @@ namespace GUI_QLNH.FORMS
             this.lbQuenMatKhau.Size = new System.Drawing.Size(105, 17);
             this.lbQuenMatKhau.TabIndex = 10;
             this.lbQuenMatKhau.Text = "Quên mật khẩu";
+            this.lbQuenMatKhau.Click += new System.EventHandler(this.lbQuenMatKhau_Click);
             // 
             // btnThoat
             // 
