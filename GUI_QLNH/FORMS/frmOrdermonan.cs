@@ -191,9 +191,11 @@ namespace GUI_QLNH.FORMS
                 btnGopBan.Enabled = true;
                 btnThanhToan.Enabled = true;
                 loadDtgvOrder();
+                btnBoQua.Enabled = false;
             }  
             else
             {
+                btnBoQua.Enabled = false;
                 btnThanhToan.Enabled = false;
                 btnChuyenBan.Enabled = false;
                 btnGopBan.Enabled = false;
@@ -241,6 +243,7 @@ namespace GUI_QLNH.FORMS
                 }
                 else
                 {
+                    btnBoQua.Enabled = true;
                     btnThemMon.Enabled = false;
                     btnCapNhatMon.Enabled = true;
                     btnXoaMon.Enabled = true;
@@ -260,6 +263,7 @@ namespace GUI_QLNH.FORMS
 
         private void btnBoQua_Click(object sender, EventArgs e)
         {
+            btnBoQua.Enabled = false;
             btnThemMon.Enabled = true;
             btnXoaMon.Enabled = false;
             btnCapNhatMon.Enabled = false;
