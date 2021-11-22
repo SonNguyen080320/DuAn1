@@ -38,6 +38,9 @@ namespace GUI_QLNH
             lbchao.Text = "Chào: " + _Email;
             timer1.Start();
             lbGio.Text = DateTime.Now.ToString();
+            btthoattamthoi.Visible = false;
+            btnphongto.Visible = false;
+            btnthoat.Visible = false;
 
         }
         private void PanelMacDinh()// panel mặc định

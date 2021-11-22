@@ -95,7 +95,7 @@ namespace GUI_QLNH.FORMS
             this.pnlDatMon.Location = new System.Drawing.Point(711, 12);
             this.pnlDatMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDatMon.Name = "pnlDatMon";
-            this.pnlDatMon.Size = new System.Drawing.Size(677, 735);
+            this.pnlDatMon.Size = new System.Drawing.Size(638, 735);
             this.pnlDatMon.TabIndex = 15;
             // 
             // btnBoQua
@@ -316,7 +316,7 @@ namespace GUI_QLNH.FORMS
             this.dtgvOrder.Name = "dtgvOrder";
             this.dtgvOrder.RowHeadersWidth = 51;
             this.dtgvOrder.RowTemplate.Height = 24;
-            this.dtgvOrder.Size = new System.Drawing.Size(640, 228);
+            this.dtgvOrder.Size = new System.Drawing.Size(606, 228);
             this.dtgvOrder.TabIndex = 6;
             this.dtgvOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvOrder_CellContentClick);
             this.dtgvOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvOrder_CellContentClick);

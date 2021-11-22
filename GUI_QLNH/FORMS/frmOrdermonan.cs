@@ -36,19 +36,26 @@ namespace GUI_QLNH.FORMS
 
         private void btnChuyenBan_Click(object sender, EventArgs e)
         {
-            if (Utils.XacNhan("Bạn muốn chuyển "+ lblBanHienTai.Text +" sang " + cbBan.Text))
+            if (lblBanHienTai.Text == cbBan.Text)
             {
-                if (busHoaDon.ChuyenBan(maBanHienTai, cbBan.Text))
+                Utils.HienError("Đang ở bàn hiện tại. Vui lòng chọn bàn trống để chuyển");
+            }
+            else
+            {
+                if (Utils.XacNhan("Bạn muốn chuyển " + lblBanHienTai.Text + " sang " + cbBan.Text))
                 {
-                    Utils.HienThongBao("Chuyển bàn thành công");
-                    flpTable.Controls.Clear();
-                    HienButtonBan();
-                    //loadDtgvOrder();
-                    load();
-                }
-                else
-                {
-                    MessageBox.Show("Bàn đã có người !!!");
+                    if (busHoaDon.ChuyenBan(maBanHienTai, cbBan.Text))
+                    {
+                        Utils.HienThongBao("Chuyển bàn thành công");
+                        flpTable.Controls.Clear();
+                        HienButtonBan();
+                        //loadDtgvOrder();
+                        load();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bàn đã có người !!!");
+                    }
                 }
             }
         }
@@ -169,7 +176,7 @@ namespace GUI_QLNH.FORMS
             btnCapNhatMon.Enabled = false;
             btnThemMon.Enabled = true;
             pnlDatMon.Enabled = true;
-
+            
             var buttonHienTai = ((sender as Button).Tag as DTO_Ban);
 
             maBanHienTai = buttonHienTai.Maban;
@@ -179,20 +186,50 @@ namespace GUI_QLNH.FORMS
             lblBanHienTai.Text = buttonHienTai.TenBan;
 
             if (isCoNguoi == true)
+            {
+                btnChuyenBan.Enabled = true;
+                btnGopBan.Enabled = true;
+                btnThanhToan.Enabled = true;
                 loadDtgvOrder();
+            }  
             else
+            {
+                btnThanhToan.Enabled = false;
+                btnChuyenBan.Enabled = false;
+                btnGopBan.Enabled = false;
                 load();
+            }
         }
 
         private void btnGopBan_Click(object sender, EventArgs e)
         {
-            busHoaDon.GopBan(maBanHienTai, cbBan.Text);
-            flpTable.Controls.Clear();
-            HienButtonBan();
-            load();
-            loadDtgvOrder();
+            if (lblBanHienTai.Text == cbBan.Text)
+            {
+                Utils.HienError("Đang ở bàn hiện tại. Vui lòng chọn bàn để gộp");
+            }
+            else
+            {
+                if (Utils.XacNhan("Bạn muốn gộp " + lblBanHienTai.Text + " sang " + cbBan.Text))
+                {
+                    if (busban.TrangThaiBan(cbBan.Text) == false)
+                    {
+                        Utils.HienError(cbBan.Text + " không có hóa đơn để gộp. Chỉ có thể chuyển bàn");
+                    }
+                    else
+                    {
+                        for (int i = 1; i <= dtgvOrder.Rows.Count; i++)
+                        {
+                            busHoaDon.GopBan(maBanHienTai, cbBan.Text);
+                        }
+                        Utils.HienThongBao("Gộp bàn thành công");
+                        flpTable.Controls.Clear();
+                        HienButtonBan();
+                        load();
+                        loadDtgvOrder();
+                    }
+                }
+            }   
         }
-
         private void dtgvOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)

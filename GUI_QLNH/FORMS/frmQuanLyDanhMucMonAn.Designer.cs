@@ -51,12 +51,12 @@ namespace GUI_QLNH.FORMS
             this.dtgvDanhMuc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDanhMuc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvDanhMuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDanhMuc.Location = new System.Drawing.Point(24, 10);
-            this.dtgvDanhMuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgvDanhMuc.Location = new System.Drawing.Point(12, 11);
+            this.dtgvDanhMuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgvDanhMuc.Name = "dtgvDanhMuc";
             this.dtgvDanhMuc.RowHeadersWidth = 51;
             this.dtgvDanhMuc.RowTemplate.Height = 24;
-            this.dtgvDanhMuc.Size = new System.Drawing.Size(465, 557);
+            this.dtgvDanhMuc.Size = new System.Drawing.Size(466, 686);
             this.dtgvDanhMuc.TabIndex = 0;
             this.dtgvDanhMuc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDanhMuc_CellContentClick);
             this.dtgvDanhMuc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDanhMuc_CellContentClick);
@@ -74,20 +74,19 @@ namespace GUI_QLNH.FORMS
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txttimkiem);
-            this.panel1.Location = new System.Drawing.Point(494, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(504, 11);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(566, 557);
+            this.panel1.Size = new System.Drawing.Size(719, 686);
             this.panel1.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Mistral", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(182, 31);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(243, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(244, 41);
+            this.label3.Size = new System.Drawing.Size(299, 49);
             this.label3.TabIndex = 15;
             this.label3.Text = "Danh mục món ăn";
             // 
@@ -99,10 +98,10 @@ namespace GUI_QLNH.FORMS
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.Image = global::GUI_QLNH.Properties.Resources.search;
             this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(343, 124);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTimKiem.Location = new System.Drawing.Point(457, 153);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(128, 47);
+            this.btnTimKiem.Size = new System.Drawing.Size(171, 58);
             this.btnTimKiem.TabIndex = 14;
             this.btnTimKiem.Text = "TÌM KIẾM";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -117,9 +116,10 @@ namespace GUI_QLNH.FORMS
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Image = global::GUI_QLNH.Properties.Resources.save;
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(159, 397);
+            this.btnLuu.Location = new System.Drawing.Point(212, 489);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(105, 54);
+            this.btnLuu.Size = new System.Drawing.Size(140, 66);
             this.btnLuu.TabIndex = 12;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -134,9 +134,10 @@ namespace GUI_QLNH.FORMS
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = global::GUI_QLNH.Properties.Resources.delete;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(289, 397);
+            this.btnXoa.Location = new System.Drawing.Point(385, 489);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(105, 54);
+            this.btnXoa.Size = new System.Drawing.Size(140, 66);
             this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "Xoá";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -151,9 +152,10 @@ namespace GUI_QLNH.FORMS
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = global::GUI_QLNH.Properties.Resources.update;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(418, 397);
+            this.btnSua.Location = new System.Drawing.Point(557, 489);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(105, 54);
+            this.btnSua.Size = new System.Drawing.Size(140, 66);
             this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -169,9 +171,10 @@ namespace GUI_QLNH.FORMS
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = global::GUI_QLNH.Properties.Resources._new;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(37, 396);
+            this.btnThem.Location = new System.Drawing.Point(49, 487);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(105, 56);
+            this.btnThem.Size = new System.Drawing.Size(140, 69);
             this.btnThem.TabIndex = 9;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -181,29 +184,28 @@ namespace GUI_QLNH.FORMS
             // txtTenDanhMuc
             // 
             this.txtTenDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDanhMuc.Location = new System.Drawing.Point(222, 305);
-            this.txtTenDanhMuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenDanhMuc.Location = new System.Drawing.Point(296, 375);
+            this.txtTenDanhMuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenDanhMuc.Name = "txtTenDanhMuc";
-            this.txtTenDanhMuc.Size = new System.Drawing.Size(204, 27);
+            this.txtTenDanhMuc.Size = new System.Drawing.Size(271, 32);
             this.txtTenDanhMuc.TabIndex = 5;
             // 
             // txtMaDanhMuc
             // 
             this.txtMaDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaDanhMuc.Location = new System.Drawing.Point(222, 241);
-            this.txtMaDanhMuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaDanhMuc.Location = new System.Drawing.Point(296, 297);
+            this.txtMaDanhMuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaDanhMuc.Name = "txtMaDanhMuc";
-            this.txtMaDanhMuc.Size = new System.Drawing.Size(204, 27);
+            this.txtMaDanhMuc.Size = new System.Drawing.Size(271, 32);
             this.txtMaDanhMuc.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(101, 310);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(135, 382);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 17);
+            this.label2.Size = new System.Drawing.Size(127, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên danh mục";
             // 
@@ -211,31 +213,30 @@ namespace GUI_QLNH.FORMS
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(103, 251);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(137, 309);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 17);
+            this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã danh mục";
             // 
             // txttimkiem
             // 
             this.txttimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttimkiem.Location = new System.Drawing.Point(104, 141);
-            this.txttimkiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txttimkiem.Location = new System.Drawing.Point(139, 174);
+            this.txttimkiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(235, 30);
+            this.txttimkiem.Size = new System.Drawing.Size(312, 36);
             this.txttimkiem.TabIndex = 0;
             // 
             // frmQuanLyDanhMucMonAn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1028, 596);
+            this.ClientSize = new System.Drawing.Size(1238, 734);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dtgvDanhMuc);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmQuanLyDanhMucMonAn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form quản lí danh mục món ăn";

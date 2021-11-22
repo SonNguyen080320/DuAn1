@@ -42,6 +42,8 @@ namespace GUI_QLNH.FORMS
             this.btnTongHop = new System.Windows.Forms.Button();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbCa = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThongKeTheoNgay)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +74,7 @@ namespace GUI_QLNH.FORMS
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(103, 113);
+            this.label3.Location = new System.Drawing.Point(56, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 24);
             this.label3.TabIndex = 3;
@@ -83,10 +85,10 @@ namespace GUI_QLNH.FORMS
             this.btnChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChiTiet.Image = global::GUI_QLNH.Properties.Resources._7247303;
             this.btnChiTiet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChiTiet.Location = new System.Drawing.Point(1100, 196);
+            this.btnChiTiet.Location = new System.Drawing.Point(1093, 196);
             this.btnChiTiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(254, 54);
+            this.btnChiTiet.Size = new System.Drawing.Size(287, 54);
             this.btnChiTiet.TabIndex = 6;
             this.btnChiTiet.Text = "Thống kê chi tiết";
             this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -96,26 +98,26 @@ namespace GUI_QLNH.FORMS
             // dtpTuNgay
             // 
             this.dtpTuNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpTuNgay.Location = new System.Drawing.Point(210, 110);
+            this.dtpTuNgay.Location = new System.Drawing.Point(170, 110);
             this.dtpTuNgay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpTuNgay.Name = "dtpTuNgay";
-            this.dtpTuNgay.Size = new System.Drawing.Size(271, 27);
+            this.dtpTuNgay.Size = new System.Drawing.Size(332, 27);
             this.dtpTuNgay.TabIndex = 4;
             // 
             // dtpDenNgay
             // 
             this.dtpDenNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDenNgay.Location = new System.Drawing.Point(697, 110);
+            this.dtpDenNgay.Location = new System.Drawing.Point(691, 107);
             this.dtpDenNgay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDenNgay.Name = "dtpDenNgay";
-            this.dtpDenNgay.Size = new System.Drawing.Size(271, 27);
+            this.dtpDenNgay.Size = new System.Drawing.Size(332, 27);
             this.dtpDenNgay.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(572, 113);
+            this.label1.Location = new System.Drawing.Point(573, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 24);
             this.label1.TabIndex = 7;
@@ -139,7 +141,7 @@ namespace GUI_QLNH.FORMS
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(103, 196);
+            this.label4.Location = new System.Drawing.Point(56, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 24);
             this.label4.TabIndex = 10;
@@ -148,9 +150,9 @@ namespace GUI_QLNH.FORMS
             // txtMaNV
             // 
             this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(273, 193);
+            this.txtMaNV.Location = new System.Drawing.Point(223, 193);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(208, 27);
+            this.txtMaNV.Size = new System.Drawing.Size(279, 27);
             this.txtMaNV.TabIndex = 11;
             // 
             // btnTongHop
@@ -158,10 +160,10 @@ namespace GUI_QLNH.FORMS
             this.btnTongHop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTongHop.Image = global::GUI_QLNH.Properties.Resources._7247303;
             this.btnTongHop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTongHop.Location = new System.Drawing.Point(1100, 115);
+            this.btnTongHop.Location = new System.Drawing.Point(1093, 113);
             this.btnTongHop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTongHop.Name = "btnTongHop";
-            this.btnTongHop.Size = new System.Drawing.Size(254, 54);
+            this.btnTongHop.Size = new System.Drawing.Size(287, 54);
             this.btnTongHop.TabIndex = 12;
             this.btnTongHop.Text = "Thống kê tổng hợp";
             this.btnTongHop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -186,12 +188,38 @@ namespace GUI_QLNH.FORMS
             this.label5.TabIndex = 13;
             this.label5.Text = "Tổng doanh thu";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(573, 196);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 24);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Ca";
+            // 
+            // cbCa
+            // 
+            this.cbCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCa.FormattingEnabled = true;
+            this.cbCa.Items.AddRange(new object[] {
+            "Cả Ngày (6h-22h)",
+            "Ca Sáng (6h-14h)",
+            "Ca Tối (14h-22h)"});
+            this.cbCa.Location = new System.Drawing.Point(691, 196);
+            this.cbCa.Name = "cbCa";
+            this.cbCa.Size = new System.Drawing.Size(332, 30);
+            this.cbCa.TabIndex = 16;
+            this.cbCa.Text = "Cả Ngày (6h-22h)";
+            // 
             // frmThongKeTheoNgay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1392, 734);
+            this.Controls.Add(this.cbCa);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnTongHop);
@@ -231,5 +259,7 @@ namespace GUI_QLNH.FORMS
         private System.Windows.Forms.Button btnTongHop;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbCa;
     }
 }

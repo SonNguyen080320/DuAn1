@@ -75,6 +75,7 @@ namespace GUI_QLNH.FORMS
             // 
             this.dtgvQLNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvQLNhanVien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgvQLNhanVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtgvQLNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvQLNhanVien.Location = new System.Drawing.Point(16, 505);
             this.dtgvQLNhanVien.Margin = new System.Windows.Forms.Padding(4);

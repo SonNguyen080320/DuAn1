@@ -140,5 +140,30 @@ namespace DAL_QLNH
             }
             return false;
         }
+        public bool TrangThaiBan(string TenBan)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_TrangThaiBan";
+                cmd.Parameters.AddWithValue("TenBan", TenBan);
+                if (cmd.ExecuteNonQuery() >0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }    
+            }
+            finally
+            {
+                conn.Close();
+
+            }
+        }
     }
 }

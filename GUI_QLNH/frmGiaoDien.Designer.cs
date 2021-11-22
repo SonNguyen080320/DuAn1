@@ -185,7 +185,7 @@ namespace GUI_QLNH
             this.pnlSileMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlSileMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlSileMenu.Name = "pnlSileMenu";
-            this.pnlSileMenu.Size = new System.Drawing.Size(251, 750);
+            this.pnlSileMenu.Size = new System.Drawing.Size(251, 846);
             this.pnlSileMenu.TabIndex = 26;
             // 
             // btnquanlynhanvien
@@ -413,10 +413,11 @@ namespace GUI_QLNH
             // 
             // lbchao
             // 
+            this.lbchao.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbchao.AutoSize = true;
             this.lbchao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbchao.ForeColor = System.Drawing.Color.White;
-            this.lbchao.Location = new System.Drawing.Point(927, 30);
+            this.lbchao.Location = new System.Drawing.Point(1177, 32);
             this.lbchao.Name = "lbchao";
             this.lbchao.Size = new System.Drawing.Size(195, 29);
             this.lbchao.TabIndex = 3;
@@ -431,10 +432,10 @@ namespace GUI_QLNH
             this.pnlchinh.Controls.Add(this.panel1);
             this.pnlchinh.Controls.Add(this.pictureBox2);
             this.pnlchinh.Controls.Add(this.pictureBox1);
-            this.pnlchinh.Location = new System.Drawing.Point(251, 86);
+            this.pnlchinh.Location = new System.Drawing.Point(251, 90);
             this.pnlchinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlchinh.Name = "pnlchinh";
-            this.pnlchinh.Size = new System.Drawing.Size(1539, 730);
+            this.pnlchinh.Size = new System.Drawing.Size(1450, 756);
             this.pnlchinh.TabIndex = 32;
             // 
             // pictureBox3
@@ -493,11 +494,12 @@ namespace GUI_QLNH
             this.pnltitel.Location = new System.Drawing.Point(251, 0);
             this.pnltitel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnltitel.Name = "pnltitel";
-            this.pnltitel.Size = new System.Drawing.Size(1270, 91);
+            this.pnltitel.Size = new System.Drawing.Size(1404, 91);
             this.pnltitel.TabIndex = 33;
             // 
             // lbGio
             // 
+            this.lbGio.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbGio.AutoSize = true;
             this.lbGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGio.ForeColor = System.Drawing.Color.White;
@@ -514,7 +516,7 @@ namespace GUI_QLNH
             this.btnthoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnthoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnthoat.ForeColor = System.Drawing.Color.White;
-            this.btnthoat.Location = new System.Drawing.Point(1203, 2);
+            this.btnthoat.Location = new System.Drawing.Point(1337, 2);
             this.btnthoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnthoat.Name = "btnthoat";
             this.btnthoat.Size = new System.Drawing.Size(35, 33);
@@ -530,7 +532,7 @@ namespace GUI_QLNH
             this.btnphongto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnphongto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnphongto.ForeColor = System.Drawing.Color.White;
-            this.btnphongto.Location = new System.Drawing.Point(1154, 2);
+            this.btnphongto.Location = new System.Drawing.Point(1288, 2);
             this.btnphongto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnphongto.Name = "btnphongto";
             this.btnphongto.Size = new System.Drawing.Size(35, 33);
@@ -546,7 +548,7 @@ namespace GUI_QLNH
             this.btthoattamthoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btthoattamthoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btthoattamthoi.ForeColor = System.Drawing.Color.White;
-            this.btthoattamthoi.Location = new System.Drawing.Point(1114, 2);
+            this.btthoattamthoi.Location = new System.Drawing.Point(1248, 2);
             this.btthoattamthoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btthoattamthoi.Name = "btthoattamthoi";
             this.btthoattamthoi.Size = new System.Drawing.Size(35, 33);
@@ -557,10 +559,11 @@ namespace GUI_QLNH
             // 
             // lbtitel
             // 
+            this.lbtitel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbtitel.AutoSize = true;
             this.lbtitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtitel.ForeColor = System.Drawing.Color.White;
-            this.lbtitel.Location = new System.Drawing.Point(504, 30);
+            this.lbtitel.Location = new System.Drawing.Point(675, 30);
             this.lbtitel.Name = "lbtitel";
             this.lbtitel.Size = new System.Drawing.Size(89, 29);
             this.lbtitel.TabIndex = 0;
@@ -577,9 +580,9 @@ namespace GUI_QLNH
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1521, 750);
-            this.Controls.Add(this.pnltitel);
+            this.ClientSize = new System.Drawing.Size(1655, 846);
             this.Controls.Add(this.pnlchinh);
+            this.Controls.Add(this.pnltitel);
             this.Controls.Add(this.pnlSileMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

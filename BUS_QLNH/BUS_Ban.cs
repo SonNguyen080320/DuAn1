@@ -52,5 +52,9 @@ namespace BUS_QLNH
         {
             return dalBan.BanCoNguoi(maban);
         }
+        public bool TrangThaiBan(string TenBan)
+        {
+            return dalBan.TrangThaiBan(TenBan);
+        }
     }
 }

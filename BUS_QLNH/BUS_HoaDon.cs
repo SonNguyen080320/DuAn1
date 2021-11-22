@@ -27,13 +27,13 @@ namespace BUS_QLNH
         {
             return dalHoaDon.GopBan(MaBanHienTai, TenBanMuonGop);
         }
-        public DataTable ThongKeTongHop(DateTime TuNgay, DateTime DenNgay, string MaNV)
+        public DataTable ThongKeTongHop(DateTime TuNgay, DateTime DenNgay, string MaNV,string Ca)
         {
-            return dalHoaDon.ThongKeTongHop(TuNgay, DenNgay, MaNV);
+            return dalHoaDon.ThongKeTongHop(TuNgay, DenNgay, MaNV,Ca);
         }
-        public DataTable ThongKeChiTiet(DateTime TuNgay, DateTime DenNgay, string MaNV)
+        public DataTable ThongKeChiTiet(DateTime TuNgay, DateTime DenNgay, string MaNV,string Ca)
         {
-            return dalHoaDon.ThongKeChiTiet(TuNgay, DenNgay, MaNV);
+            return dalHoaDon.ThongKeChiTiet(TuNgay, DenNgay, MaNV,Ca);
         }
         public bool XoaMonAn(string TenMon, int MaBan)
         {

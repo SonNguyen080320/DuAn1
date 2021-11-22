@@ -30,11 +30,11 @@ namespace GUI_QLNH.FORMS
             btnXuatExcel.Enabled = true;
             if (txtMaNV.Text.Trim().Length == 0)
             {
-                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeTongHop(dtpTuNgay.Value, dtpDenNgay.Value, "1");
+                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeTongHop(dtpTuNgay.Value, dtpDenNgay.Value, "1",cbCa.Text);
             }
             else
             {
-                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeTongHop(dtpTuNgay.Value, dtpDenNgay.Value, txtMaNV.Text);
+                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeTongHop(dtpTuNgay.Value, dtpDenNgay.Value, txtMaNV.Text,cbCa.Text);
             }
             double tongtien = 0;
             for (int i = 0; i < dtgvThongKeTheoNgay.Rows.Count - 1; i++)
@@ -51,11 +51,11 @@ namespace GUI_QLNH.FORMS
             btnXuatExcel.Enabled = true;
             if (txtMaNV.Text.Trim().Length == 0)
             {
-                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value, "1");
+                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value, "1",cbCa.Text);
             }
             else
             {
-                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value, txtMaNV.Text);
+                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value, txtMaNV.Text,cbCa.Text);
             }
             double tongtien = 0;
             for (int i = 0; i < dtgvThongKeTheoNgay.Rows.Count - 1; i++)
@@ -68,14 +68,14 @@ namespace GUI_QLNH.FORMS
 
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {
-            Utils excel = new Utils();
-            // Lấy về nguồn dữ liệu cần Export là 1 DataTable
-            // DataTable này mỗi bạn lấy mỗi khác. 
-            // Ở đây tôi dùng BindingSouce có tên bs nên tôi ép kiểu như sau:
-            // Bạn nào gán trực tiếp vào DataGridView thì ép kiểu DataSource của
-            // DataGridView nhé 
-            DataTable dt = (DataTable)dtgvThongKeTheoNgay.DataSource;
-            excel.Export(dtgvThongKeTheoNgay,dt, "Thống kê", "Thống kê doanh thu");
+            if (Utils.XacNhan("Bạn muốn xuất thống kê ra file excel?"))
+            {
+                Utils excel = new Utils();
+                // Lấy về nguồn dữ liệu cần Export là 1 DataTable
+                // gán trực tiếp vào DataGridView thì ép kiểu DataSource
+                DataTable dt = (DataTable)dtgvThongKeTheoNgay.DataSource;
+                excel.Export(dtgvThongKeTheoNgay, dt, "Thống kê", "Thống kê doanh thu");
+            }
         }
     } 
 }
