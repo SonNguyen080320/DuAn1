@@ -17,6 +17,7 @@ namespace GUI_QLNH.FORMS
         public frmQuanLyBan()
         {
             InitializeComponent();
+            goiytenban();
         }
         BUS_Ban busBan = new BUS_Ban();
         private void frmQuanLyBan_Load(object sender, EventArgs e)
@@ -237,6 +238,21 @@ namespace GUI_QLNH.FORMS
                     }
                 }
             }
+        }
+        void goiytenban()
+        {
+            AutoCompleteStringCollection auto1 = new AutoCompleteStringCollection();
+            txtTimKiem.AutoCompleteMode = AutoCompleteMode.Append;
+            txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtTimKiem.AutoCompleteMode = AutoCompleteMode.Suggest;
+            DataTable dtb = busBan.TenBanGoiY();
+            string tenban;
+            for (int i = 0; i < dtb.Rows.Count; i++)
+            {
+                tenban = dtb.Rows[i]["TenBan"].ToString();
+                auto1.Add(tenban);
+            }
+            txtTimKiem.AutoCompleteCustomSource = auto1;
         }
     }
 }

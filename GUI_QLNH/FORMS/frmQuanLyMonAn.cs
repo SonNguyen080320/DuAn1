@@ -18,6 +18,7 @@ namespace GUI_QLNH.FORMS
         public frmQuanLyMonAn()
         {
             InitializeComponent();
+            goiyten();
         }
         BUS_MonAn busMonAn = new BUS_MonAn();
         BUS_DanhMuc busDanhMucMonAn = new BUS_DanhMuc();
@@ -373,6 +374,21 @@ namespace GUI_QLNH.FORMS
                     picMonAn.Image = Image.FromFile(fileaddress);
                 }
             }
+        }
+        void goiyten()
+        {
+            AutoCompleteStringCollection auto1 = new AutoCompleteStringCollection();
+            txtTimKiem.AutoCompleteMode = AutoCompleteMode.Append;
+            txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtTimKiem.AutoCompleteMode = AutoCompleteMode.Suggest;
+            DataTable dtb = busMonAn.TenMonAnGoiY();
+            string tenban;
+            for (int i = 0; i < dtb.Rows.Count; i++)
+            {
+                tenban = dtb.Rows[i]["TenMon"].ToString();
+                auto1.Add(tenban);
+            }
+            txtTimKiem.AutoCompleteCustomSource = auto1;
         }
     }
 }

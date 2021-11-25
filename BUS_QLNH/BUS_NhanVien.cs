@@ -17,6 +17,10 @@ namespace BUS_QLNH
         {
             return dalNhanVien.NhanVienDangNhap(nv);
         }
+        public bool VaiTro(string email)
+        {
+            return dalNhanVien.VaiTro(email);
+        }
         public bool ThemNhanVien(DTO_NhanVien nv)
         {
             return dalNhanVien.ThemNhanVien(nv);
@@ -68,6 +72,10 @@ namespace BUS_QLNH
         public bool TaoMatKhau(string Email, string Matkhaumoi)
         {
             return dalNhanVien.TaoMatKhau(Email, Matkhaumoi);
+        }
+        public DataTable TenNVGoiY()
+        {
+            return dalNhanVien.TenNVGoiY();
         }
     }
 }

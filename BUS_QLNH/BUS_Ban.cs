@@ -56,5 +56,9 @@ namespace BUS_QLNH
         {
             return dalBan.TrangThaiBan(TenBan);
         }
+        public DataTable TenBanGoiY()
+        {
+            return dalBan.TenBanGoiY();
+        }
     }
 }

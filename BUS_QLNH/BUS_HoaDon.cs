@@ -31,9 +31,9 @@ namespace BUS_QLNH
         {
             return dalHoaDon.ThongKeTongHop(TuNgay, DenNgay, MaNV,Ca);
         }
-        public DataTable ThongKeChiTiet(DateTime TuNgay, DateTime DenNgay, string MaNV,string Ca)
+        public DataTable ThongKeChiTiet(DateTime TuNgay, DateTime DenNgay)
         {
-            return dalHoaDon.ThongKeChiTiet(TuNgay, DenNgay, MaNV,Ca);
+            return dalHoaDon.ThongKeChiTiet(TuNgay, DenNgay);
         }
         public bool XoaMonAn(string TenMon, int MaBan)
         {

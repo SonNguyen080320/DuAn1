@@ -62,19 +62,14 @@ namespace GUI_QLNH.FORMS
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            if(Utils.XacNhan("Bạn muốn thanh toán hóa đơn?"))
+            frmThanhToan ftt = new frmThanhToan();
+            if (ftt.ShowDialog() == DialogResult.Cancel)
             {
-                if (busHoaDon.ThanhToan(maBanHienTai,float.Parse(txtTongTien.Text),float.Parse(txtThanhTien.Text)))
-                {
-                    Utils.HienThongBao("Thanh toán thành công");
-                    load();
-                    flpTable.Controls.Clear();
-                    HienButtonBan();
-                    isCoNguoi = false;
-                }
-            }    
+                flpTable.Controls.Clear();
+                loadDtgvOrder();
+                HienButtonBan();
+            }
         }
-
         private void btnThemMon_Click(object sender, EventArgs e)
         {
             if (isCoNguoi) // cập nhật hoá đơn
@@ -97,6 +92,9 @@ namespace GUI_QLNH.FORMS
                 }
             }
            isCoNguoi = true;
+            btnChuyenBan.Enabled = true;
+            btnGopBan.Enabled = true;
+            btnThanhToan.Enabled = true;
         }
 
         void load()
@@ -166,8 +164,8 @@ namespace GUI_QLNH.FORMS
             }
         }
 
-        int maBanHienTai;
-        bool isCoNguoi;
+        public static int maBanHienTai;
+        public static bool isCoNguoi;
 
         private void btnBan_Click(object sender, EventArgs e)
         {

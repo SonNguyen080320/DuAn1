@@ -11,6 +11,25 @@ namespace DAL_QLNH
 {
     public class DAL_DanhMuc : DB_Connect
     {
+        public DataTable TenDMGoiY()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_TenDMGoiY";
+                cmd.Connection = conn;
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         public DataTable HienThiDanhMucMonAN()
         {
             try

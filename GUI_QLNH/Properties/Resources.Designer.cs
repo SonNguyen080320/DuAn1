@@ -233,6 +233,16 @@ namespace GUI_QLNH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfacebook {
+            get {
+                object obj = ResourceManager.GetObject("iconfacebook", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconhello {
             get {
                 object obj = ResourceManager.GetObject("iconhello", resourceCulture);
@@ -316,6 +326,16 @@ namespace GUI_QLNH.Properties {
         internal static System.Drawing.Bitmap iconorder {
             get {
                 object obj = ResourceManager.GetObject("iconorder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconphone {
+            get {
+                object obj = ResourceManager.GetObject("iconphone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

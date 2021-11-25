@@ -51,19 +51,19 @@ namespace GUI_QLNH.FORMS
             btnXuatExcel.Enabled = true;
             if (txtMaNV.Text.Trim().Length == 0)
             {
-                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value, "1",cbCa.Text);
+                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value);
             }
             else
             {
-                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value, txtMaNV.Text,cbCa.Text);
+                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value);
             }
             double tongtien = 0;
             for (int i = 0; i < dtgvThongKeTheoNgay.Rows.Count - 1; i++)
             {
-                double tien = Convert.ToDouble(dtgvThongKeTheoNgay.Rows[i].Cells["Thành Tiền"].Value);
+                double tien = Convert.ToDouble(dtgvThongKeTheoNgay.Rows[i].Cells["Tổng Tiền Có VAT"].Value);
                 tongtien += tien;
             }
-            txtTongTien.Text = tongtien.ToString("#,#", CultureInfo.InvariantCulture) + " VNĐ";
+            txtTongTien.Text =tongtien.ToString("#,#", CultureInfo.InvariantCulture) + " VNĐ";
         }
 
         private void btnXuatExcel_Click(object sender, EventArgs e)

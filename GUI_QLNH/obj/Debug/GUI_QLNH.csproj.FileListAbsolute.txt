@@ -226,3 +226,4 @@ E:\DUAN_1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.csproj.CopyComple
 E:\DUAN_1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.exe
 E:\DUAN_1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.pdb
 D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.csproj.ResolveComReference.cache
+D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.FORMS.frmThanhToan.resources

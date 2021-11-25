@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FORMS\frmThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmThanhToan.Designer.cs">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\frmThongTinCaNhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="FORMS\frmThanhToan.resx">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\frmThongTinCaNhan.resx">
       <DependentUpon>frmThongTinCaNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +275,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\anh.jfif" />
+    <None Include="Resources\iconfacebook.png" />
+    <None Include="Resources\iconphone.png" />
     <None Include="Resources\iconthongke2.png" />
     <None Include="Resources\iconmonan2.png" />
     <None Include="Resources\icondanhmucmonan.png" />

@@ -114,7 +114,7 @@ namespace GUI_QLNH
 
             // Tạo phần đầu nếu muốn
 
-            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "E1");
+            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "F1");
 
             head.MergeCells = true;
 
@@ -151,19 +151,24 @@ namespace GUI_QLNH
 
                 cl4.Value2 = dtgv.Columns[3].HeaderText;
 
-                cl4.ColumnWidth = 15.0;
+                cl4.ColumnWidth = 25.0;
                 Microsoft.Office.Interop.Excel.Range cl5 = oSheet.get_Range("E3", "E3");
 
                 cl5.Value2 = dtgv.Columns[4].HeaderText;
 
                 cl5.ColumnWidth = 25.0;
+                Microsoft.Office.Interop.Excel.Range cl6= oSheet.get_Range("F3", "F3");
+
+                cl6.Value2 = dtgv.Columns[5].HeaderText;
+
+                cl6.ColumnWidth = 25.0;
             }
 
             
 
             
 
-            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "E3");
+            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "F3");
 
             rowHead.Font.Bold = true;
 

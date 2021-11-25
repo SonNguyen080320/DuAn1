@@ -84,6 +84,7 @@ namespace GUI_QLNH
             this.btndoimatkhau.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btndoimatkhau.Dock = System.Windows.Forms.DockStyle.Top;
             this.btndoimatkhau.FlatAppearance.BorderSize = 0;
+            this.btndoimatkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndoimatkhau.ForeColor = System.Drawing.Color.White;
             this.btndoimatkhau.Location = new System.Drawing.Point(0, 73);
             this.btndoimatkhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -111,6 +112,7 @@ namespace GUI_QLNH
             this.btndangxuat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btndangxuat.Dock = System.Windows.Forms.DockStyle.Top;
             this.btndangxuat.FlatAppearance.BorderSize = 0;
+            this.btndangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndangxuat.ForeColor = System.Drawing.Color.White;
             this.btndangxuat.Location = new System.Drawing.Point(0, 151);
             this.btndangxuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -127,6 +129,7 @@ namespace GUI_QLNH
             this.bnthongtinnhanvien.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bnthongtinnhanvien.Dock = System.Windows.Forms.DockStyle.Top;
             this.bnthongtinnhanvien.FlatAppearance.BorderSize = 0;
+            this.bnthongtinnhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnthongtinnhanvien.ForeColor = System.Drawing.Color.White;
             this.bnthongtinnhanvien.Location = new System.Drawing.Point(0, 0);
             this.bnthongtinnhanvien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -154,6 +157,7 @@ namespace GUI_QLNH
             this.btnthongketheongay.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnthongketheongay.FlatAppearance.BorderSize = 0;
             this.btnthongketheongay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnthongketheongay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnthongketheongay.ForeColor = System.Drawing.Color.White;
             this.btnthongketheongay.Image = global::GUI_QLNH.Properties.Resources.iconthongke2;
             this.btnthongketheongay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,7 +167,7 @@ namespace GUI_QLNH
             this.btnthongketheongay.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnthongketheongay.Size = new System.Drawing.Size(251, 72);
             this.btnthongketheongay.TabIndex = 9;
-            this.btnthongketheongay.Text = "Thống Kê Doanh Thu";
+            this.btnthongketheongay.Text = " Doanh Thu";
             this.btnthongketheongay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnthongketheongay.UseVisualStyleBackColor = false;
             this.btnthongketheongay.Click += new System.EventHandler(this.btnthongketheongay_Click);
@@ -195,6 +199,7 @@ namespace GUI_QLNH
             this.btnquanlynhanvien.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnquanlynhanvien.FlatAppearance.BorderSize = 0;
             this.btnquanlynhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnquanlynhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnquanlynhanvien.ForeColor = System.Drawing.Color.White;
             this.btnquanlynhanvien.Image = global::GUI_QLNH.Properties.Resources.icontaikhoan;
             this.btnquanlynhanvien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -204,7 +209,7 @@ namespace GUI_QLNH
             this.btnquanlynhanvien.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnquanlynhanvien.Size = new System.Drawing.Size(251, 62);
             this.btnquanlynhanvien.TabIndex = 9;
-            this.btnquanlynhanvien.Text = "QUẢN LÝ NHÂN VIÊN";
+            this.btnquanlynhanvien.Text = "NHÂN VIÊN";
             this.btnquanlynhanvien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnquanlynhanvien.UseVisualStyleBackColor = false;
             this.btnquanlynhanvien.Click += new System.EventHandler(this.btnquanlynhanvien_Click);
@@ -216,6 +221,7 @@ namespace GUI_QLNH
             this.bnquanlythongke.Dock = System.Windows.Forms.DockStyle.Top;
             this.bnquanlythongke.FlatAppearance.BorderSize = 0;
             this.bnquanlythongke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bnquanlythongke.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnquanlythongke.ForeColor = System.Drawing.Color.White;
             this.bnquanlythongke.Image = global::GUI_QLNH.Properties.Resources.iconthongke2;
             this.bnquanlythongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -225,7 +231,7 @@ namespace GUI_QLNH
             this.bnquanlythongke.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.bnquanlythongke.Size = new System.Drawing.Size(251, 59);
             this.bnquanlythongke.TabIndex = 7;
-            this.bnquanlythongke.Text = "QUẢN LÝ THỐNG KÊ";
+            this.bnquanlythongke.Text = "THỐNG KÊ";
             this.bnquanlythongke.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnquanlythongke.UseVisualStyleBackColor = false;
             this.bnquanlythongke.Click += new System.EventHandler(this.bnquanlythongke_Click);
@@ -248,6 +254,7 @@ namespace GUI_QLNH
             this.btnmonan.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnmonan.FlatAppearance.BorderSize = 0;
             this.btnmonan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmonan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmonan.ForeColor = System.Drawing.Color.White;
             this.btnmonan.Image = global::GUI_QLNH.Properties.Resources.iconmonan2;
             this.btnmonan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -268,6 +275,7 @@ namespace GUI_QLNH
             this.btndanhmucmonan.Dock = System.Windows.Forms.DockStyle.Top;
             this.btndanhmucmonan.FlatAppearance.BorderSize = 0;
             this.btndanhmucmonan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndanhmucmonan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndanhmucmonan.ForeColor = System.Drawing.Color.White;
             this.btndanhmucmonan.Image = global::GUI_QLNH.Properties.Resources.icondanhmucmonan;
             this.btndanhmucmonan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -289,6 +297,7 @@ namespace GUI_QLNH
             this.btnquanlythucpham.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnquanlythucpham.FlatAppearance.BorderSize = 0;
             this.btnquanlythucpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnquanlythucpham.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnquanlythucpham.ForeColor = System.Drawing.Color.White;
             this.btnquanlythucpham.Image = global::GUI_QLNH.Properties.Resources.icondanhmuc4;
             this.btnquanlythucpham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -298,7 +307,7 @@ namespace GUI_QLNH
             this.btnquanlythucpham.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnquanlythucpham.Size = new System.Drawing.Size(251, 59);
             this.btnquanlythucpham.TabIndex = 5;
-            this.btnquanlythucpham.Text = "QUẢN LÝ THỰC PHẨM";
+            this.btnquanlythucpham.Text = "THỰC PHẨM";
             this.btnquanlythucpham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnquanlythucpham.UseVisualStyleBackColor = false;
             this.btnquanlythucpham.Click += new System.EventHandler(this.btnquanlythucpham_Click);
@@ -310,6 +319,7 @@ namespace GUI_QLNH
             this.btnban.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnban.FlatAppearance.BorderSize = 0;
             this.btnban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnban.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnban.ForeColor = System.Drawing.Color.White;
             this.btnban.Image = global::GUI_QLNH.Properties.Resources.iconban3;
             this.btnban.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -320,6 +330,7 @@ namespace GUI_QLNH
             this.btnban.Size = new System.Drawing.Size(251, 59);
             this.btnban.TabIndex = 4;
             this.btnban.Text = "BÀN";
+            this.btnban.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnban.UseVisualStyleBackColor = false;
             this.btnban.Click += new System.EventHandler(this.btnban_Click);
             // 
@@ -330,6 +341,7 @@ namespace GUI_QLNH
             this.btndatmon.Dock = System.Windows.Forms.DockStyle.Top;
             this.btndatmon.FlatAppearance.BorderSize = 0;
             this.btndatmon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndatmon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndatmon.ForeColor = System.Drawing.Color.White;
             this.btndatmon.Image = global::GUI_QLNH.Properties.Resources.iconoder;
             this.btndatmon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -340,6 +352,7 @@ namespace GUI_QLNH
             this.btndatmon.Size = new System.Drawing.Size(251, 59);
             this.btndatmon.TabIndex = 3;
             this.btndatmon.Text = "ĐẶT MÓN";
+            this.btndatmon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btndatmon.UseVisualStyleBackColor = false;
             this.btndatmon.Click += new System.EventHandler(this.btndatmon_Click);
             // 
@@ -350,6 +363,7 @@ namespace GUI_QLNH
             this.btnhome.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnhome.FlatAppearance.BorderSize = 0;
             this.btnhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnhome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnhome.ForeColor = System.Drawing.Color.White;
             this.btnhome.Image = global::GUI_QLNH.Properties.Resources.iconhomes;
             this.btnhome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -360,6 +374,7 @@ namespace GUI_QLNH
             this.btnhome.Size = new System.Drawing.Size(251, 59);
             this.btnhome.TabIndex = 2;
             this.btnhome.Text = "HOME";
+            this.btnhome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnhome.UseVisualStyleBackColor = false;
             this.btnhome.Click += new System.EventHandler(this.btnhome_Click);
             // 
@@ -413,7 +428,6 @@ namespace GUI_QLNH
             // 
             // lbchao
             // 
-            this.lbchao.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbchao.AutoSize = true;
             this.lbchao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbchao.ForeColor = System.Drawing.Color.White;
@@ -563,7 +577,7 @@ namespace GUI_QLNH
             this.lbtitel.AutoSize = true;
             this.lbtitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtitel.ForeColor = System.Drawing.Color.White;
-            this.lbtitel.Location = new System.Drawing.Point(675, 30);
+            this.lbtitel.Location = new System.Drawing.Point(504, 32);
             this.lbtitel.Name = "lbtitel";
             this.lbtitel.Size = new System.Drawing.Size(89, 29);
             this.lbtitel.TabIndex = 0;

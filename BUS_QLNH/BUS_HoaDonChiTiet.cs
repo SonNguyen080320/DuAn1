@@ -24,5 +24,10 @@ namespace BUS_QLNH
         {
             return dalHoaDonCT.ThemMon(maBan, tenMon, soLuong,tong);
         }
+
+        public string TenBan(int maBan)
+        {
+            return dalHoaDonCT.TenBan(maBan);
+        }
     }
 }

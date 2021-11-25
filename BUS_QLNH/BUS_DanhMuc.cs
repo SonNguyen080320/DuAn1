@@ -32,5 +32,9 @@ namespace BUS_QLNH
         {
             return daldanhmucmonan.TimDanhMuc(tendanhmuc);
         }
+        public DataTable TenDMGoiY()
+        {
+            return daldanhmucmonan.TenDMGoiY();
+        }
     }
 }

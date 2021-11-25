@@ -11,6 +11,25 @@ namespace DAL_QLNH
 {
     public class DAL_NhanVien : DB_Connect
     {
+        public DataTable TenNVGoiY()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_TenNVGoiY";
+                cmd.Connection = conn;
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         public bool NhanVienDangNhap(DTO_NhanVien nv)
         {
             try
@@ -42,6 +61,29 @@ namespace DAL_QLNH
             }
 
             return false;
+        }
+        public bool VaiTro(string email)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "sp_VaiTroNV"
+                };
+                cmd.Parameters.AddWithValue("Email", email);
+                if(Convert.ToInt32(cmd.ExecuteScalar())>0)
+                {
+                    return true;
+                } 
+                else
+                {
+                    return false;
+                }    
+            }
+            finally { conn.Close(); }
         }
         public bool ThemNhanVien(DTO_NhanVien nv)
         {
@@ -338,7 +380,7 @@ namespace DAL_QLNH
             }
             catch (Exception e)
             {
-
+                
             }
             finally
             {

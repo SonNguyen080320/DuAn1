@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS_QLNH;
 
 namespace GUI_QLNH
 {
@@ -16,7 +17,7 @@ namespace GUI_QLNH
         // private Form activeForm;
 
         public static string _Email;
-
+        BUS_NhanVien busNhanVien = new BUS_NhanVien();
         public frmGiaoDien()
         {
             InitializeComponent();
@@ -30,10 +31,15 @@ namespace GUI_QLNH
         }
         private void frmGiaoDien_Load(object sender, EventArgs e)
         {
-            if(_Email=="Admin"||_Email=="admin")
+            loadForm();
+
+        }
+        void loadForm()
+        {
+            if (_Email == "Admin" || _Email == "admin")
             {
                 btndoimatkhau.Hide();
-            }    
+            }
             this.WindowState = FormWindowState.Maximized;
             lbchao.Text = "Chào: " + _Email;
             timer1.Start();
@@ -41,7 +47,27 @@ namespace GUI_QLNH
             btthoattamthoi.Visible = false;
             btnphongto.Visible = false;
             btnthoat.Visible = false;
+            if (busNhanVien.VaiTro(_Email))
+            {
+                btnban.Visible = true;
+                btndanhmucmonan.Visible = true;
+                btnmonan.Visible = true;
+                btnquanlynhanvien.Visible = true;
+                btnquanlythucpham.Visible = true;
+                btnthongketheongay.Visible = true;
+                bnquanlythongke.Visible = true;
 
+            }
+            else
+            {
+                btnban.Visible = false;
+                btndanhmucmonan.Visible = false;
+                btnmonan.Visible = false;
+                btnquanlynhanvien.Visible = false;
+                btnquanlythucpham.Visible = false;
+                btnthongketheongay.Visible = false;
+                bnquanlythongke.Visible = false;
+            }
         }
         private void PanelMacDinh()// panel mặc định
         {
@@ -123,7 +149,7 @@ namespace GUI_QLNH
 
         private void btnthongketheongay_Click(object sender, EventArgs e)
         {
-            lbtitel.Text = "THỐNG KÊ THEO NGÀY";
+            lbtitel.Text = "THỐNG KÊ";
             MoForm(new FORMS.frmThongKeTheoNgay());
             //code
            // panelmacdinhkhiloadform();

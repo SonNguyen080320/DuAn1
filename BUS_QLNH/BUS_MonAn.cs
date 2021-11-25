@@ -45,5 +45,9 @@ namespace BUS_QLNH
         {
             return dalmonan.TenDM(tenMon);
         }
+        public DataTable TenMonAnGoiY()
+        {
+            return dalmonan.TenMonAnGoiY();
+        }
     }
 }

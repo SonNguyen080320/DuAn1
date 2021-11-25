@@ -17,6 +17,7 @@ namespace GUI_QLNH.FORMS
         public frmQuanLyDanhMucMonAn()
         {
             InitializeComponent();
+            goiyten();
         }
 
         private void frmQuanLyDanhMucMonAn_Load(object sender, EventArgs e)
@@ -189,6 +190,21 @@ namespace GUI_QLNH.FORMS
                 txttimkiem.BackColor = Color.LightGray;
                 ResetValues();
             }
+        }
+        void goiyten()
+        {
+            AutoCompleteStringCollection auto1 = new AutoCompleteStringCollection();
+            txttimkiem.AutoCompleteMode = AutoCompleteMode.Append;
+            txttimkiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txttimkiem.AutoCompleteMode = AutoCompleteMode.Suggest;
+            DataTable dtb = busdanhmucmonan.TenDMGoiY();
+            string tenban;
+            for (int i = 0; i < dtb.Rows.Count; i++)
+            {
+                tenban = dtb.Rows[i]["TenDM"].ToString();
+                auto1.Add(tenban);
+            }
+            txttimkiem.AutoCompleteCustomSource = auto1;
         }
     }
 }

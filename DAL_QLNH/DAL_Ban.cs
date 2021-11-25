@@ -29,6 +29,25 @@ namespace DAL_QLNH
                 conn.Close();
             }
         }
+        public DataTable TenBanGoiY()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_TenBanGoiY";
+                cmd.Connection = conn;
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+                
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         public bool ThemBan(DTO_Ban ban)
         {
             try

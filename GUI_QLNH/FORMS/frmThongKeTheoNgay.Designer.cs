@@ -85,12 +85,12 @@ namespace GUI_QLNH.FORMS
             this.btnChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChiTiet.Image = global::GUI_QLNH.Properties.Resources._7247303;
             this.btnChiTiet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChiTiet.Location = new System.Drawing.Point(1093, 196);
+            this.btnChiTiet.Location = new System.Drawing.Point(1093, 113);
             this.btnChiTiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChiTiet.Name = "btnChiTiet";
             this.btnChiTiet.Size = new System.Drawing.Size(287, 54);
             this.btnChiTiet.TabIndex = 6;
-            this.btnChiTiet.Text = "Thống kê chi tiết";
+            this.btnChiTiet.Text = "Thống kê tổng hợp";
             this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChiTiet.UseVisualStyleBackColor = true;
             this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
@@ -160,18 +160,19 @@ namespace GUI_QLNH.FORMS
             this.btnTongHop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTongHop.Image = global::GUI_QLNH.Properties.Resources._7247303;
             this.btnTongHop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTongHop.Location = new System.Drawing.Point(1093, 113);
+            this.btnTongHop.Location = new System.Drawing.Point(1093, 193);
             this.btnTongHop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTongHop.Name = "btnTongHop";
             this.btnTongHop.Size = new System.Drawing.Size(287, 54);
             this.btnTongHop.TabIndex = 12;
-            this.btnTongHop.Text = "Thống kê tổng hợp";
+            this.btnTongHop.Text = "Thống kê chi tiết";
             this.btnTongHop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTongHop.UseVisualStyleBackColor = true;
             this.btnTongHop.Click += new System.EventHandler(this.btnTongHop_Click);
             // 
             // txtTongTien
             // 
+            this.txtTongTien.Enabled = false;
             this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTien.Location = new System.Drawing.Point(1146, 662);
             this.txtTongTien.Name = "txtTongTien";

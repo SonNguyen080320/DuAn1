@@ -154,6 +154,9 @@
   <data name="icondanhmuc4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icondanhmuc4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconphone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconphone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icondanhmucmonan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icondanhmucmonan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -237,5 +240,8 @@
   </data>
   <data name="iconthongke2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconthongke2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconfacebook" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfacebook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

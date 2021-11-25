@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 using DTO_QLNH;
 using BUS_QLNH;
 using System.Net.Mail;
@@ -20,9 +21,25 @@ namespace GUI_QLNH.FORMS
         public frmQuanLyNhanVien()
         {
             InitializeComponent();
+            goiyten();
         }
         BUS_NhanVien busNhanVien = new BUS_NhanVien();
         DTO_NhanVien dtoNhanVien = new DTO_NhanVien();
+        void goiyten()
+        {
+            AutoCompleteStringCollection auto1 = new AutoCompleteStringCollection();
+            txtTimKiem.AutoCompleteMode = AutoCompleteMode.Append;
+            txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtTimKiem.AutoCompleteMode = AutoCompleteMode.Suggest;
+            DataTable dtb = busNhanVien.TenNVGoiY();
+            string tenban;
+            for (int i = 0; i < dtb.Rows.Count; i++)
+            {
+                tenban = dtb.Rows[i]["TenNV"].ToString();
+                auto1.Add(tenban);
+            }
+            txtTimKiem.AutoCompleteCustomSource = auto1;
+        }
         private void frmQuanLyNhanVien_Load(object sender, EventArgs e)
         {
 
@@ -396,6 +413,16 @@ namespace GUI_QLNH.FORMS
                     }
                     else
                     {
+                        string emailXoa = rows.Cells[2].Value.ToString().Substring(0, 1).ToUpper() + rows.Cells[2].Value.ToString().Substring(1).ToLower();
+                        if (rows.Cells[2].Value.ToString() == frmGiaoDien._Email ||
+                                emailXoa== frmGiaoDien._Email)
+                        {
+                            btnXoa.Enabled = false;
+                        }
+                        else
+                        {
+                            btnXoa.Enabled = true;
+                        }
                         txtDiaChi.Enabled = true;
                         txtEmail.Enabled = false;
                         txtMaNV.Enabled = false;
@@ -413,44 +440,44 @@ namespace GUI_QLNH.FORMS
                         btnSua.Enabled = true;
                         btnThem.Enabled = true;
                         btnTimKiem.Enabled = true;
-                        btnXoa.Enabled = true;
                         dtNgaySinh.Enabled = true;
-                    }
-                    txtMaNV.Text = rows.Cells[0].Value.ToString();
-                    txtTenNV.Text = rows.Cells[1].Value.ToString();
-                    txtEmail.Text = rows.Cells[2].Value.ToString();
-                    dtNgaySinh.Text = rows.Cells[3].Value.ToString();
-                    if (bool.Parse(rows.Cells[4].Value.ToString()) == true)
-                    {
-                        rdoNam.Checked = true;
-                    }
-                    else
-                    {
-                        rdoNu.Checked = true;
-                    }
-                    txtDiaChi.Text = rows.Cells[5].Value.ToString();
-                    txtSDT.Text = rows.Cells[6].Value.ToString();
-                    if (bool.Parse(rows.Cells[7].Value.ToString()) == true)
-                    {
-                        rdoAdmin.Checked = true;
-                    }
-                    else
-                    {
-                        rdoNV.Checked = true;
-                    }
-                    if (bool.Parse(rows.Cells[8].Value.ToString()) == true)
-                    {
-                        rdoHoatDong.Checked = true;
-                    }
-                    else
-                    {
-                        rdoNgungHoatDong.Checked = true;
-                    }
-                    hinh = rows.Cells[9].Value.ToString();
-                    txtHinh = hinh;
-                    checkurlimage = hinh;
-                    picnhanvien.Image = Image.FromFile(saveDirectory + hinh);
 
+                        txtMaNV.Text = rows.Cells[0].Value.ToString();
+                        txtTenNV.Text = rows.Cells[1].Value.ToString();
+                        txtEmail.Text = rows.Cells[2].Value.ToString();
+                        dtNgaySinh.Text = rows.Cells[3].Value.ToString();
+                        if (bool.Parse(rows.Cells[4].Value.ToString()) == true)
+                        {
+                            rdoNam.Checked = true;
+                        }
+                        else
+                        {
+                            rdoNu.Checked = true;
+                        }
+                        txtDiaChi.Text = rows.Cells[5].Value.ToString();
+                        txtSDT.Text = rows.Cells[6].Value.ToString();
+                        if (bool.Parse(rows.Cells[7].Value.ToString()) == true)
+                        {
+                            rdoAdmin.Checked = true;
+                        }
+                        else
+                        {
+                            rdoNV.Checked = true;
+                        }
+                        if (bool.Parse(rows.Cells[8].Value.ToString()) == true)
+                        {
+                            rdoHoatDong.Checked = true;
+                        }
+                        else
+                        {
+                            rdoNgungHoatDong.Checked = true;
+                        }
+                        hinh = rows.Cells[9].Value.ToString();
+                        txtHinh = hinh;
+                        checkurlimage = hinh;
+                        picnhanvien.Image = Image.FromFile(saveDirectory + hinh);
+
+                    }
                 }
             }    
         }

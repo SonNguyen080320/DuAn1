@@ -81,5 +81,22 @@ namespace DAL_QLNH
             finally { conn.Close(); }
             return false;
         }
+        public string TenBan(int maBan)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "sp_TenBan"
+                };
+                cmd.Parameters.AddWithValue("mabanhientai", maBan);
+                string tenNhanVien = cmd.ExecuteScalar().ToString();
+                return tenNhanVien;
+            }
+            finally { conn.Close(); }
+        }
     }
 }

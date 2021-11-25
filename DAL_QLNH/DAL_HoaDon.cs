@@ -171,7 +171,7 @@ namespace DAL_QLNH
             }
             finally { conn.Close(); }
         }
-        public DataTable ThongKeChiTiet(DateTime TuNgay, DateTime DenNgay, string MaNV,string Ca)
+        public DataTable ThongKeChiTiet(DateTime TuNgay, DateTime DenNgay)
         {
             try
             {
@@ -184,8 +184,6 @@ namespace DAL_QLNH
                 };
                 cmd.Parameters.AddWithValue("TuNgay", TuNgay);
                 cmd.Parameters.AddWithValue("DenNgay", DenNgay);
-                cmd.Parameters.AddWithValue("MaNV", MaNV);
-                cmd.Parameters.AddWithValue("Ca", Ca);
                 DataTable dt = new DataTable();
                 dt.Load(cmd.ExecuteReader());
                 return dt;
