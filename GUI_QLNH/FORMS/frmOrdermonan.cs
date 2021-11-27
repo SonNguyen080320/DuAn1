@@ -65,9 +65,28 @@ namespace GUI_QLNH.FORMS
             frmThanhToan ftt = new frmThanhToan();
             if (ftt.ShowDialog() == DialogResult.Cancel)
             {
-                flpTable.Controls.Clear();
-                loadDtgvOrder();
-                HienButtonBan();
+                if (busban.TrangThaiBan(lblBanHienTai.Text))
+                {
+                    loadDtgvOrder();
+                }
+                else
+                {
+                    flpTable.Controls.Clear();
+                    dtgvOrder.Columns.Clear();
+                    dtgvOrder.Columns.Add("Tên món", "Tên món");
+                    dtgvOrder.Columns.Add("Số lượng", "Số lượng");
+                    dtgvOrder.Columns.Add("Đơn giá", "Đơn giá");
+                    dtgvOrder.Columns.Add("Thành tiền", "Thành tiền");
+                    this.dtgvOrder.Columns["Đơn giá"].DefaultCellStyle
+                    .Alignment = DataGridViewContentAlignment.MiddleRight;
+                    this.dtgvOrder.Columns["Thành tiền"].DefaultCellStyle
+                    .Alignment = DataGridViewContentAlignment.MiddleRight;
+                    this.dtgvOrder.Columns["Số lượng"].DefaultCellStyle
+                    .Alignment = DataGridViewContentAlignment.MiddleRight;
+                    txtTongTien.Text = "";
+                    txtThanhTien.Text = "";
+                    HienButtonBan();
+                }
             }
         }
         private void btnThemMon_Click(object sender, EventArgs e)
@@ -116,6 +135,8 @@ namespace GUI_QLNH.FORMS
             txtThanhTien.Text = "0";
             btnCapNhatMon.Enabled = false;
             btnXoaMon.Enabled = false;
+
+            
         }
         void loadDtgvOrder()
         {
@@ -129,6 +150,12 @@ namespace GUI_QLNH.FORMS
             }
             txtThanhTien.Text = tongtien.ToString("#,#", CultureInfo.InvariantCulture) ;
             txtTongTien.Text = (tongtien + tongtien * 0.1).ToString("#,#", CultureInfo.InvariantCulture);
+            this.dtgvOrder.Columns["Đơn giá"].DefaultCellStyle
+            .Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.dtgvOrder.Columns["Thành tiền"].DefaultCellStyle
+            .Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.dtgvOrder.Columns["Số lượng"].DefaultCellStyle
+            .Alignment = DataGridViewContentAlignment.MiddleRight;
         }
         private void cbDanhMucMonAn_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -245,6 +272,7 @@ namespace GUI_QLNH.FORMS
                     btnThemMon.Enabled = false;
                     btnCapNhatMon.Enabled = true;
                     btnXoaMon.Enabled = true;
+                    
                     cbMonAn.Text = rows.Cells[0].Value.ToString();
                     numSoLuong.Text = rows.Cells[1].Value.ToString();
                     busMonAn.TenDM(cbMonAn.Text);

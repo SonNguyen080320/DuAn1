@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace GUI_QLNH.FORMS
 {
@@ -77,6 +78,8 @@ namespace GUI_QLNH.FORMS
             dtgvMonAn.Columns[4].HeaderText = "HÌNH ẢNH";
             dtgvMonAn.Columns[5].HeaderText = "TÌNH TRẠNG";
             dtgvMonAn.Columns[6].HeaderText = "TÊN DANH MỤC";
+            this.dtgvMonAn.Columns["dg"].DefaultCellStyle
+                .Alignment = DataGridViewContentAlignment.MiddleRight;
         }
         private void ResetValues()
         {
@@ -281,7 +284,6 @@ namespace GUI_QLNH.FORMS
                 {
                     if (busMonAn.SuaMonAn(monan))
                     {
-
                         if (txtHinh != checkurlimage)
                         {
                             File.Copy(fileaddress, filesavepath, true);
@@ -289,7 +291,6 @@ namespace GUI_QLNH.FORMS
                         MessageBox.Show("Update thành công");
                         ResetValues();
                         loadgridview_MonAn();
-
                     }
                     else
                     {
@@ -316,7 +317,7 @@ namespace GUI_QLNH.FORMS
                 }
                 else
                 {
-                    MessageBox.Show("Xóa không thành công");
+                    Utils.HienWarning("Món ăn đang có trong hóa đơn chưa thanh toán. Không được xóa");
                 }
             }
             else
@@ -345,6 +346,7 @@ namespace GUI_QLNH.FORMS
             else
             {
                 MessageBox.Show("Không Tìm Thấy hàng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTimKiem.Focus();
             }
             txtTimKiem.BackColor = Color.LightGray;
 
@@ -389,6 +391,24 @@ namespace GUI_QLNH.FORMS
                 auto1.Add(tenban);
             }
             txtTimKiem.AutoCompleteCustomSource = auto1;
+        }
+
+        private void btnBoQua_Click(object sender, EventArgs e)
+        {
+            ResetValues();
+            loadgridview_MonAn();
+            txtTimKiem.Text = "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmPhucHoi f1 = new frmPhucHoi("Danh Sách Món Ăn Đã Xóa");
+            if(f1.ShowDialog()==DialogResult.Cancel)
+            {
+                ResetValues();
+                loadgridview_MonAn();
+                txtTimKiem.Text = "";
+            }    
         }
     }
 }

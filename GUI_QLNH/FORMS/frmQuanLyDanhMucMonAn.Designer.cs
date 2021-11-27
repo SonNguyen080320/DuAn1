@@ -42,6 +42,8 @@ namespace GUI_QLNH.FORMS
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txttimkiem = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnBoQua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhMuc)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +65,8 @@ namespace GUI_QLNH.FORMS
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnBoQua);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Controls.Add(this.btnLuu);
@@ -117,7 +121,7 @@ namespace GUI_QLNH.FORMS
             this.btnLuu.Image = global::GUI_QLNH.Properties.Resources.save;
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu.Location = new System.Drawing.Point(212, 489);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(140, 66);
             this.btnLuu.TabIndex = 12;
@@ -135,7 +139,7 @@ namespace GUI_QLNH.FORMS
             this.btnXoa.Image = global::GUI_QLNH.Properties.Resources.delete;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(385, 489);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(140, 66);
             this.btnXoa.TabIndex = 11;
@@ -153,7 +157,7 @@ namespace GUI_QLNH.FORMS
             this.btnSua.Image = global::GUI_QLNH.Properties.Resources.update;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.Location = new System.Drawing.Point(557, 489);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(140, 66);
             this.btnSua.TabIndex = 10;
@@ -172,7 +176,7 @@ namespace GUI_QLNH.FORMS
             this.btnThem.Image = global::GUI_QLNH.Properties.Resources._new;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(49, 487);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(140, 69);
             this.btnThem.TabIndex = 9;
@@ -228,6 +232,44 @@ namespace GUI_QLNH.FORMS
             this.txttimkiem.Size = new System.Drawing.Size(312, 36);
             this.txttimkiem.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::GUI_QLNH.Properties.Resources.phuchoi;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(405, 585);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(214, 69);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "Phục Hồi DM";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnBoQua
+            // 
+            this.btnBoQua.BackColor = System.Drawing.Color.White;
+            this.btnBoQua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBoQua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBoQua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBoQua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBoQua.Image = global::GUI_QLNH.Properties.Resources.skip;
+            this.btnBoQua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBoQua.Location = new System.Drawing.Point(139, 585);
+            this.btnBoQua.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBoQua.Name = "btnBoQua";
+            this.btnBoQua.Size = new System.Drawing.Size(167, 69);
+            this.btnBoQua.TabIndex = 16;
+            this.btnBoQua.Text = "Bỏ qua";
+            this.btnBoQua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBoQua.UseVisualStyleBackColor = false;
+            this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
+            // 
             // frmQuanLyDanhMucMonAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -263,5 +305,7 @@ namespace GUI_QLNH.FORMS
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBoQua;
     }
 }

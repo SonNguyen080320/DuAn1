@@ -40,6 +40,8 @@ namespace GUI_QLNH.FORMS
             this.rdoDaDat = new System.Windows.Forms.RadioButton();
             this.rdoTrong = new System.Windows.Forms.RadioButton();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btntimkiem = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -55,7 +57,7 @@ namespace GUI_QLNH.FORMS
             this.dtgvQLBanAn.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvQLBanAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvQLBanAn.Location = new System.Drawing.Point(13, 14);
-            this.dtgvQLBanAn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgvQLBanAn.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvQLBanAn.Name = "dtgvQLBanAn";
             this.dtgvQLBanAn.RowHeadersWidth = 51;
             this.dtgvQLBanAn.Size = new System.Drawing.Size(540, 706);
@@ -111,7 +113,7 @@ namespace GUI_QLNH.FORMS
             // 
             this.txtMaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaBan.Location = new System.Drawing.Point(798, 160);
-            this.txtMaBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaBan.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaBan.Name = "txtMaBan";
             this.txtMaBan.Size = new System.Drawing.Size(281, 32);
             this.txtMaBan.TabIndex = 9;
@@ -120,7 +122,7 @@ namespace GUI_QLNH.FORMS
             // 
             this.txtTenBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenBan.Location = new System.Drawing.Point(798, 226);
-            this.txtTenBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenBan.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenBan.Name = "txtTenBan";
             this.txtTenBan.Size = new System.Drawing.Size(281, 32);
             this.txtTenBan.TabIndex = 10;
@@ -130,7 +132,7 @@ namespace GUI_QLNH.FORMS
             this.pnlTrangThai.Controls.Add(this.rdoDaDat);
             this.pnlTrangThai.Controls.Add(this.rdoTrong);
             this.pnlTrangThai.Location = new System.Drawing.Point(798, 268);
-            this.pnlTrangThai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTrangThai.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTrangThai.Name = "pnlTrangThai";
             this.pnlTrangThai.Size = new System.Drawing.Size(283, 57);
             this.pnlTrangThai.TabIndex = 11;
@@ -140,7 +142,7 @@ namespace GUI_QLNH.FORMS
             this.rdoDaDat.AutoSize = true;
             this.rdoDaDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoDaDat.Location = new System.Drawing.Point(192, 20);
-            this.rdoDaDat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoDaDat.Margin = new System.Windows.Forms.Padding(4);
             this.rdoDaDat.Name = "rdoDaDat";
             this.rdoDaDat.Size = new System.Drawing.Size(79, 24);
             this.rdoDaDat.TabIndex = 1;
@@ -152,7 +154,7 @@ namespace GUI_QLNH.FORMS
             this.rdoTrong.AutoSize = true;
             this.rdoTrong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoTrong.Location = new System.Drawing.Point(4, 20);
-            this.rdoTrong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoTrong.Margin = new System.Windows.Forms.Padding(4);
             this.rdoTrong.Name = "rdoTrong";
             this.rdoTrong.Size = new System.Drawing.Size(73, 24);
             this.rdoTrong.TabIndex = 0;
@@ -163,10 +165,48 @@ namespace GUI_QLNH.FORMS
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.Location = new System.Drawing.Point(619, 101);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(300, 32);
             this.txtTimKiem.TabIndex = 12;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::GUI_QLNH.Properties.Resources.phuchoi;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(958, 522);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(214, 69);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Phục Hồi Bàn";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::GUI_QLNH.Properties.Resources.skip;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(640, 522);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(197, 69);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Bỏ qua";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btntimkiem
             // 
@@ -195,7 +235,7 @@ namespace GUI_QLNH.FORMS
             this.btnLuu.Image = global::GUI_QLNH.Properties.Resources.save;
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu.Location = new System.Drawing.Point(743, 432);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(140, 66);
             this.btnLuu.TabIndex = 8;
@@ -213,7 +253,7 @@ namespace GUI_QLNH.FORMS
             this.btnXoa.Image = global::GUI_QLNH.Properties.Resources.delete;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(917, 432);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(140, 66);
             this.btnXoa.TabIndex = 7;
@@ -231,7 +271,7 @@ namespace GUI_QLNH.FORMS
             this.btnSua.Image = global::GUI_QLNH.Properties.Resources.update;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.Location = new System.Drawing.Point(1089, 432);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(140, 66);
             this.btnSua.TabIndex = 6;
@@ -250,7 +290,7 @@ namespace GUI_QLNH.FORMS
             this.btnThem.Image = global::GUI_QLNH.Properties.Resources._new;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(581, 430);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(140, 69);
             this.btnThem.TabIndex = 5;
@@ -265,6 +305,8 @@ namespace GUI_QLNH.FORMS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1278, 734);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btntimkiem);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.pnlTrangThai);
@@ -279,7 +321,7 @@ namespace GUI_QLNH.FORMS
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgvQLBanAn);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmQuanLyBan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form quản lí bàn";
@@ -310,5 +352,7 @@ namespace GUI_QLNH.FORMS
         private System.Windows.Forms.RadioButton rdoTrong;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btntimkiem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

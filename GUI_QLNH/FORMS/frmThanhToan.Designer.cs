@@ -280,6 +280,7 @@ namespace GUI_QLNH.FORMS
             this.Name = "frmThanhToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmThanhToan";
+            this.Load += new System.EventHandler(this.frmThanhToan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

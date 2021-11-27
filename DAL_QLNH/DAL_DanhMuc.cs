@@ -30,6 +30,25 @@ namespace DAL_QLNH
                 conn.Close();
             }
         }
+        public DataTable DmDaXoa()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_DmDaXoa";
+                cmd.Connection = conn;
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         public DataTable HienThiDanhMucMonAN()
         {
             try
@@ -101,6 +120,28 @@ namespace DAL_QLNH
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sp_XoaDanhMuc";
                 cmd.Parameters.AddWithValue("ID", madanhmuc);
+                cmd.Connection = conn;
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
+        public bool PhucHoiDM(int madanhmuc)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_PhucHoiDM";
+                cmd.Parameters.AddWithValue("MaDM", madanhmuc);
                 cmd.Connection = conn;
                 if (cmd.ExecuteNonQuery() > 0)
                 {

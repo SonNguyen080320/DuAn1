@@ -184,5 +184,49 @@ namespace DAL_QLNH
 
             }
         }
+        public DataTable BanDaXoa()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_BanDaXoa";
+                cmd.Connection = conn;
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public bool PhucHoiBan(int MaBan)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_PhucHoiBan";
+                cmd.Parameters.AddWithValue("MaBan", MaBan);
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                conn.Close();
+
+            }
+        }
     }
 }

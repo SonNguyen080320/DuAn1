@@ -130,7 +130,7 @@ namespace GUI_QLNH.FORMS
                     }
                     else
                     {
-                        MessageBox.Show("Xóa không thành công");
+                        Utils.HienWarning("Bàn đang có người. Không được xóa");
                     }
                 }
                 else
@@ -201,6 +201,7 @@ namespace GUI_QLNH.FORMS
                 else
                 {
                     MessageBox.Show("Không Tìm Thấy Bàn !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtTimKiem.Focus();
                 }
                 txtTimKiem.BackColor = Color.LightGray;
                 ResetValues();
@@ -253,6 +254,23 @@ namespace GUI_QLNH.FORMS
                 auto1.Add(tenban);
             }
             txtTimKiem.AutoCompleteCustomSource = auto1;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ResetValues();
+            loadgridview_Ban();
+            txtTimKiem.Text = "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmPhucHoi f1 = new frmPhucHoi("Danh Sách Bàn Đã Xóa");
+            if(f1.ShowDialog()==DialogResult.Cancel)
+            {
+                ResetValues();
+                loadgridview_Ban();
+            }    
         }
     }
 }

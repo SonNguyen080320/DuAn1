@@ -38,6 +38,12 @@ namespace GUI_QLNH.FORMS
             }
             txtThanhTien.Text = tongtien.ToString("#,#", CultureInfo.InvariantCulture);
             txtTongTien.Text = (tongtien + tongtien * 0.1).ToString("#,#", CultureInfo.InvariantCulture);
+            this.dtgvHoaDon.Columns["Đơn giá"].DefaultCellStyle
+            .Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.dtgvHoaDon.Columns["Thành tiền"].DefaultCellStyle
+            .Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.dtgvHoaDon.Columns["Số lượng"].DefaultCellStyle
+            .Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -51,6 +57,11 @@ namespace GUI_QLNH.FORMS
                     this.Close();
                 }
             }
+        }
+
+        private void frmThanhToan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

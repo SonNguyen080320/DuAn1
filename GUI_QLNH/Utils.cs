@@ -112,7 +112,7 @@ namespace GUI_QLNH
 
             oSheet.Name = sheetName;
 
-            // Tạo phần đầu nếu muốn
+            // Tạo phần đầu 
 
             Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "F1");
 
@@ -163,11 +163,6 @@ namespace GUI_QLNH
 
                 cl6.ColumnWidth = 25.0;
             }
-
-            
-
-            
-
             Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "F3");
 
             rowHead.Font.Bold = true;
@@ -191,13 +186,10 @@ namespace GUI_QLNH
             //Chuyển dữ liệu từ DataTable vào mảng đối tượng
 
             for (int r = 0; r < dt.Rows.Count; r++)
-
             {
-
                 DataRow dr = dt.Rows[r];
 
                 for (int c = 0; c < dt.Columns.Count; c++)
-
                 {
                     arr[r, c] = dr[c];
                 }

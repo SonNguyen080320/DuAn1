@@ -123,7 +123,7 @@ namespace GUI_QLNH.FORMS
                     }
                     else
                     {
-                        MessageBox.Show("Xóa không thành công");
+                        Utils.HienWarning("Danh mục đang có món ăn trong hóa đơn chưa thanh toán. không thể xóa");
                     }
                 }
                 else
@@ -186,6 +186,7 @@ namespace GUI_QLNH.FORMS
                 else
                 {
                     MessageBox.Show("Không Tìm Thấy Danh mục món Ăn Này  !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txttimkiem.Focus();
                 }
                 txttimkiem.BackColor = Color.LightGray;
                 ResetValues();
@@ -205,6 +206,24 @@ namespace GUI_QLNH.FORMS
                 auto1.Add(tenban);
             }
             txttimkiem.AutoCompleteCustomSource = auto1;
+        }
+
+        private void btnBoQua_Click(object sender, EventArgs e)
+        {
+            ResetValues();
+            loadgridview_DanhMucMonAn();
+            txttimkiem.Text = "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmPhucHoi f1 = new frmPhucHoi("Danh Sách Danh Mục Đã Xóa");
+            if(f1.ShowDialog()==DialogResult.Cancel)
+            {
+                ResetValues();
+                loadgridview_DanhMucMonAn();
+                txttimkiem.Text = "";
+            }    
         }
     }
 }

@@ -77,5 +77,13 @@ namespace BUS_QLNH
         {
             return dalNhanVien.TenNVGoiY();
         }
+        public bool PhucHoiNV(string MaNV)
+        {
+            return dalNhanVien.PhucHoiNV(MaNV);
+        }
+        public DataTable NvDaXoa()
+        {
+            return dalNhanVien.NvDaXoa();
+        }
     }
 }

@@ -36,5 +36,13 @@ namespace BUS_QLNH
         {
             return daldanhmucmonan.TenDMGoiY();
         }
+        public DataTable DmDaXoa()
+        {
+            return daldanhmucmonan.DmDaXoa();
+        }
+        public bool PhucHoiDM(int madanhmuc)
+        {
+            return daldanhmucmonan.PhucHoiDM(madanhmuc);
+        }
     }
 }

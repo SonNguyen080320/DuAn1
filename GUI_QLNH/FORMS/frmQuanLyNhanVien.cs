@@ -192,6 +192,7 @@ namespace GUI_QLNH.FORMS
         {
             ResetValue();
             LoadGridView();
+            txtTimKiem.Text = "";
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -315,7 +316,7 @@ namespace GUI_QLNH.FORMS
                 }
                 else
                 {
-                    Utils.HienError("Xóa nhân viên thất bại");
+                    Utils.HienWarning("Nhân viên đang có hóa đơn chưa thanh toán. Không được xóa");
                 }    
             }    
         }
@@ -415,7 +416,7 @@ namespace GUI_QLNH.FORMS
                     {
                         string emailXoa = rows.Cells[2].Value.ToString().Substring(0, 1).ToUpper() + rows.Cells[2].Value.ToString().Substring(1).ToLower();
                         if (rows.Cells[2].Value.ToString() == frmGiaoDien._Email ||
-                                emailXoa== frmGiaoDien._Email)
+                                emailXoa == frmGiaoDien._Email)
                         {
                             btnXoa.Enabled = false;
                         }
@@ -441,43 +442,41 @@ namespace GUI_QLNH.FORMS
                         btnThem.Enabled = true;
                         btnTimKiem.Enabled = true;
                         dtNgaySinh.Enabled = true;
-
-                        txtMaNV.Text = rows.Cells[0].Value.ToString();
-                        txtTenNV.Text = rows.Cells[1].Value.ToString();
-                        txtEmail.Text = rows.Cells[2].Value.ToString();
-                        dtNgaySinh.Text = rows.Cells[3].Value.ToString();
-                        if (bool.Parse(rows.Cells[4].Value.ToString()) == true)
-                        {
-                            rdoNam.Checked = true;
-                        }
-                        else
-                        {
-                            rdoNu.Checked = true;
-                        }
-                        txtDiaChi.Text = rows.Cells[5].Value.ToString();
-                        txtSDT.Text = rows.Cells[6].Value.ToString();
-                        if (bool.Parse(rows.Cells[7].Value.ToString()) == true)
-                        {
-                            rdoAdmin.Checked = true;
-                        }
-                        else
-                        {
-                            rdoNV.Checked = true;
-                        }
-                        if (bool.Parse(rows.Cells[8].Value.ToString()) == true)
-                        {
-                            rdoHoatDong.Checked = true;
-                        }
-                        else
-                        {
-                            rdoNgungHoatDong.Checked = true;
-                        }
-                        hinh = rows.Cells[9].Value.ToString();
-                        txtHinh = hinh;
-                        checkurlimage = hinh;
-                        picnhanvien.Image = Image.FromFile(saveDirectory + hinh);
-
                     }
+                    txtMaNV.Text = rows.Cells[0].Value.ToString();
+                    txtTenNV.Text = rows.Cells[1].Value.ToString();
+                    txtEmail.Text = rows.Cells[2].Value.ToString();
+                    dtNgaySinh.Text = rows.Cells[3].Value.ToString();
+                    if (bool.Parse(rows.Cells[4].Value.ToString()) == true)
+                    {
+                        rdoNam.Checked = true;
+                    }
+                    else
+                    {
+                        rdoNu.Checked = true;
+                    }
+                    txtDiaChi.Text = rows.Cells[5].Value.ToString();
+                    txtSDT.Text = rows.Cells[6].Value.ToString();
+                    if (bool.Parse(rows.Cells[7].Value.ToString()) == true)
+                    {
+                        rdoAdmin.Checked = true;
+                    }
+                    else
+                    {
+                        rdoNV.Checked = true;
+                    }
+                    if (bool.Parse(rows.Cells[8].Value.ToString()) == true)
+                    {
+                        rdoHoatDong.Checked = true;
+                    }
+                    else
+                    {
+                        rdoNgungHoatDong.Checked = true;
+                    }
+                    hinh = rows.Cells[9].Value.ToString();
+                    txtHinh = hinh;
+                    checkurlimage = hinh;
+                    picnhanvien.Image = Image.FromFile(saveDirectory + hinh);
                 }
             }    
         }
@@ -498,6 +497,17 @@ namespace GUI_QLNH.FORMS
                     return;
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmPhucHoi f1 = new frmPhucHoi("Danh Sách Nhân Viên Đã Xóa");
+            if(f1.ShowDialog()==DialogResult.Cancel)
+            {
+                ResetValue();
+                LoadGridView();
+                txtTimKiem.Text = "";
+            }    
         }
     }
 }

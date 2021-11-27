@@ -30,6 +30,25 @@ namespace DAL_QLNH
                 conn.Close();
             }
         }
+        public DataTable NvDaXoa()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_NVDaXoa";
+                cmd.Connection = conn;
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         public bool NhanVienDangNhap(DTO_NhanVien nv)
         {
             try
@@ -165,6 +184,26 @@ namespace DAL_QLNH
                 {
                     return true;
                 }    
+            }
+            finally { conn.Close(); }
+            return false;
+        }
+        public bool PhucHoiNV(string MaNV)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "sp_PhucHoiNV"
+                };
+                cmd.Parameters.AddWithValue("MaNV", MaNV);
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
             }
             finally { conn.Close(); }
             return false;

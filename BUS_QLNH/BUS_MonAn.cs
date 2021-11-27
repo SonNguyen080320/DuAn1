@@ -49,5 +49,13 @@ namespace BUS_QLNH
         {
             return dalmonan.TenMonAnGoiY();
         }
+        public DataTable MonAnDaXoa()
+        {
+            return dalmonan.MonAnDaXoa();
+        }
+        public bool PhucHoiMon(int mamon)
+        {
+            return dalmonan.PhucHoiMon(mamon);
+        }    
     }
 }

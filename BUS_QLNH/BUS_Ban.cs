@@ -60,5 +60,13 @@ namespace BUS_QLNH
         {
             return dalBan.TenBanGoiY();
         }
+        public DataTable BanDaXoa()
+        {
+            return dalBan.BanDaXoa();
+        }
+        public bool PhucHoiBan(int MaBan)
+        {
+            return dalBan.PhucHoiBan(MaBan);
+        }
     }
 }

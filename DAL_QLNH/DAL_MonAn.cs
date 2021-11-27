@@ -198,5 +198,46 @@ namespace DAL_QLNH
                 conn.Close();
             }
         }
+        public DataTable MonAnDaXoa()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_MonAnDaXoa";
+                cmd.Connection = conn;
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public bool PhucHoiMon(int mamon)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_PhucHoiMonAn";
+                cmd.Parameters.AddWithValue("MaMon", mamon);
+                cmd.Connection = conn;
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
     }
 }
