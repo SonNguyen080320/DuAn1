@@ -198,6 +198,7 @@ namespace GUI_QLNH.FORMS
             this.Controls.Add(this.btnPhucHoi);
             this.Controls.Add(this.txtMa);
             this.Name = "frmPhucHoi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPhucHoi";
             this.Load += new System.EventHandler(this.frmPhucHoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPhucHoi)).EndInit();

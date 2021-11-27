@@ -31,10 +31,22 @@ namespace GUI_QLNH.FORMS
             if (txtMaNV.Text.Trim().Length == 0)
             {
                 dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeTongHop(dtpTuNgay.Value, dtpDenNgay.Value, "1",cbCa.Text);
+                this.dtgvThongKeTheoNgay.Columns["Thành Tiền"].DefaultCellStyle
+                .Alignment = DataGridViewContentAlignment.MiddleRight;
+                this.dtgvThongKeTheoNgay.Columns["Thuế VAT"].DefaultCellStyle
+                .Alignment = DataGridViewContentAlignment.MiddleRight;
+                this.dtgvThongKeTheoNgay.Columns["Tổng tiền"].DefaultCellStyle
+                .Alignment = DataGridViewContentAlignment.MiddleRight;
             }
             else
             {
                 dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeTongHop(dtpTuNgay.Value, dtpDenNgay.Value, txtMaNV.Text,cbCa.Text);
+                this.dtgvThongKeTheoNgay.Columns["Thành Tiền"].DefaultCellStyle
+                .Alignment = DataGridViewContentAlignment.MiddleRight;
+                this.dtgvThongKeTheoNgay.Columns["Thuế VAT"].DefaultCellStyle
+                .Alignment = DataGridViewContentAlignment.MiddleRight;
+                this.dtgvThongKeTheoNgay.Columns["Tổng tiền"].DefaultCellStyle
+                .Alignment = DataGridViewContentAlignment.MiddleRight;
             }
             double tongtien = 0;
             for (int i = 0; i < dtgvThongKeTheoNgay.Rows.Count - 1; i++)
@@ -49,14 +61,15 @@ namespace GUI_QLNH.FORMS
         private void btnChiTiet_Click(object sender, EventArgs e)
         {
             btnXuatExcel.Enabled = true;
-            if (txtMaNV.Text.Trim().Length == 0)
-            {
-                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value);
-            }
-            else
-            {
-                dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value);
-            }
+            dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value);
+            this.dtgvThongKeTheoNgay.Columns["Tổng Số Hóa Đơn"].DefaultCellStyle
+            .Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.dtgvThongKeTheoNgay.Columns["Tổng Tiền Không VAT"].DefaultCellStyle
+            .Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.dtgvThongKeTheoNgay.Columns["Tổng VAT"].DefaultCellStyle
+            .Alignment = DataGridViewContentAlignment.MiddleRight;
+            this.dtgvThongKeTheoNgay.Columns["Tổng Tiền Có VAT"].DefaultCellStyle
+            .Alignment = DataGridViewContentAlignment.MiddleRight;
             double tongtien = 0;
             for (int i = 0; i < dtgvThongKeTheoNgay.Rows.Count - 1; i++)
             {

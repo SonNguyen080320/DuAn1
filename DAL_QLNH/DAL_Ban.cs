@@ -84,7 +84,7 @@ namespace DAL_QLNH
                 cmd.Parameters.AddWithValue("TenBan", ban.TenBan);
                 cmd.Parameters.AddWithValue("TrangThai", ban.TrangThai);
 
-                if (cmd.ExecuteNonQuery() > 0)
+                if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
                     return true;
                 }
@@ -169,20 +169,17 @@ namespace DAL_QLNH
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sp_TrangThaiBan";
                 cmd.Parameters.AddWithValue("TenBan", TenBan);
-                if (cmd.ExecuteNonQuery() >0)
+                if (Convert.ToInt32(cmd.ExecuteScalar())>0)
                 {
                     return true;
-                }
-                else
-                {
-                    return false;
-                }    
+                }  
             }
             finally
             {
                 conn.Close();
 
             }
+            return false;
         }
         public DataTable BanDaXoa()
         {

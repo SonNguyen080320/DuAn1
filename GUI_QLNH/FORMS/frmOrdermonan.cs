@@ -65,27 +65,13 @@ namespace GUI_QLNH.FORMS
             frmThanhToan ftt = new frmThanhToan();
             if (ftt.ShowDialog() == DialogResult.Cancel)
             {
-                if (busban.TrangThaiBan(lblBanHienTai.Text))
-                {
-                    loadDtgvOrder();
-                }
-                else
+                if (busban.TrangThaiBan(lblBanHienTai.Text)==false)
                 {
                     flpTable.Controls.Clear();
-                    dtgvOrder.Columns.Clear();
-                    dtgvOrder.Columns.Add("Tên món", "Tên món");
-                    dtgvOrder.Columns.Add("Số lượng", "Số lượng");
-                    dtgvOrder.Columns.Add("Đơn giá", "Đơn giá");
-                    dtgvOrder.Columns.Add("Thành tiền", "Thành tiền");
-                    this.dtgvOrder.Columns["Đơn giá"].DefaultCellStyle
-                    .Alignment = DataGridViewContentAlignment.MiddleRight;
-                    this.dtgvOrder.Columns["Thành tiền"].DefaultCellStyle
-                    .Alignment = DataGridViewContentAlignment.MiddleRight;
-                    this.dtgvOrder.Columns["Số lượng"].DefaultCellStyle
-                    .Alignment = DataGridViewContentAlignment.MiddleRight;
-                    txtTongTien.Text = "";
-                    txtThanhTien.Text = "";
                     HienButtonBan();
+                }
+                {
+                    loadDtgvOrder();
                 }
             }
         }
@@ -150,12 +136,6 @@ namespace GUI_QLNH.FORMS
             }
             txtThanhTien.Text = tongtien.ToString("#,#", CultureInfo.InvariantCulture) ;
             txtTongTien.Text = (tongtien + tongtien * 0.1).ToString("#,#", CultureInfo.InvariantCulture);
-            this.dtgvOrder.Columns["Đơn giá"].DefaultCellStyle
-            .Alignment = DataGridViewContentAlignment.MiddleRight;
-            this.dtgvOrder.Columns["Thành tiền"].DefaultCellStyle
-            .Alignment = DataGridViewContentAlignment.MiddleRight;
-            this.dtgvOrder.Columns["Số lượng"].DefaultCellStyle
-            .Alignment = DataGridViewContentAlignment.MiddleRight;
         }
         private void cbDanhMucMonAn_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -238,11 +218,7 @@ namespace GUI_QLNH.FORMS
             {
                 if (Utils.XacNhan("Bạn muốn gộp " + lblBanHienTai.Text + " sang " + cbBan.Text))
                 {
-                    if (busban.TrangThaiBan(cbBan.Text) == false)
-                    {
-                        Utils.HienError(cbBan.Text + " không có hóa đơn để gộp. Chỉ có thể chuyển bàn");
-                    }
-                    else
+                    if (busban.TrangThaiBan(cbBan.Text))
                     {
                         for (int i = 1; i <= dtgvOrder.Rows.Count; i++)
                         {
@@ -253,6 +229,10 @@ namespace GUI_QLNH.FORMS
                         HienButtonBan();
                         load();
                         loadDtgvOrder();
+                    }
+                    else
+                    {
+                        Utils.HienError(cbBan.Text + " không có hóa đơn để gộp. Chỉ có thể chuyển bàn");
                     }
                 }
             }   

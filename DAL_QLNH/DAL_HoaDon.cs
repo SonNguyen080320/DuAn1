@@ -119,7 +119,7 @@ namespace DAL_QLNH
                 };
                 cmd.Parameters.AddWithValue("BanMacDinh", banmacdinh);
                 cmd.Parameters.AddWithValue("TenBan", banmuonchuyen);
-                if (cmd.ExecuteNonQuery() > 0)
+                if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
                     return true;
                 }

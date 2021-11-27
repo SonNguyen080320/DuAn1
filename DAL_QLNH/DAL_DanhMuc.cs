@@ -99,7 +99,7 @@ namespace DAL_QLNH
                 cmd.CommandText = "sp_CapNhatDanhMuc";
                 cmd.Parameters.AddWithValue("ID", danhmuc.MaDanhMuc);
                 cmd.Parameters.AddWithValue("TenDM", danhmuc.TenDanhMuc);
-                if (cmd.ExecuteNonQuery() > 0)
+                if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
                     return true;
                 }
