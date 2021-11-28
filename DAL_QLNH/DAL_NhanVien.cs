@@ -122,7 +122,7 @@ namespace DAL_QLNH
                 cmd.Parameters.AddWithValue("Vaitro", nv.VaiTro);
                 cmd.Parameters.AddWithValue("TrangThai", nv.TrangThai);
                 cmd.Parameters.AddWithValue("HinhAnh", nv.HinhAnh);
-                if (cmd.ExecuteNonQuery() > 0)
+                if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
                     return true;
                 }
@@ -180,7 +180,7 @@ namespace DAL_QLNH
                     CommandText = "sp_XoaNhanVien"
                 };
                 cmd.Parameters.AddWithValue("MaNV", MaNV);
-                if(cmd.ExecuteNonQuery()>0)
+                if(Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
                     return true;
                 }    
@@ -257,7 +257,7 @@ namespace DAL_QLNH
                     CommandText = "sp_DoiMatKhau"
                 };
                 cmd.Parameters.AddRange(para);
-                if(cmd.ExecuteNonQuery()>0)
+                if(Convert.ToInt32(cmd.ExecuteScalar())>0)
                 {
                     return true;
                 }    

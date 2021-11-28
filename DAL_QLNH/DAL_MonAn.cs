@@ -44,7 +44,7 @@ namespace DAL_QLNH
                 cmd.Parameters.AddWithValue("HinhAnh", monan.HinhAnh);
                 cmd.Parameters.AddWithValue("TinhTrang", monan.TinhTrang);
                 cmd.Parameters.AddWithValue("TenDM", monan.TenDanhMuc);
-                if (cmd.ExecuteNonQuery() > 0)
+                if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
                     return true;
                 }
@@ -93,7 +93,7 @@ namespace DAL_QLNH
                 cmd.CommandText = "sp_XoaMonAn";
                 cmd.Parameters.AddWithValue("ID", mamon);
                 cmd.Connection = conn;
-                if (cmd.ExecuteNonQuery() > 0)
+                if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
                     return true;
                 }

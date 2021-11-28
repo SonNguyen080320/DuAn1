@@ -77,7 +77,7 @@ namespace DAL_QLNH
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "sp_ThemDanhMuc";
                 cmd.Parameters.AddWithValue("TenDM", danhmuc.TenDanhMuc);
-                if (cmd.ExecuteNonQuery() > 0)
+                if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
                     return true;
                 }
@@ -121,7 +121,7 @@ namespace DAL_QLNH
                 cmd.CommandText = "sp_XoaDanhMuc";
                 cmd.Parameters.AddWithValue("ID", madanhmuc);
                 cmd.Connection = conn;
-                if (cmd.ExecuteNonQuery() > 0)
+                if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
                     return true;
                 }

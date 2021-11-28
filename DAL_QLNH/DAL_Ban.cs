@@ -60,7 +60,7 @@ namespace DAL_QLNH
                 cmd.Parameters.AddWithValue("TenBan", ban.TenBan);
                 cmd.Parameters.AddWithValue("TrangThai", ban.TrangThai);
 
-                if (cmd.ExecuteNonQuery() > 0)
+                if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
                     return true;
                 }
@@ -106,7 +106,7 @@ namespace DAL_QLNH
                 cmd.CommandText = "sp_XoaBan";
                 cmd.Parameters.AddWithValue("ID", maban);
                 cmd.Connection = conn;
-                if (cmd.ExecuteNonQuery() > 0)
+                if (Convert.ToInt32(cmd.ExecuteScalar()) > 0)
                 {
                     return true;
                 }
