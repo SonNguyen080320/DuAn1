@@ -32,23 +32,26 @@ namespace GUI_QLNH.FORMS
             this.dtgvThongKeTheoNgay = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnChiTiet = new System.Windows.Forms.Button();
             this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnXuatExcel = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.btnTongHop = new System.Windows.Forms.Button();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbCa = new System.Windows.Forms.ComboBox();
+            this.btnChart = new System.Windows.Forms.Button();
+            this.btnPDF = new System.Windows.Forms.Button();
+            this.btnTongHop = new System.Windows.Forms.Button();
+            this.btnXuatExcel = new System.Windows.Forms.Button();
+            this.btnChiTiet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvThongKeTheoNgay)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgvThongKeTheoNgay
             // 
+            this.dtgvThongKeTheoNgay.AllowUserToAddRows = false;
             this.dtgvThongKeTheoNgay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvThongKeTheoNgay.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvThongKeTheoNgay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -80,21 +83,6 @@ namespace GUI_QLNH.FORMS
             this.label3.TabIndex = 3;
             this.label3.Text = "Từ ngày";
             // 
-            // btnChiTiet
-            // 
-            this.btnChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChiTiet.Image = global::GUI_QLNH.Properties.Resources._7247303;
-            this.btnChiTiet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChiTiet.Location = new System.Drawing.Point(1093, 113);
-            this.btnChiTiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(287, 54);
-            this.btnChiTiet.TabIndex = 6;
-            this.btnChiTiet.Text = "Thống kê tổng hợp";
-            this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChiTiet.UseVisualStyleBackColor = true;
-            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
-            // 
             // dtpTuNgay
             // 
             this.dtpTuNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,20 +111,6 @@ namespace GUI_QLNH.FORMS
             this.label1.TabIndex = 7;
             this.label1.Text = "Đến ngày";
             // 
-            // btnXuatExcel
-            // 
-            this.btnXuatExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXuatExcel.Location = new System.Drawing.Point(1207, 22);
-            this.btnXuatExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXuatExcel.Name = "btnXuatExcel";
-            this.btnXuatExcel.Size = new System.Drawing.Size(158, 54);
-            this.btnXuatExcel.TabIndex = 9;
-            this.btnXuatExcel.Text = "Xuất file excel";
-            this.btnXuatExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXuatExcel.UseVisualStyleBackColor = true;
-            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -151,24 +125,10 @@ namespace GUI_QLNH.FORMS
             // 
             this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaNV.Location = new System.Drawing.Point(223, 193);
+            this.txtMaNV.MaxLength = 30;
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(279, 27);
             this.txtMaNV.TabIndex = 11;
-            // 
-            // btnTongHop
-            // 
-            this.btnTongHop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTongHop.Image = global::GUI_QLNH.Properties.Resources._7247303;
-            this.btnTongHop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTongHop.Location = new System.Drawing.Point(1093, 193);
-            this.btnTongHop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTongHop.Name = "btnTongHop";
-            this.btnTongHop.Size = new System.Drawing.Size(287, 54);
-            this.btnTongHop.TabIndex = 12;
-            this.btnTongHop.Text = "Thống kê chi tiết";
-            this.btnTongHop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTongHop.UseVisualStyleBackColor = true;
-            this.btnTongHop.Click += new System.EventHandler(this.btnTongHop_Click);
             // 
             // txtTongTien
             // 
@@ -213,12 +173,89 @@ namespace GUI_QLNH.FORMS
             this.cbCa.TabIndex = 16;
             this.cbCa.Text = "Cả Ngày (6h-22h)";
             // 
+            // btnChart
+            // 
+            this.btnChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChart.Image = global::GUI_QLNH.Properties.Resources._2486645;
+            this.btnChart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChart.Location = new System.Drawing.Point(1093, 22);
+            this.btnChart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChart.Name = "btnChart";
+            this.btnChart.Size = new System.Drawing.Size(236, 65);
+            this.btnChart.TabIndex = 18;
+            this.btnChart.Text = "Biểu đồ chart";
+            this.btnChart.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChart.UseVisualStyleBackColor = true;
+            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
+            // 
+            // btnPDF
+            // 
+            this.btnPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPDF.Image = global::GUI_QLNH.Properties.Resources.pdf;
+            this.btnPDF.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPDF.Location = new System.Drawing.Point(12, 648);
+            this.btnPDF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(241, 65);
+            this.btnPDF.TabIndex = 17;
+            this.btnPDF.Text = "Xuất file PDF";
+            this.btnPDF.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
+            // 
+            // btnTongHop
+            // 
+            this.btnTongHop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTongHop.Image = global::GUI_QLNH.Properties.Resources._7247303;
+            this.btnTongHop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTongHop.Location = new System.Drawing.Point(1093, 182);
+            this.btnTongHop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTongHop.Name = "btnTongHop";
+            this.btnTongHop.Size = new System.Drawing.Size(287, 54);
+            this.btnTongHop.TabIndex = 12;
+            this.btnTongHop.Text = "Thống kê chi tiết";
+            this.btnTongHop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTongHop.UseVisualStyleBackColor = true;
+            this.btnTongHop.Click += new System.EventHandler(this.btnTongHop_Click);
+            // 
+            // btnXuatExcel
+            // 
+            this.btnXuatExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatExcel.Image = global::GUI_QLNH.Properties.Resources.excel;
+            this.btnXuatExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuatExcel.Location = new System.Drawing.Point(279, 648);
+            this.btnXuatExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(242, 65);
+            this.btnXuatExcel.TabIndex = 9;
+            this.btnXuatExcel.Text = "Xuất file Excel";
+            this.btnXuatExcel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXuatExcel.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
+            // 
+            // btnChiTiet
+            // 
+            this.btnChiTiet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChiTiet.Image = global::GUI_QLNH.Properties.Resources._7247303;
+            this.btnChiTiet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChiTiet.Location = new System.Drawing.Point(1093, 107);
+            this.btnChiTiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChiTiet.Name = "btnChiTiet";
+            this.btnChiTiet.Size = new System.Drawing.Size(287, 54);
+            this.btnChiTiet.TabIndex = 6;
+            this.btnChiTiet.Text = "Thống kê tổng hợp";
+            this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChiTiet.UseVisualStyleBackColor = true;
+            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
+            // 
             // frmThongKeTheoNgay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1392, 734);
+            this.Controls.Add(this.btnChart);
+            this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.cbCa);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTongTien);
@@ -262,5 +299,7 @@ namespace GUI_QLNH.FORMS
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbCa;
+        private System.Windows.Forms.Button btnPDF;
+        private System.Windows.Forms.Button btnChart;
     }
 }

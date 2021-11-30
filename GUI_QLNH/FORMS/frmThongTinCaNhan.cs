@@ -47,14 +47,13 @@ namespace GUI_QLNH.FORMS
             {
                 btncapnhat.Hide();
                 btnMoHinh.Hide();
-            }    
-            
+            }
+            dtNgaySinh.Value = new DateTime(2000, 01, 01);
         }
         string checkurlimage;
         string filename;
         string filesavepath;
         string fileaddress;
-        string hinh;
         string txtHinh;
         string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
         void loadForm()
@@ -113,6 +112,12 @@ namespace GUI_QLNH.FORMS
                     Utils.HienThongBao("Cập nhật thông tin thành công");
                 }
             }    
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0') || (e.KeyChar > '9')) e.Handled = true;
+            if (e.KeyChar == 8) e.Handled = false;
         }
     }
 }

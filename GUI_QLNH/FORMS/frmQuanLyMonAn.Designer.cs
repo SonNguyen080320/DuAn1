@@ -31,6 +31,7 @@ namespace GUI_QLNH.FORMS
         {
             this.dtgvMonAn = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnBoQua = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.rdoConPhucVu = new System.Windows.Forms.RadioButton();
@@ -51,16 +52,14 @@ namespace GUI_QLNH.FORMS
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.numGia = new System.Windows.Forms.NumericUpDown();
             this.txtTenMon = new System.Windows.Forms.TextBox();
             this.txtMaMon = new System.Windows.Forms.TextBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.numGia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMonAn)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMonAn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numGia)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgvMonAn
@@ -80,6 +79,7 @@ namespace GUI_QLNH.FORMS
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.numGia);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnBoQua);
             this.panel1.Controls.Add(this.panel2);
@@ -99,7 +99,6 @@ namespace GUI_QLNH.FORMS
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.numGia);
             this.panel1.Controls.Add(this.txtTenMon);
             this.panel1.Controls.Add(this.txtMaMon);
             this.panel1.Controls.Add(this.txtTimKiem);
@@ -108,6 +107,25 @@ namespace GUI_QLNH.FORMS
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(655, 762);
             this.panel1.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::GUI_QLNH.Properties.Resources.phuchoi;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(371, 658);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(214, 69);
+            this.button2.TabIndex = 46;
+            this.button2.Text = "Phục Hồi Món";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnBoQua
             // 
@@ -374,25 +392,12 @@ namespace GUI_QLNH.FORMS
             this.label1.TabIndex = 6;
             this.label1.Text = "Mã món";
             // 
-            // numGia
-            // 
-            this.numGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numGia.Location = new System.Drawing.Point(277, 484);
-            this.numGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.numGia.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.numGia.Name = "numGia";
-            this.numGia.Size = new System.Drawing.Size(235, 30);
-            this.numGia.TabIndex = 5;
-            // 
             // txtTenMon
             // 
             this.txtTenMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenMon.Location = new System.Drawing.Point(277, 380);
             this.txtTenMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTenMon.MaxLength = 30;
             this.txtTenMon.Name = "txtTenMon";
             this.txtTenMon.Size = new System.Drawing.Size(236, 30);
             this.txtTenMon.TabIndex = 3;
@@ -411,28 +416,20 @@ namespace GUI_QLNH.FORMS
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.Location = new System.Drawing.Point(85, 73);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTimKiem.MaxLength = 30;
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(263, 36);
             this.txtTimKiem.TabIndex = 0;
             // 
-            // button2
+            // numGia
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::GUI_QLNH.Properties.Resources.phuchoi;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(371, 658);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(214, 69);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "Phục Hồi Món";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.numGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numGia.Location = new System.Drawing.Point(277, 479);
+            this.numGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numGia.Name = "numGia";
+            this.numGia.Size = new System.Drawing.Size(236, 30);
+            this.numGia.TabIndex = 47;
+            this.numGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numGia_KeyPress);
             // 
             // frmQuanLyMonAn
             // 
@@ -453,7 +450,6 @@ namespace GUI_QLNH.FORMS
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMonAn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numGia)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -463,7 +459,6 @@ namespace GUI_QLNH.FORMS
         private System.Windows.Forms.DataGridView dtgvMonAn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.NumericUpDown numGia;
         private System.Windows.Forms.TextBox txtTenMon;
         private System.Windows.Forms.TextBox txtMaMon;
         private System.Windows.Forms.Label label4;
@@ -487,5 +482,6 @@ namespace GUI_QLNH.FORMS
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnBoQua;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox numGia;
     }
 }

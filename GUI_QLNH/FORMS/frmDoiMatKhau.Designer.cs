@@ -116,6 +116,7 @@ namespace GUI_QLNH.FORMS
             // 
             this.txtXacNhanMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtXacNhanMatKhau.Location = new System.Drawing.Point(327, 404);
+            this.txtXacNhanMatKhau.MaxLength = 15;
             this.txtXacNhanMatKhau.Name = "txtXacNhanMatKhau";
             this.txtXacNhanMatKhau.Size = new System.Drawing.Size(346, 27);
             this.txtXacNhanMatKhau.TabIndex = 9;
@@ -124,6 +125,7 @@ namespace GUI_QLNH.FORMS
             // 
             this.txtMatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauMoi.Location = new System.Drawing.Point(327, 352);
+            this.txtMatKhauMoi.MaxLength = 15;
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.Size = new System.Drawing.Size(346, 27);
             this.txtMatKhauMoi.TabIndex = 8;
@@ -132,6 +134,7 @@ namespace GUI_QLNH.FORMS
             // 
             this.txtMatKhauCu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauCu.Location = new System.Drawing.Point(327, 295);
+            this.txtMatKhauCu.MaxLength = 15;
             this.txtMatKhauCu.Name = "txtMatKhauCu";
             this.txtMatKhauCu.Size = new System.Drawing.Size(346, 27);
             this.txtMatKhauCu.TabIndex = 7;

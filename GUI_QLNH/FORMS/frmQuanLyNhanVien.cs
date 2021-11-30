@@ -26,7 +26,7 @@ namespace GUI_QLNH.FORMS
         BUS_NhanVien busNhanVien = new BUS_NhanVien();
         DTO_NhanVien dtoNhanVien = new DTO_NhanVien();
         void goiyten()
-        {
+        {// gợi ý tên nhân viên khi tìm kiếm
             AutoCompleteStringCollection auto1 = new AutoCompleteStringCollection();
             txtTimKiem.AutoCompleteMode = AutoCompleteMode.Append;
             txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -42,10 +42,9 @@ namespace GUI_QLNH.FORMS
         }
         private void frmQuanLyNhanVien_Load(object sender, EventArgs e)
         {
-
-            //this.Size = this.MaximumSize = MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
             ResetValue();
             LoadGridView();
+            dtNgaySinh.Value = new DateTime(2000, 01, 01);
         }
         string checkurlimage;
         string filename;
@@ -55,7 +54,7 @@ namespace GUI_QLNH.FORMS
         static string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
         string filesavepath = saveDirectory + "\\Images\\" + "macdinh.jpg";
         private void btnMoHinh_Click(object sender, EventArgs e)
-        {
+        {// xem chú thích ở button mở hình form món ăn
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "Pictures files (.jpg, *.jpeg, *.jpe, *.jfif, *.png)|.jpg; .jpeg; *.jpe; *.jfif; *.png|All files (.*)|*.*";
             openFile.FilterIndex = 1;
@@ -118,7 +117,7 @@ namespace GUI_QLNH.FORMS
             dtNgaySinh.Enabled = false;
         }
         public void LoadGridView()
-        {
+        {// hiển thi danh sách nhân viên lên datagridview
             dtgvQLNhanVien.DataSource = busNhanVien.DanhSachNhanVien();
             dtgvQLNhanVien.Columns[0].HeaderText = "Mã NV";
             dtgvQLNhanVien.Columns[1].HeaderText = "Tên NV";
@@ -134,8 +133,8 @@ namespace GUI_QLNH.FORMS
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if (Utils.KiemTraTextBox(txtTimKiem, "Tên nhân viên"))
-            {
+            if (Utils.KiemTraTextBox(txtTimKiem, "Tên nhân viên"))// kiểm tra trống
+            {// hiển thị danh sách nhân viên tìm kiếm
                 dtgvQLNhanVien.DataSource = busNhanVien.TimKiemNhanVien(txtTimKiem.Text);
                 dtgvQLNhanVien.Columns[0].HeaderText = "Mã NV";
                 dtgvQLNhanVien.Columns[1].HeaderText = "Tên NV";
@@ -158,6 +157,7 @@ namespace GUI_QLNH.FORMS
             txtSDT.Text = "";
             txtTenNV.Text = "";
             txtTimKiem.Text = "";
+            dtNgaySinh.Value = new DateTime(2000, 01, 01);
             rdoNam.Checked = true;
             rdoNV.Checked = true;
             rdoHoatDong.Checked = true;
@@ -197,6 +197,7 @@ namespace GUI_QLNH.FORMS
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            // kiểm tra trống và lấy vai tro giới tính, trạng thái
             if (!Utils.KiemTraTextBox(txtEmail, "Email") || !Utils.KiemTraTextBox(txtTenNV, "Tên nhân viên")
                 || !Utils.KiemTraTextBox(txtDiaChi, "Địa chỉ") || !Utils.KiemTraTextBox(txtSDT, "Số điện thoại")) return;
             int GioiTinh = 1;
@@ -229,10 +230,14 @@ namespace GUI_QLNH.FORMS
             else if(!IsValidEmail(txtEmail.Text))
             {
                 Utils.HienError("Email không chính xác");
-            }
+            }// kiểm tra email đúng định dạng
+            else if(txtSDT.Text.Trim().Length<10)
+            {
+                Utils.HienError("SĐT không chính xác");
+            }    
             else
             {   
-                if(txtHinh==null)
+                if(txtHinh==null)//nếu không chọn hình sẽ cho hình mặc định
                 {
                     txtHinh = @"\Images\macdinh.jpg";
                 }    
@@ -240,7 +245,7 @@ namespace GUI_QLNH.FORMS
                 {
                     dtoNhanVien = new DTO_NhanVien(txtTenNV.Text, txtEmail.Text, dtNgaySinh.Value, 
                                                    GioiTinh, txtDiaChi.Text, txtSDT.Text, VaiTro, TrangThai,  txtHinh);
-                    if (busNhanVien.ThemNhanVien(dtoNhanVien))
+                    if (busNhanVien.ThemNhanVien(dtoNhanVien))// thêm nhân viên vào database
                     {
                         if (File.Exists(filesavepath))
                         {
@@ -259,7 +264,7 @@ namespace GUI_QLNH.FORMS
                         }
                     }
                     else
-                    {
+                    {// email trùng sẽ không được thêm
                         Utils.HienThongBao("Email đã tồn tại");
                     }
                 }    
@@ -288,7 +293,7 @@ namespace GUI_QLNH.FORMS
             }
         }
         public bool IsValidEmail(string email)
-        {
+        {// kiểm tra email đúng định dạng
             try
             {
                 MailAddress m = new MailAddress(email);
@@ -302,20 +307,20 @@ namespace GUI_QLNH.FORMS
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if(txtMaNV.Text.Trim().Length==0)
+            if(txtMaNV.Text.Trim().Length==0)// kiêm tra trống
             {
                 Utils.HienError("Vui lòng chọn nhân viên cần xóa");
             }    
             if(Utils.XacNhan("Bạn muốn xóa nhân viên này"))
             {
-                if(busNhanVien.XoaNhanVien(txtMaNV.Text))
+                if(busNhanVien.XoaNhanVien(txtMaNV.Text))// xóa nhân viên 
                 {
                     Utils.HienThongBao("Xóa nhân viên thành công");
                     ResetValue();
                     LoadGridView();
                 }
                 else
-                {
+                {// nhân viên có hóa đơn chưa thanh toán không cho xóa
                     Utils.HienWarning("Nhân viên đang có hóa đơn chưa thanh toán. Không được xóa");
                 }    
             }    
@@ -323,6 +328,7 @@ namespace GUI_QLNH.FORMS
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            // kiểm tra trống và lấy vai trò , trạng thái , giới tính
             if (!Utils.KiemTraTextBox(txtEmail, "Email") || !Utils.KiemTraTextBox(txtTenNV, "Tên nhân viên")
                || !Utils.KiemTraTextBox(txtDiaChi, "Địa chỉ") || !Utils.KiemTraTextBox(txtSDT, "Số điện thoại")) return;
             int GioiTinh = 1;
@@ -352,17 +358,20 @@ namespace GUI_QLNH.FORMS
             {
                 Utils.HienError("Vui lòng chọn trạng thái");
             }
+            else if(txtSDT.Text.Trim().Length<10)
+            {
+                Utils.HienError("SĐT không chính xác");
+            }    
             else
             {
-                //DateTime ngaysinh = dtNgaySinh.Value;
                 string MaNV = txtMaNV.Text;
                 if(Utils.XacNhan("Bạn muốn cập nhật nhân viên này"))
                 {
                     dtoNhanVien = new DTO_NhanVien(MaNV, txtTenNV.Text, txtEmail.Text,  dtNgaySinh.Value,
                                                         GioiTinh, txtDiaChi.Text, txtSDT.Text, VaiTro, TrangThai, txtHinh);
-                    if(busNhanVien.SuaNhanVien(dtoNhanVien))
+                    if(busNhanVien.SuaNhanVien(dtoNhanVien))// cập nhật thông tin nhân viên
                     {
-                        if (txtHinh != checkurlimage)
+                        if (txtHinh != checkurlimage)// lưu hình ảnh mới nếu có
                         {
                             File.Copy(fileaddress, filesavepath, true);
                         }
@@ -381,7 +390,7 @@ namespace GUI_QLNH.FORMS
         private void dtgvQLNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex>-1)
-            {
+            {// hiển thị thông tin lên các vị trí tương ứng
                 DataGridViewRow rows = this.dtgvQLNhanVien.Rows[e.RowIndex];
                 if (rows.Cells[1].Value.ToString().Count() == 0)
                 {
@@ -483,7 +492,7 @@ namespace GUI_QLNH.FORMS
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
-            if (txtSDT.Text != "")
+           /* if (txtSDT.Text != "")
             {
                 try
                 {
@@ -496,11 +505,11 @@ namespace GUI_QLNH.FORMS
                     txtSDT.Focus();
                     return;
                 }
-            }
+            }*/
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+        {// button phục hồi nhân viên đã xóa
             frmPhucHoi f1 = new frmPhucHoi("Danh Sách Nhân Viên Đã Xóa");
             if(f1.ShowDialog()==DialogResult.Cancel)
             {
@@ -508,6 +517,13 @@ namespace GUI_QLNH.FORMS
                 LoadGridView();
                 txtTimKiem.Text = "";
             }    
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {// chỉ cho phép nhập từ 0 đến 9 và phím backspace
+            if ((e.KeyChar < '0') || (e.KeyChar > '9')) e.Handled = true;
+            if (e.KeyChar == 8) e.Handled = false;
+
         }
     }
 }

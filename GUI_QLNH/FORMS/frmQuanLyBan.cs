@@ -22,13 +22,11 @@ namespace GUI_QLNH.FORMS
         BUS_Ban busBan = new BUS_Ban();
         private void frmQuanLyBan_Load(object sender, EventArgs e)
         {
-            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                         (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             ResetValues();
             loadgridview_Ban();
         }
         private void loadgridview_Ban()
-        {
+        {// hiển thị danh sách bàn ra datagridview
             txtMaBan.Enabled = false;
             dtgvQLBanAn.DataSource = busBan.HienBan();
             dtgvQLBanAn.Columns[0].HeaderText = "MÃ  BÀN";
@@ -51,11 +49,11 @@ namespace GUI_QLNH.FORMS
         }
 
         private void btnThem_Click(object sender, EventArgs e)
-        {
+        {// khi bấm button thêm các dữ liệu sẽ được xóa trắng 
             txtMaBan.Text = null;
             txtTenBan.Text = null;
             txtTenBan.Enabled = true;
-
+            
             rdoDaDat.Enabled = false;
             rdoTrong.Enabled = false;
             rdoTrong.Checked = true;
@@ -72,7 +70,7 @@ namespace GUI_QLNH.FORMS
             if (rdoDaDat.Checked)
             {
                 tinhtrang = 1;
-            }
+            }// kiểm tra tình trạng
             else
             {
                 tinhtrang = 0;
@@ -83,7 +81,7 @@ namespace GUI_QLNH.FORMS
                 txtTenBan.Focus();
                 return;
 
-            }
+            }//kiểm tra có trống không
 
             if (rdoDaDat.Checked == false && rdoTrong.Checked == false)
             {
@@ -94,10 +92,10 @@ namespace GUI_QLNH.FORMS
 
             else
             {
-                DTO_Ban b = new DTO_Ban(txtTenBan.Text, tinhtrang);
+                DTO_Ban b = new DTO_Ban(txtTenBan.Text, tinhtrang);//truyền dữ liệu cho DTO
                 if (MessageBox.Show("Bạn muốn thêm bàn này ?", "Lưu ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (busBan.ThemBan(b))
+                    if (busBan.ThemBan(b))//kiểm tra thêm bàn thành công hay không
                     {
                         MessageBox.Show("Thêm bàn thành công");
                         ResetValues();
@@ -105,7 +103,7 @@ namespace GUI_QLNH.FORMS
                     }
                     else
                     {
-                        Utils.HienWarning("Tên bàn đã tồn tại. Vui lòng nhập tên khác");
+                        Utils.HienWarning("Tên bàn đã tồn tại. Vui lòng nhập tên khác");// tên bàn trùng sẽ không cho thêm
                     }
                 }
             }
@@ -114,7 +112,7 @@ namespace GUI_QLNH.FORMS
         private void btnXoa_Click(object sender, EventArgs e)
         {
             int maban = Convert.ToInt32(txtMaBan.Text);
-            if (txtMaBan.Text.Trim().Length == 0)
+            if (txtMaBan.Text.Trim().Length == 0)//kiểm tra đã chọn bàn cần xóa
             {
                 MessageBox.Show("Bạn cần chọn bàn cần xóa");
             }
@@ -122,13 +120,13 @@ namespace GUI_QLNH.FORMS
             {
                 if (MessageBox.Show("Bạn chắc chắn muốn xóa dữ liệu này", "lưu ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (busBan.XoaBan(maban))
+                    if (busBan.XoaBan(maban))//xóa bàn
                     {
                         MessageBox.Show("Xóa dữ liệu thành công");
                         ResetValues();
                         loadgridview_Ban();
                     }
-                    else
+                    else//bàn có người sẽ k cho xóa
                     {
                         Utils.HienWarning("Bàn đang có người. Không được xóa");
                     }
@@ -147,7 +145,7 @@ namespace GUI_QLNH.FORMS
                 MessageBox.Show("Bạn cần nhập tên Bàn !", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTenBan.Focus();
                 return;
-            }
+            }// kiểm tra trống 
             else
             {
                 int tinhtrang;
@@ -155,20 +153,20 @@ namespace GUI_QLNH.FORMS
                 {
                     tinhtrang = 1;
 
-                }
+                }// lấy tình trạng
                 else
                 {
                     tinhtrang = 0;
                 }
-                DTO_Ban ban = new DTO_Ban(Convert.ToInt32(txtMaBan.Text), txtTenBan.Text, tinhtrang);
+                DTO_Ban ban = new DTO_Ban(Convert.ToInt32(txtMaBan.Text), txtTenBan.Text, tinhtrang);// truyền dữ liệu cho DTO
                 if (MessageBox.Show("Bạn có chắc chắn muốn sửa", "Lưu ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (busBan.SuaBan(ban))
+                    if (busBan.SuaBan(ban))//cập nhật thông tin bàn
                     {
                         MessageBox.Show("Update thành công");
                         loadgridview_Ban();
                     }
-                    else
+                    else//tên bàn đã tồn tại sẽ không cho cập nhật
                     {
                         Utils.HienWarning("Tên bàn đã tồn tại. Vui lòng nhập tên mới");
                     }
@@ -182,24 +180,24 @@ namespace GUI_QLNH.FORMS
 
         private void btntimkiem_Click(object sender, EventArgs e)
         {
-            if (txtTimKiem.Text == "")
+            if (txtTimKiem.Text == "")// kiểm tra trống
             {
                 MessageBox.Show("vui lòng nhập tên bàn cần tìm");
             }
             else
             {
                 string tenbantim = txtTimKiem.Text;
-                DataTable ds = busBan.TimBan(tenbantim);
+                DataTable ds = busBan.TimBan(tenbantim);//tìm kiếm bàn
                 if (ds.Rows.Count > 0)
                 {
-                    dtgvQLBanAn.DataSource = ds;
+                    dtgvQLBanAn.DataSource = ds;//hiển thị danh sách bàn theo tên cần tìm
                     dtgvQLBanAn.Columns[0].HeaderText = "ID";
                     dtgvQLBanAn.Columns[1].HeaderText = "TÊN BÀN";
                     dtgvQLBanAn.Columns[2].HeaderText = "TRẠNG THÁI";
 
                 }
                 else
-                {
+                {//không tên bàn trùng
                     MessageBox.Show("Không Tìm Thấy Bàn !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtTimKiem.Focus();
                 }
@@ -211,9 +209,9 @@ namespace GUI_QLNH.FORMS
         private void dtgvQLBanAn_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex>-1)
-            {
+            {//hiển thị thông tin lên các vị trí tương ứng khi click
                 DataGridViewRow rows = this.dtgvQLBanAn.Rows[e.RowIndex];
-                if (rows.Cells[1].Value.ToString().Count() == 0)
+                if (rows.Cells[1].Value.ToString().Count() == 0)//kiểm tra row đnag chọn có dữ liệu hay không
                 {
                     MessageBox.Show("Không tồn tại dữ liệu");
                     ResetValues();
@@ -241,7 +239,7 @@ namespace GUI_QLNH.FORMS
             }
         }
         void goiytenban()
-        {
+        {//gợi ý tên bàn khi nhập tìm kiếm
             AutoCompleteStringCollection auto1 = new AutoCompleteStringCollection();
             txtTimKiem.AutoCompleteMode = AutoCompleteMode.Append;
             txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -257,14 +255,14 @@ namespace GUI_QLNH.FORMS
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {//button bỏ qua.
             ResetValues();
             loadgridview_Ban();
             txtTimKiem.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+        {// button phục hồi bàn
             frmPhucHoi f1 = new frmPhucHoi("Danh Sách Bàn Đã Xóa");
             if(f1.ShowDialog()==DialogResult.Cancel)
             {

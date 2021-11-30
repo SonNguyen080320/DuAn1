@@ -21,7 +21,7 @@ namespace GUI_QLNH.FORMS
             HienButtonBan();
             pnlDatMon.Enabled = false;
         }
-
+        
         BUS_DanhMuc busDanhMucMonAn = new BUS_DanhMuc();
         BUS_Ban busban = new BUS_Ban();
         BUS_HoaDon busHoaDon = new BUS_HoaDon();
@@ -36,15 +36,15 @@ namespace GUI_QLNH.FORMS
 
         private void btnChuyenBan_Click(object sender, EventArgs e)
         {
-            if (lblBanHienTai.Text == cbBan.Text)
+            if (lblBanHienTai.Text == cbBan.Text)// kiểm tra bàn muốn chuyển đến có phải bàn hiện tại
             {
                 Utils.HienError("Đang ở bàn hiện tại. Vui lòng chọn bàn trống để chuyển");
             }
             else
             {
-                if (Utils.XacNhan("Bạn muốn chuyển " + lblBanHienTai.Text + " sang " + cbBan.Text))
+                if (Utils.XacNhan("Bạn muốn chuyển " + lblBanHienTai.Text + " sang " + cbBan.Text))//xác nhận chuyển bàn
                 {
-                    if (busHoaDon.ChuyenBan(maBanHienTai, cbBan.Text))
+                    if (busHoaDon.ChuyenBan(maBanHienTai, cbBan.Text)) //bàn thứ 2 trống 
                     {
                         Utils.HienThongBao("Chuyển bàn thành công");
                         flpTable.Controls.Clear();
@@ -52,7 +52,7 @@ namespace GUI_QLNH.FORMS
                         //loadDtgvOrder();
                         load();
                     }
-                    else
+                    else // bàn thứ 2 có người 
                     {
                         MessageBox.Show("Bàn đã có người !!!");
                     }
@@ -62,27 +62,25 @@ namespace GUI_QLNH.FORMS
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            frmThanhToan ftt = new frmThanhToan();
-            if (ftt.ShowDialog() == DialogResult.Cancel)
+            frmThanhToan ftt = new frmThanhToan(); 
+            if (ftt.ShowDialog() == DialogResult.Cancel)// mở form thanh toán và nếu form đóng
             {
-                if (busban.TrangThaiBan(lblBanHienTai.Text)==false)
-                {
+                if (busban.TrangThaiBan(lblBanHienTai.Text)==false)// cập nhật lại trạng thái bàn khi thanh toán
+                { 
                     flpTable.Controls.Clear();
                     HienButtonBan();
-                }
-                {
                     loadDtgvOrder();
                 }
             }
         }
         private void btnThemMon_Click(object sender, EventArgs e)
         {
-            if (isCoNguoi) // cập nhật hoá đơn
+            if (isCoNguoi) // nếu bàn đã có người cập nhật lại hóa đơn khi thêm món
             {
                 busHoaDonCT.CapNhatHoaDon(maBanHienTai, cbMonAn.Text, Convert.ToInt32(numSoLuong.Text),float.Parse(txtTongTien.Text));
                 loadDtgvOrder();
             }
-            else // thêm mới hoá đơn
+            else // thêm mới hoá đơn khi bàn không có người
             {
                 DTO_HoaDon hd = new DTO_HoaDon(txtTongTien.Text, maBanHienTai, frmGiaoDien._Email, 0, 10);
                 if (busHoaDon.ThemHoaDon(hd))
@@ -96,7 +94,7 @@ namespace GUI_QLNH.FORMS
                     
                 }
             }
-           isCoNguoi = true;
+            isCoNguoi = true;
             btnChuyenBan.Enabled = true;
             btnGopBan.Enabled = true;
             btnThanhToan.Enabled = true;
@@ -106,11 +104,11 @@ namespace GUI_QLNH.FORMS
         {
             cbBan.DisplayMember = "TenBan";
             cbBan.ValueMember = "MaBan";
-            cbBan.DataSource = busban.HienBan();
+            cbBan.DataSource = busban.HienBan();// hiển thị combobox danh sách bàn
 
             cbDanhMucMonAn.DisplayMember = "TenDM";
             cbDanhMucMonAn.ValueMember = "MaDM";
-            cbDanhMucMonAn.DataSource = busDanhMucMonAn.HienThiDanhMucMonAN();
+            cbDanhMucMonAn.DataSource = busDanhMucMonAn.HienThiDanhMucMonAN(); // hiển thị combobox danh sách danh mục
 
             dtgvOrder.Columns.Clear();
             dtgvOrder.Columns.Add("tenMon", "Tên món");
@@ -126,6 +124,7 @@ namespace GUI_QLNH.FORMS
         }
         void loadDtgvOrder()
         {
+            // hiển thị hóa đơn chi tiết của bàn được chọn
             dtgvOrder.Columns.Clear();
             dtgvOrder.DataSource=busHoaDonCT.BillInfo(maBanHienTai);
             double tongtien = 0;
@@ -139,6 +138,7 @@ namespace GUI_QLNH.FORMS
         }
         private void cbDanhMucMonAn_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // hiển thị combobox danh sách món ăn. thay đổi khi danh mục thay đổi
             tenDm = cbDanhMucMonAn.Text;
             busMonAn.TenMon(tenDm);
             cbMonAn.DisplayMember = "TenMon";
@@ -147,27 +147,28 @@ namespace GUI_QLNH.FORMS
 
         void HienButtonBan()
         {
-            List<DTO_Ban> LTB = busban.HienButtonsBan();
+            // hiển thị bàn ra flowlayerpanel
+            List<DTO_Ban> LTB = busban.HienButtonsBan();//lấy danh sách bàn
 
             foreach (DTO_Ban banTuDB in LTB)
             {
-                Button btn = new Button()
+                Button btn = new Button()//tạo các button
                 {
                     Width = busban.tablewidth,
                     Height = busban.tableheight
                 };
-                btn.Text = banTuDB.TenBan + Environment.NewLine + (banTuDB.TrangThai == 0 ? "Trống" : "Có Người");
+                btn.Text = banTuDB.TenBan + Environment.NewLine + (banTuDB.TrangThai == 0 ? "Trống" : "Có Người");// xét trạng thái
 
                 btn.Click += btnBan_Click;
 
-                btn.Tag = banTuDB;
+                btn.Tag = banTuDB;//lưu thông tin của bàn đang chọn
 
                 if (banTuDB.TrangThai == 1)
                 {
-                    btn.BackColor = Color.GreenYellow;
+                    btn.BackColor = Color.GreenYellow;// có người sẽ hiển thị màu vàng
                 }
 
-                flpTable.Controls.Add(btn);
+                flpTable.Controls.Add(btn);// add các button vào flowlayerpanel
             }
         }
 
@@ -176,7 +177,7 @@ namespace GUI_QLNH.FORMS
 
         private void btnBan_Click(object sender, EventArgs e)
         {
-            
+            // sự kiện xảy ra khi click vào button các bàn
             btnXoaMon.Enabled = false;
             btnCapNhatMon.Enabled = false;
             btnThemMon.Enabled = true;
@@ -184,14 +185,14 @@ namespace GUI_QLNH.FORMS
             
             var buttonHienTai = ((sender as Button).Tag as DTO_Ban);
 
-            maBanHienTai = buttonHienTai.Maban;
+            maBanHienTai = buttonHienTai.Maban;//lấy mã bàn đang chọn
 
             isCoNguoi= Convert.ToBoolean(buttonHienTai.TrangThai);
 
-            lblBanHienTai.Text = buttonHienTai.TenBan;
+            lblBanHienTai.Text = buttonHienTai.TenBan;// lấy trạng thái bàn đang chọn
 
             if (isCoNguoi == true)
-            {
+            {// nếu bàn có hóa đơn sẽ cho phép dùng các button sau
                 btnChuyenBan.Enabled = true;
                 btnGopBan.Enabled = true;
                 btnThanhToan.Enabled = true;
@@ -199,7 +200,7 @@ namespace GUI_QLNH.FORMS
                 btnBoQua.Enabled = false;
             }  
             else
-            {
+            {// bàn không có người sẽ khóa các button sau
                 btnBoQua.Enabled = false;
                 btnThanhToan.Enabled = false;
                 btnChuyenBan.Enabled = false;
@@ -211,14 +212,14 @@ namespace GUI_QLNH.FORMS
         private void btnGopBan_Click(object sender, EventArgs e)
         {
             if (lblBanHienTai.Text == cbBan.Text)
-            {
+            {//kiểm tra xem có phải gộp đến bàn hiện tại không
                 Utils.HienError("Đang ở bàn hiện tại. Vui lòng chọn bàn để gộp");
             }
             else
             {
                 if (Utils.XacNhan("Bạn muốn gộp " + lblBanHienTai.Text + " sang " + cbBan.Text))
                 {
-                    if (busban.TrangThaiBan(cbBan.Text))
+                    if (busban.TrangThaiBan(cbBan.Text))//nếu bàn 2 có hóa đơn sẽ cho gộp bàn
                     {
                         for (int i = 1; i <= dtgvOrder.Rows.Count; i++)
                         {
@@ -231,7 +232,7 @@ namespace GUI_QLNH.FORMS
                         loadDtgvOrder();
                     }
                     else
-                    {
+                    {// bàn không có hóa đơn sẽ không cho gộp
                         Utils.HienError(cbBan.Text + " không có hóa đơn để gộp. Chỉ có thể chuyển bàn");
                     }
                 }
@@ -242,17 +243,17 @@ namespace GUI_QLNH.FORMS
             if (e.RowIndex > -1)
             {
                 DataGridViewRow rows = this.dtgvOrder.Rows[e.RowIndex];
-                if (rows.Cells[0].Value == null)
+                if (rows.Cells[0].Value == null)//kiểm tra row click có dữ liệu hay không
                 {
                     MessageBox.Show("Không tồn tại dữ liệu");
                 }
                 else
-                {
+                {// không cho phép thêm món và thanh toán
                     btnBoQua.Enabled = true;
                     btnThemMon.Enabled = false;
                     btnCapNhatMon.Enabled = true;
                     btnXoaMon.Enabled = true;
-                    
+                    // hiển thị các dữ liệu lên các vị trí tương ứng
                     cbMonAn.Text = rows.Cells[0].Value.ToString();
                     numSoLuong.Text = rows.Cells[1].Value.ToString();
                     busMonAn.TenDM(cbMonAn.Text);
@@ -268,7 +269,7 @@ namespace GUI_QLNH.FORMS
         }
 
         private void btnBoQua_Click(object sender, EventArgs e)
-        {
+        {// quay lại trạng thái cho phép thêm món 
             btnBoQua.Enabled = false;
             btnThemMon.Enabled = true;
             btnXoaMon.Enabled = false;
@@ -281,7 +282,7 @@ namespace GUI_QLNH.FORMS
         private void btnXoaMon_Click(object sender, EventArgs e)
         {
             if (Utils.XacNhan("Bạn muốn xóa món ăn này khỏi hóa đơn?"))
-            {
+            {//xóa món ăn khỏi hóa đơn
                 if (busHoaDon.XoaMonAn(cbMonAn.Text, maBanHienTai))
                 {
                     if (dtgvOrder.Rows.Count == 2)
@@ -304,7 +305,7 @@ namespace GUI_QLNH.FORMS
         private void btnCapNhatMon_Click(object sender, EventArgs e)
         {
             if(Utils.XacNhan("Bạn muốn sửa số lượng món ăn?"))
-            {
+            {// chỉnh sửa số lượng món ăn
                 if(busHoaDon.CapNhatMonAn(cbMonAn.Text,maBanHienTai,Convert.ToInt32(numSoLuong.Value)))
                 {
                     Utils.HienThongBao("Cập nhật thành công");

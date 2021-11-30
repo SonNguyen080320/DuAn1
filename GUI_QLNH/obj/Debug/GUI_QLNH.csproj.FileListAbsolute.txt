@@ -229,3 +229,7 @@ D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.csproj.Resolv
 D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.FORMS.frmThanhToan.resources
 D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\bin\Debug\Guna.UI2.dll
 D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.FORMS.frmPhucHoi.resources
+D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\bin\Debug\BouncyCastle.Crypto.dll
+D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\bin\Debug\itextsharp.dll
+D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\bin\Debug\itextsharp.xml
+D:\KY_4\DuAn1\NhomFlames_QuanLyNhaHang\GUI_QLNH\obj\Debug\GUI_QLNH.FORMS.frmBieuDoChart.resources

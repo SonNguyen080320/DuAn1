@@ -22,14 +22,12 @@ namespace GUI_QLNH.FORMS
 
         private void frmQuanLyDanhMucMonAn_Load(object sender, EventArgs e)
         {
-            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                        (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             loadgridview_DanhMucMonAn();
             ResetValues();
         }
         BUS_DanhMuc busdanhmucmonan = new BUS_DanhMuc();
         private void loadgridview_DanhMucMonAn()
-        {
+        {// hiển thị danh sách danh mục ra datagridview
             dtgvDanhMuc.DataSource = busdanhmucmonan.HienThiDanhMucMonAN();
             dtgvDanhMuc.Columns[0].HeaderText = "MÃ  DANH MUC";
             dtgvDanhMuc.Columns[1].HeaderText = "TÊN DANH MỤC";
@@ -47,7 +45,7 @@ namespace GUI_QLNH.FORMS
         }
 
         private void dtgvDanhMuc_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        {//hiển thị thông tin ra vị trí tương ứng khi click
             if (dtgvDanhMuc.Rows.Count > 1)
             {
                 txtTenDanhMuc.Enabled = true;
@@ -65,7 +63,7 @@ namespace GUI_QLNH.FORMS
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (txtTenDanhMuc.Text.Trim().Length == 0)
+            if (txtTenDanhMuc.Text.Trim().Length == 0)//kiểm tra trống
             {
                 MessageBox.Show("Bạn phải nhập tên Danh mục nhé !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTenDanhMuc.Focus();
@@ -77,14 +75,14 @@ namespace GUI_QLNH.FORMS
                 DTO_DanhMuc dm = new DTO_DanhMuc(txtTenDanhMuc.Text);
                 if (MessageBox.Show("Bạn muốn thêm danh mục này", "lưu ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (busdanhmucmonan.ThemDanhMucMonAn(dm))
+                    if (busdanhmucmonan.ThemDanhMucMonAn(dm))//thêm danh mục vào database
                     {
                         MessageBox.Show("Thêm thành công");
                         ResetValues();
                         loadgridview_DanhMucMonAn();
 
                     }
-                    else
+                    else//tên dnah mục đã tồn tại sẽ không cho thêm
                     {
                         Utils.HienWarning("Tên danh mục đã tồn tại. Vui lòng nhập tên mới");
                     }
@@ -106,8 +104,8 @@ namespace GUI_QLNH.FORMS
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            int madanhmuc = Convert.ToInt32(txtMaDanhMuc.Text);
-            if (txtMaDanhMuc.Text.Trim().Length == 0)
+            int madanhmuc = Convert.ToInt32(txtMaDanhMuc.Text);//lấy mã danh mục
+            if (txtMaDanhMuc.Text.Trim().Length == 0)//kiểm tra trống
             {
                 MessageBox.Show("Bạn cần chọn danh mục cần xóa");
             }
@@ -115,14 +113,14 @@ namespace GUI_QLNH.FORMS
             {
                 if (MessageBox.Show("Bạn chắc chắn muốn xóa dữ liệu này", "lưu ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (busdanhmucmonan.XoaDanhMuc(madanhmuc))
+                    if (busdanhmucmonan.XoaDanhMuc(madanhmuc))//xóa danh mục 
                     {
                         MessageBox.Show("Xóa dữ liệu thành công");
                         ResetValues();
                         loadgridview_DanhMucMonAn();
                     }
                     else
-                    {
+                    {//danh mục có món ăn trong hóa đơn chưa thanh toán không cho xóa
                         Utils.HienWarning("Danh mục đang có món ăn trong hóa đơn chưa thanh toán. không thể xóa");
                     }
                 }
@@ -136,7 +134,7 @@ namespace GUI_QLNH.FORMS
         private void btnSua_Click(object sender, EventArgs e)
         {
 
-            if (txtTenDanhMuc.Text.Trim().Length == 0)
+            if (txtTenDanhMuc.Text.Trim().Length == 0)//kiểm tra trống
             {
                 MessageBox.Show("Bạn cần nhập tên Danh mục !", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTenDanhMuc.Focus();
@@ -149,14 +147,14 @@ namespace GUI_QLNH.FORMS
                 DTO_DanhMuc dm = new DTO_DanhMuc(Convert.ToInt32(txtMaDanhMuc.Text), txtTenDanhMuc.Text);
                 if (MessageBox.Show("Bạn có chắc chắn muốn sửa", "Lưu ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (busdanhmucmonan.SuaDanhMuc(dm))
+                    if (busdanhmucmonan.SuaDanhMuc(dm))//cập nhật danh mục dựa theo mã danh mục
                     {
                         MessageBox.Show("Update thành công");
                         ResetValues();
                         loadgridview_DanhMucMonAn();
                     }
                     else
-                    {
+                    {//tên danh mục đã tồn tại không cho cập nhật
                         Utils.HienWarning("Tên danh mục đã tồn tại. Vui lòng nhập tên mới");
                     }
                 }
@@ -169,7 +167,7 @@ namespace GUI_QLNH.FORMS
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if (txttimkiem.Text == "")
+            if (txttimkiem.Text == "")//kiểm tra trống
             {
                 MessageBox.Show("vui lòng nhập tên Danh mục cần tìm");
             }
@@ -178,7 +176,7 @@ namespace GUI_QLNH.FORMS
                 string tendanhmuc = txttimkiem.Text;
                 DataTable ds = busdanhmucmonan.TimDanhMuc(tendanhmuc);
                 if (ds.Rows.Count > 0)
-                {
+                {//hiển thị danh mục tương ứng ra datagridview
                     dtgvDanhMuc.DataSource = ds;
                     dtgvDanhMuc.Columns[0].HeaderText = "MÃ DANH MỤC";
                     dtgvDanhMuc.Columns[1].HeaderText = "TÊN DANH MỤC";
@@ -193,7 +191,7 @@ namespace GUI_QLNH.FORMS
             }
         }
         void goiyten()
-        {
+        {//gợi ý tên danh mục khi nhập tên tìm kiếm
             AutoCompleteStringCollection auto1 = new AutoCompleteStringCollection();
             txttimkiem.AutoCompleteMode = AutoCompleteMode.Append;
             txttimkiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -216,7 +214,7 @@ namespace GUI_QLNH.FORMS
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+        {// button phục hồi
             frmPhucHoi f1 = new frmPhucHoi("Danh Sách Danh Mục Đã Xóa");
             if(f1.ShowDialog()==DialogResult.Cancel)
             {

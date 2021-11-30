@@ -23,11 +23,9 @@ namespace GUI_QLNH
             InitializeComponent();
             PanelMacDinh();
         }
-        public frmGiaoDien(string email)
+        public frmGiaoDien(string email) : this()
         {
             _Email = email;
-            InitializeComponent();
-            PanelMacDinh();
         }
         private void frmGiaoDien_Load(object sender, EventArgs e)
         {
@@ -38,16 +36,16 @@ namespace GUI_QLNH
         {
             if (_Email == "Admin" || _Email == "admin")
             {
-                btndoimatkhau.Hide();
+                btndoimatkhau.Hide();// nếu tài khoản đăng nhập là admin thì không hiển thị đổi mật khẩu
             }
             this.WindowState = FormWindowState.Maximized;
-            lbchao.Text = "Chào: " + _Email;
+            lbchao.Text = "Chào: " + _Email; // hiển thị email đăng nhập
             timer1.Start();
-            lbGio.Text = DateTime.Now.ToString();
-            btthoattamthoi.Visible = false;
+            lbGio.Text = DateTime.Now.ToString(); // hiển thị thời gian
+            btthoattamthoi.Visible = false; 
             btnphongto.Visible = false;
             btnthoat.Visible = false;
-            if (busNhanVien.VaiTro(_Email))
+            if (busNhanVien.VaiTro(_Email)) // nếu vai trò là quản trị hiển thị đủ chức năng
             {
                 btnban.Visible = true;
                 btndanhmucmonan.Visible = true;
@@ -58,7 +56,7 @@ namespace GUI_QLNH
                 bnquanlythongke.Visible = true;
 
             }
-            else
+            else // vai trò nhân viên không hiển thị các chức năng 
             {
                 btnban.Visible = false;
                 btndanhmucmonan.Visible = false;
@@ -69,7 +67,7 @@ namespace GUI_QLNH
                 bnquanlythongke.Visible = false;
             }
         }
-        private void PanelMacDinh()// panel mặc định
+        private void PanelMacDinh()// panel mặc định để hiển thị các form 
         {
             pnlquanlythucpham.Visible = false;
             pnlthongke.Visible = false;
@@ -121,7 +119,6 @@ namespace GUI_QLNH
         private void btnquanlythucpham_Click(object sender, EventArgs e)
         {
             HienPanel(pnlquanlythucpham);
-
         }
 
         private void btndanhmucmonan_Click(object sender, EventArgs e)
@@ -236,7 +233,8 @@ namespace GUI_QLNH
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbGio.Text = DateTime.Now.ToString();
+            this.lbtitel.ForeColor = Color.Red; // hiển thị màu của title
+            lbGio.Text = DateTime.Now.ToString(); // thời gian hiện tại
         }
 
         private void btndangxuat_Click(object sender, EventArgs e)
@@ -245,6 +243,16 @@ namespace GUI_QLNH
             {
                 this.Close();
             }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            this.lbtitel.ForeColor = Color.Blue;
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            this.lbtitel.ForeColor = Color.Yellow;
         }
     }
 }

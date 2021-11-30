@@ -30,32 +30,18 @@ namespace GUI_QLNH
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGiaoDien));
             this.btndoimatkhau = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btndangxuat = new System.Windows.Forms.Button();
             this.bnthongtinnhanvien = new System.Windows.Forms.Button();
             this.pnlthongke = new System.Windows.Forms.Panel();
-            this.btnthongketheongay = new System.Windows.Forms.Button();
             this.pnlSileMenu = new System.Windows.Forms.Panel();
-            this.btnquanlynhanvien = new System.Windows.Forms.Button();
-            this.bnquanlythongke = new System.Windows.Forms.Button();
             this.pnlquanlythucpham = new System.Windows.Forms.Panel();
-            this.btnmonan = new System.Windows.Forms.Button();
-            this.btndanhmucmonan = new System.Windows.Forms.Button();
-            this.btnquanlythucpham = new System.Windows.Forms.Button();
-            this.btnban = new System.Windows.Forms.Button();
-            this.btndatmon = new System.Windows.Forms.Button();
-            this.btnhome = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.FlowLayoutPanel();
-            this.pichello = new System.Windows.Forms.PictureBox();
-            this.piclogo = new System.Windows.Forms.PictureBox();
             this.lbtennhom = new System.Windows.Forms.Label();
             this.lbchao = new System.Windows.Forms.Label();
             this.pnlchinh = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnltitel = new System.Windows.Forms.Panel();
             this.lbGio = new System.Windows.Forms.Label();
             this.btnthoat = new System.Windows.Forms.Button();
@@ -63,19 +49,36 @@ namespace GUI_QLNH
             this.btthoattamthoi = new System.Windows.Forms.Button();
             this.lbtitel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnquanlynhanvien = new System.Windows.Forms.Button();
+            this.btnthongketheongay = new System.Windows.Forms.Button();
+            this.bnquanlythongke = new System.Windows.Forms.Button();
+            this.btnmonan = new System.Windows.Forms.Button();
+            this.btndanhmucmonan = new System.Windows.Forms.Button();
+            this.btnquanlythucpham = new System.Windows.Forms.Button();
+            this.btnban = new System.Windows.Forms.Button();
+            this.btndatmon = new System.Windows.Forms.Button();
+            this.btnhome = new System.Windows.Forms.Button();
+            this.pichello = new System.Windows.Forms.PictureBox();
+            this.piclogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.pnlthongke.SuspendLayout();
             this.pnlSileMenu.SuspendLayout();
             this.pnlquanlythucpham.SuspendLayout();
             this.pnlLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pichello)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
             this.pnlchinh.SuspendLayout();
+            this.pnltitel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnltitel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pichello)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.piclogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btndoimatkhau
@@ -150,28 +153,6 @@ namespace GUI_QLNH
             this.pnlthongke.Size = new System.Drawing.Size(251, 63);
             this.pnlthongke.TabIndex = 8;
             // 
-            // btnthongketheongay
-            // 
-            this.btnthongketheongay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.btnthongketheongay.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnthongketheongay.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnthongketheongay.FlatAppearance.BorderSize = 0;
-            this.btnthongketheongay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnthongketheongay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnthongketheongay.ForeColor = System.Drawing.Color.White;
-            this.btnthongketheongay.Image = global::GUI_QLNH.Properties.Resources.iconthongke2;
-            this.btnthongketheongay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnthongketheongay.Location = new System.Drawing.Point(0, 0);
-            this.btnthongketheongay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnthongketheongay.Name = "btnthongketheongay";
-            this.btnthongketheongay.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnthongketheongay.Size = new System.Drawing.Size(251, 72);
-            this.btnthongketheongay.TabIndex = 9;
-            this.btnthongketheongay.Text = " Doanh Thu";
-            this.btnthongketheongay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnthongketheongay.UseVisualStyleBackColor = false;
-            this.btnthongketheongay.Click += new System.EventHandler(this.btnthongketheongay_Click);
-            // 
             // pnlSileMenu
             // 
             this.pnlSileMenu.AutoScroll = true;
@@ -191,6 +172,218 @@ namespace GUI_QLNH
             this.pnlSileMenu.Name = "pnlSileMenu";
             this.pnlSileMenu.Size = new System.Drawing.Size(251, 846);
             this.pnlSileMenu.TabIndex = 26;
+            // 
+            // pnlquanlythucpham
+            // 
+            this.pnlquanlythucpham.Controls.Add(this.btnmonan);
+            this.pnlquanlythucpham.Controls.Add(this.btndanhmucmonan);
+            this.pnlquanlythucpham.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlquanlythucpham.Location = new System.Drawing.Point(0, 434);
+            this.pnlquanlythucpham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlquanlythucpham.Name = "pnlquanlythucpham";
+            this.pnlquanlythucpham.Size = new System.Drawing.Size(251, 121);
+            this.pnlquanlythucpham.TabIndex = 6;
+            // 
+            // pnlLogo
+            // 
+            this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.pnlLogo.Controls.Add(this.pichello);
+            this.pnlLogo.Controls.Add(this.piclogo);
+            this.pnlLogo.Controls.Add(this.lbtennhom);
+            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(251, 198);
+            this.pnlLogo.TabIndex = 1;
+            // 
+            // lbtennhom
+            // 
+            this.lbtennhom.AutoSize = true;
+            this.lbtennhom.Font = new System.Drawing.Font("Copperplate Gothic Bold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtennhom.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbtennhom.Location = new System.Drawing.Point(3, 166);
+            this.lbtennhom.Name = "lbtennhom";
+            this.lbtennhom.Padding = new System.Windows.Forms.Padding(51, 0, 0, 0);
+            this.lbtennhom.Size = new System.Drawing.Size(202, 31);
+            this.lbtennhom.TabIndex = 1;
+            this.lbtennhom.Text = "FLAMES";
+            this.lbtennhom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbchao
+            // 
+            this.lbchao.AutoSize = true;
+            this.lbchao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbchao.ForeColor = System.Drawing.Color.White;
+            this.lbchao.Location = new System.Drawing.Point(1177, 32);
+            this.lbchao.Name = "lbchao";
+            this.lbchao.Size = new System.Drawing.Size(195, 29);
+            this.lbchao.TabIndex = 3;
+            this.lbchao.Text = "chào..................";
+            // 
+            // pnlchinh
+            // 
+            this.pnlchinh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlchinh.BackColor = System.Drawing.Color.White;
+            this.pnlchinh.Controls.Add(this.pictureBox3);
+            this.pnlchinh.Controls.Add(this.pictureBox4);
+            this.pnlchinh.Controls.Add(this.panel1);
+            this.pnlchinh.Controls.Add(this.pictureBox2);
+            this.pnlchinh.Controls.Add(this.pictureBox1);
+            this.pnlchinh.Location = new System.Drawing.Point(251, 90);
+            this.pnlchinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlchinh.Name = "pnlchinh";
+            this.pnlchinh.Size = new System.Drawing.Size(1450, 756);
+            this.pnlchinh.TabIndex = 32;
+            // 
+            // pnltitel
+            // 
+            this.pnltitel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.pnltitel.Controls.Add(this.lbGio);
+            this.pnltitel.Controls.Add(this.btnthoat);
+            this.pnltitel.Controls.Add(this.lbchao);
+            this.pnltitel.Controls.Add(this.btnphongto);
+            this.pnltitel.Controls.Add(this.btthoattamthoi);
+            this.pnltitel.Controls.Add(this.lbtitel);
+            this.pnltitel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnltitel.Location = new System.Drawing.Point(251, 0);
+            this.pnltitel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnltitel.Name = "pnltitel";
+            this.pnltitel.Size = new System.Drawing.Size(1404, 91);
+            this.pnltitel.TabIndex = 33;
+            // 
+            // lbGio
+            // 
+            this.lbGio.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbGio.AutoSize = true;
+            this.lbGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGio.ForeColor = System.Drawing.Color.White;
+            this.lbGio.Location = new System.Drawing.Point(45, 39);
+            this.lbGio.Name = "lbGio";
+            this.lbGio.Size = new System.Drawing.Size(59, 20);
+            this.lbGio.TabIndex = 6;
+            this.lbGio.Text = "label2";
+            // 
+            // btnthoat
+            // 
+            this.btnthoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnthoat.FlatAppearance.BorderSize = 0;
+            this.btnthoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnthoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnthoat.ForeColor = System.Drawing.Color.White;
+            this.btnthoat.Location = new System.Drawing.Point(1337, 2);
+            this.btnthoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnthoat.Name = "btnthoat";
+            this.btnthoat.Size = new System.Drawing.Size(35, 33);
+            this.btnthoat.TabIndex = 4;
+            this.btnthoat.Text = "X";
+            this.btnthoat.UseVisualStyleBackColor = true;
+            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
+            // 
+            // btnphongto
+            // 
+            this.btnphongto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnphongto.FlatAppearance.BorderSize = 0;
+            this.btnphongto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnphongto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnphongto.ForeColor = System.Drawing.Color.White;
+            this.btnphongto.Location = new System.Drawing.Point(1288, 2);
+            this.btnphongto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnphongto.Name = "btnphongto";
+            this.btnphongto.Size = new System.Drawing.Size(35, 33);
+            this.btnphongto.TabIndex = 3;
+            this.btnphongto.Text = "O";
+            this.btnphongto.UseVisualStyleBackColor = true;
+            this.btnphongto.Click += new System.EventHandler(this.btnphongto_Click);
+            // 
+            // btthoattamthoi
+            // 
+            this.btthoattamthoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btthoattamthoi.FlatAppearance.BorderSize = 0;
+            this.btthoattamthoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btthoattamthoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btthoattamthoi.ForeColor = System.Drawing.Color.White;
+            this.btthoattamthoi.Location = new System.Drawing.Point(1248, 2);
+            this.btthoattamthoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btthoattamthoi.Name = "btthoattamthoi";
+            this.btthoattamthoi.Size = new System.Drawing.Size(35, 33);
+            this.btthoattamthoi.TabIndex = 1;
+            this.btthoattamthoi.Text = "-";
+            this.btthoattamthoi.UseVisualStyleBackColor = true;
+            this.btthoattamthoi.Click += new System.EventHandler(this.btthoattamthoi_Click);
+            // 
+            // lbtitel
+            // 
+            this.lbtitel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbtitel.AutoSize = true;
+            this.lbtitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtitel.ForeColor = System.Drawing.Color.White;
+            this.lbtitel.Location = new System.Drawing.Point(504, 32);
+            this.lbtitel.Name = "lbtitel";
+            this.lbtitel.Size = new System.Drawing.Size(89, 29);
+            this.lbtitel.TabIndex = 0;
+            this.lbtitel.Text = "HOME";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 650;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer3
+            // 
+            this.timer3.Enabled = true;
+            this.timer3.Interval = 400;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::GUI_QLNH.Properties.Resources.icondaubepgiua;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(509, 166);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(312, 292);
+            this.pictureBox3.TabIndex = 29;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::GUI_QLNH.Properties.Resources.iconwelcome;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(384, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(552, 201);
+            this.pictureBox4.TabIndex = 30;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::GUI_QLNH.Properties.Resources.icondaubepphai;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(964, 6);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(235, 257);
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::GUI_QLNH.Properties.Resources.icondaubeptrai;
+            this.pictureBox1.Location = new System.Drawing.Point(104, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(275, 257);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
             // 
             // btnquanlynhanvien
             // 
@@ -214,6 +407,28 @@ namespace GUI_QLNH
             this.btnquanlynhanvien.UseVisualStyleBackColor = false;
             this.btnquanlynhanvien.Click += new System.EventHandler(this.btnquanlynhanvien_Click);
             // 
+            // btnthongketheongay
+            // 
+            this.btnthongketheongay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnthongketheongay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnthongketheongay.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnthongketheongay.FlatAppearance.BorderSize = 0;
+            this.btnthongketheongay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnthongketheongay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnthongketheongay.ForeColor = System.Drawing.Color.White;
+            this.btnthongketheongay.Image = global::GUI_QLNH.Properties.Resources.iconthongke2;
+            this.btnthongketheongay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnthongketheongay.Location = new System.Drawing.Point(0, 0);
+            this.btnthongketheongay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnthongketheongay.Name = "btnthongketheongay";
+            this.btnthongketheongay.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnthongketheongay.Size = new System.Drawing.Size(251, 72);
+            this.btnthongketheongay.TabIndex = 9;
+            this.btnthongketheongay.Text = " Doanh Thu";
+            this.btnthongketheongay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnthongketheongay.UseVisualStyleBackColor = false;
+            this.btnthongketheongay.Click += new System.EventHandler(this.btnthongketheongay_Click);
+            // 
             // bnquanlythongke
             // 
             this.bnquanlythongke.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
@@ -235,17 +450,6 @@ namespace GUI_QLNH
             this.bnquanlythongke.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bnquanlythongke.UseVisualStyleBackColor = false;
             this.bnquanlythongke.Click += new System.EventHandler(this.bnquanlythongke_Click);
-            // 
-            // pnlquanlythucpham
-            // 
-            this.pnlquanlythucpham.Controls.Add(this.btnmonan);
-            this.pnlquanlythucpham.Controls.Add(this.btndanhmucmonan);
-            this.pnlquanlythucpham.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlquanlythucpham.Location = new System.Drawing.Point(0, 434);
-            this.pnlquanlythucpham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlquanlythucpham.Name = "pnlquanlythucpham";
-            this.pnlquanlythucpham.Size = new System.Drawing.Size(251, 121);
-            this.pnlquanlythucpham.TabIndex = 6;
             // 
             // btnmonan
             // 
@@ -378,19 +582,6 @@ namespace GUI_QLNH
             this.btnhome.UseVisualStyleBackColor = false;
             this.btnhome.Click += new System.EventHandler(this.btnhome_Click);
             // 
-            // pnlLogo
-            // 
-            this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.pnlLogo.Controls.Add(this.pichello);
-            this.pnlLogo.Controls.Add(this.piclogo);
-            this.pnlLogo.Controls.Add(this.lbtennhom);
-            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnlLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(251, 198);
-            this.pnlLogo.TabIndex = 1;
-            // 
             // pichello
             // 
             this.pichello.BackgroundImage = global::GUI_QLNH.Properties.Resources.iconhello;
@@ -413,182 +604,6 @@ namespace GUI_QLNH
             this.piclogo.TabIndex = 2;
             this.piclogo.TabStop = false;
             // 
-            // lbtennhom
-            // 
-            this.lbtennhom.AutoSize = true;
-            this.lbtennhom.Font = new System.Drawing.Font("Copperplate Gothic Bold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtennhom.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbtennhom.Location = new System.Drawing.Point(3, 166);
-            this.lbtennhom.Name = "lbtennhom";
-            this.lbtennhom.Padding = new System.Windows.Forms.Padding(51, 0, 0, 0);
-            this.lbtennhom.Size = new System.Drawing.Size(202, 31);
-            this.lbtennhom.TabIndex = 1;
-            this.lbtennhom.Text = "FLAMES";
-            this.lbtennhom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbchao
-            // 
-            this.lbchao.AutoSize = true;
-            this.lbchao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbchao.ForeColor = System.Drawing.Color.White;
-            this.lbchao.Location = new System.Drawing.Point(1177, 32);
-            this.lbchao.Name = "lbchao";
-            this.lbchao.Size = new System.Drawing.Size(195, 29);
-            this.lbchao.TabIndex = 3;
-            this.lbchao.Text = "chào..................";
-            // 
-            // pnlchinh
-            // 
-            this.pnlchinh.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlchinh.BackColor = System.Drawing.Color.White;
-            this.pnlchinh.Controls.Add(this.pictureBox3);
-            this.pnlchinh.Controls.Add(this.pictureBox4);
-            this.pnlchinh.Controls.Add(this.panel1);
-            this.pnlchinh.Controls.Add(this.pictureBox2);
-            this.pnlchinh.Controls.Add(this.pictureBox1);
-            this.pnlchinh.Location = new System.Drawing.Point(251, 90);
-            this.pnlchinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlchinh.Name = "pnlchinh";
-            this.pnlchinh.Size = new System.Drawing.Size(1450, 756);
-            this.pnlchinh.TabIndex = 32;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::GUI_QLNH.Properties.Resources.icondaubepgiua;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(509, 166);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(312, 292);
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::GUI_QLNH.Properties.Resources.iconwelcome;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(384, 4);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(552, 201);
-            this.pictureBox4.TabIndex = 30;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::GUI_QLNH.Properties.Resources.icondaubepphai;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(964, 6);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(235, 257);
-            this.pictureBox2.TabIndex = 28;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::GUI_QLNH.Properties.Resources.icondaubeptrai;
-            this.pictureBox1.Location = new System.Drawing.Point(104, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(275, 257);
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pnltitel
-            // 
-            this.pnltitel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.pnltitel.Controls.Add(this.lbGio);
-            this.pnltitel.Controls.Add(this.btnthoat);
-            this.pnltitel.Controls.Add(this.lbchao);
-            this.pnltitel.Controls.Add(this.btnphongto);
-            this.pnltitel.Controls.Add(this.btthoattamthoi);
-            this.pnltitel.Controls.Add(this.lbtitel);
-            this.pnltitel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnltitel.Location = new System.Drawing.Point(251, 0);
-            this.pnltitel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnltitel.Name = "pnltitel";
-            this.pnltitel.Size = new System.Drawing.Size(1404, 91);
-            this.pnltitel.TabIndex = 33;
-            // 
-            // lbGio
-            // 
-            this.lbGio.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbGio.AutoSize = true;
-            this.lbGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGio.ForeColor = System.Drawing.Color.White;
-            this.lbGio.Location = new System.Drawing.Point(45, 39);
-            this.lbGio.Name = "lbGio";
-            this.lbGio.Size = new System.Drawing.Size(59, 20);
-            this.lbGio.TabIndex = 6;
-            this.lbGio.Text = "label2";
-            // 
-            // btnthoat
-            // 
-            this.btnthoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnthoat.FlatAppearance.BorderSize = 0;
-            this.btnthoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnthoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnthoat.ForeColor = System.Drawing.Color.White;
-            this.btnthoat.Location = new System.Drawing.Point(1337, 2);
-            this.btnthoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnthoat.Name = "btnthoat";
-            this.btnthoat.Size = new System.Drawing.Size(35, 33);
-            this.btnthoat.TabIndex = 4;
-            this.btnthoat.Text = "X";
-            this.btnthoat.UseVisualStyleBackColor = true;
-            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
-            // 
-            // btnphongto
-            // 
-            this.btnphongto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnphongto.FlatAppearance.BorderSize = 0;
-            this.btnphongto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnphongto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnphongto.ForeColor = System.Drawing.Color.White;
-            this.btnphongto.Location = new System.Drawing.Point(1288, 2);
-            this.btnphongto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnphongto.Name = "btnphongto";
-            this.btnphongto.Size = new System.Drawing.Size(35, 33);
-            this.btnphongto.TabIndex = 3;
-            this.btnphongto.Text = "O";
-            this.btnphongto.UseVisualStyleBackColor = true;
-            this.btnphongto.Click += new System.EventHandler(this.btnphongto_Click);
-            // 
-            // btthoattamthoi
-            // 
-            this.btthoattamthoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btthoattamthoi.FlatAppearance.BorderSize = 0;
-            this.btthoattamthoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btthoattamthoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btthoattamthoi.ForeColor = System.Drawing.Color.White;
-            this.btthoattamthoi.Location = new System.Drawing.Point(1248, 2);
-            this.btthoattamthoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btthoattamthoi.Name = "btthoattamthoi";
-            this.btthoattamthoi.Size = new System.Drawing.Size(35, 33);
-            this.btthoattamthoi.TabIndex = 1;
-            this.btthoattamthoi.Text = "-";
-            this.btthoattamthoi.UseVisualStyleBackColor = true;
-            this.btthoattamthoi.Click += new System.EventHandler(this.btthoattamthoi_Click);
-            // 
-            // lbtitel
-            // 
-            this.lbtitel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbtitel.AutoSize = true;
-            this.lbtitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtitel.ForeColor = System.Drawing.Color.White;
-            this.lbtitel.Location = new System.Drawing.Point(504, 32);
-            this.lbtitel.Name = "lbtitel";
-            this.lbtitel.Size = new System.Drawing.Size(89, 29);
-            this.lbtitel.TabIndex = 0;
-            this.lbtitel.Text = "HOME";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // frmGiaoDien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -599,10 +614,11 @@ namespace GUI_QLNH
             this.Controls.Add(this.pnltitel);
             this.Controls.Add(this.pnlSileMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(1363, 724);
             this.Name = "frmGiaoDien";
-            this.Text = "Form1";
+            this.Text = "Nhà hàng Flames";
             this.Load += new System.EventHandler(this.frmGiaoDien_Load);
             this.panel1.ResumeLayout(false);
             this.pnlthongke.ResumeLayout(false);
@@ -610,15 +626,15 @@ namespace GUI_QLNH
             this.pnlquanlythucpham.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             this.pnlLogo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pichello)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piclogo)).EndInit();
             this.pnlchinh.ResumeLayout(false);
+            this.pnltitel.ResumeLayout(false);
+            this.pnltitel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnltitel.ResumeLayout(false);
-            this.pnltitel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pichello)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.piclogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -658,6 +674,8 @@ namespace GUI_QLNH
         private System.Windows.Forms.Label lbGio;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox piclogo;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
     }
 }
 

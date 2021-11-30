@@ -111,7 +111,7 @@ namespace GUI_QLNH.FORMS
             // txtMaNV
             // 
             this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(139, 89);
+            this.txtMaNV.Location = new System.Drawing.Point(166, 91);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(297, 27);
@@ -131,7 +131,7 @@ namespace GUI_QLNH.FORMS
             // txtTenNV
             // 
             this.txtTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNV.Location = new System.Drawing.Point(139, 224);
+            this.txtTenNV.Location = new System.Drawing.Point(166, 224);
             this.txtTenNV.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNV.MaxLength = 30;
             this.txtTenNV.Name = "txtTenNV";
@@ -152,13 +152,14 @@ namespace GUI_QLNH.FORMS
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(621, 281);
+            this.txtSDT.Location = new System.Drawing.Point(631, 278);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSDT.MaxLength = 15;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(297, 27);
             this.txtSDT.TabIndex = 17;
             this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // label5
             // 
@@ -174,7 +175,7 @@ namespace GUI_QLNH.FORMS
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(621, 154);
+            this.txtDiaChi.Location = new System.Drawing.Point(636, 151);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.MaxLength = 100;
             this.txtDiaChi.Name = "txtDiaChi";
@@ -197,7 +198,7 @@ namespace GUI_QLNH.FORMS
             this.pnlVaiTro.Controls.Add(this.rdoAdmin);
             this.pnlVaiTro.Controls.Add(this.rdoNV);
             this.pnlVaiTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlVaiTro.Location = new System.Drawing.Point(139, 267);
+            this.pnlVaiTro.Location = new System.Drawing.Point(166, 261);
             this.pnlVaiTro.Margin = new System.Windows.Forms.Padding(4);
             this.pnlVaiTro.Name = "pnlVaiTro";
             this.pnlVaiTro.Size = new System.Drawing.Size(291, 49);
@@ -243,7 +244,7 @@ namespace GUI_QLNH.FORMS
             this.pnlGioiTinh.Controls.Add(this.rdoNu);
             this.pnlGioiTinh.Controls.Add(this.rdoNam);
             this.pnlGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlGioiTinh.Location = new System.Drawing.Point(621, 207);
+            this.pnlGioiTinh.Location = new System.Drawing.Point(637, 199);
             this.pnlGioiTinh.Margin = new System.Windows.Forms.Padding(4);
             this.pnlGioiTinh.Name = "pnlGioiTinh";
             this.pnlGioiTinh.Size = new System.Drawing.Size(291, 52);
@@ -252,7 +253,7 @@ namespace GUI_QLNH.FORMS
             // rdoNu
             // 
             this.rdoNu.AutoSize = true;
-            this.rdoNu.Location = new System.Drawing.Point(85, 20);
+            this.rdoNu.Location = new System.Drawing.Point(104, 21);
             this.rdoNu.Margin = new System.Windows.Forms.Padding(4);
             this.rdoNu.Name = "rdoNu";
             this.rdoNu.Size = new System.Drawing.Size(51, 24);
@@ -287,7 +288,7 @@ namespace GUI_QLNH.FORMS
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(139, 151);
+            this.txtEmail.Location = new System.Drawing.Point(166, 154);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.MaxLength = 30;
             this.txtEmail.Name = "txtEmail";
@@ -320,7 +321,7 @@ namespace GUI_QLNH.FORMS
             // 
             this.dtNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgaySinh.Location = new System.Drawing.Point(621, 85);
+            this.dtNgaySinh.Location = new System.Drawing.Point(637, 85);
             this.dtNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtNgaySinh.Name = "dtNgaySinh";
             this.dtNgaySinh.Size = new System.Drawing.Size(296, 27);

@@ -123,6 +123,7 @@ namespace GUI_QLNH.FORMS
             this.txtTenBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenBan.Location = new System.Drawing.Point(798, 226);
             this.txtTenBan.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenBan.MaxLength = 30;
             this.txtTenBan.Name = "txtTenBan";
             this.txtTenBan.Size = new System.Drawing.Size(281, 32);
             this.txtTenBan.TabIndex = 10;
@@ -166,6 +167,7 @@ namespace GUI_QLNH.FORMS
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.Location = new System.Drawing.Point(619, 101);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTimKiem.MaxLength = 30;
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(300, 32);
             this.txtTimKiem.TabIndex = 12;

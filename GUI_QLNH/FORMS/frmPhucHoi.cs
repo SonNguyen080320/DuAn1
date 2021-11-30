@@ -27,19 +27,19 @@ namespace GUI_QLNH.FORMS
         BUS_DanhMuc busDanhMuc = new BUS_DanhMuc();
         BUS_NhanVien busNhanVien = new BUS_NhanVien();
         void loadBanDaXoa()
-        {
+        {// hiển thị danh sách bàn đã xóa
             dtgvPhucHoi.DataSource = busBan.BanDaXoa();
         }
         void loadMonAnDaXoa()
-        {
+        {//hiển thị danh sách món ăn đã xóa
             dtgvPhucHoi.DataSource = busMonAn.MonAnDaXoa();
         }
         void loadDmDaXoa()
-        {
+        {// heienr thị danh sách danh mục đã xóa
             dtgvPhucHoi.DataSource = busDanhMuc.DmDaXoa();
         }
         void loadNvDaXoa()
-        {
+        {// hiển thị danh sách nhân viên đã xóa
             dtgvPhucHoi.DataSource = busNhanVien.NvDaXoa();
         }
         void ReSetValue()
@@ -53,7 +53,7 @@ namespace GUI_QLNH.FORMS
             btnPhucHoi.Enabled = false;
         }
         private void btnPhucHoi_Click(object sender, EventArgs e)
-        {
+        {//phục hồi sẽ xét theo tiêu đề của form 
             if (lbTilte.Text == "Danh Sách Bàn Đã Xóa")
             {
                 if (Utils.XacNhan("Bạn muốn phục hồi " + txtTen.Text))
@@ -106,6 +106,7 @@ namespace GUI_QLNH.FORMS
 
         private void frmPhucHoi_Load(object sender, EventArgs e)
         {
+            // hiển thị danh sách dựa theo tiêu đề của form
             lbTilte.Text = _Title;
             if(lbTilte.Text== "Danh Sách Bàn Đã Xóa")
             {
@@ -141,7 +142,7 @@ namespace GUI_QLNH.FORMS
         }
 
         private void dtgvPhucHoi_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
+        {// hiển thị thông tin ra các vị trí tương ứng khi click vào tùy theo tiêu đề form
             if (e.RowIndex > -1)
             {
                 DataGridViewRow rows = this.dtgvPhucHoi.Rows[e.RowIndex];

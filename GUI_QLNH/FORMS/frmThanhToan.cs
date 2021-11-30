@@ -26,7 +26,7 @@ namespace GUI_QLNH.FORMS
             this.Close();
         }
         void load()
-        {
+        {// hiển thị thông tin của hóa đơn muốn thanh toán
             var tb = bushoadonchitiet.TenBan(frmOrderMonAn.maBanHienTai);
             lbTenBan.Text = tb;
             dtgvHoaDon.DataSource = bushoadonchitiet.BillInfo(frmOrderMonAn.maBanHienTai);
@@ -47,7 +47,7 @@ namespace GUI_QLNH.FORMS
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
-        {
+        {// thanh toán hóa đơn
             if (Utils.XacNhan("Bạn muốn thanh toán hóa đơn " + lbTenBan.Text + " ?"))
             {
                 if (bushoadon.ThanhToan(frmOrderMonAn.maBanHienTai, float.Parse(txtTongTien.Text), float.Parse(txtThanhTien.Text)))

@@ -27,14 +27,12 @@ namespace GUI_QLNH.FORMS
 
         private void frmDoiMatKhau_Load(object sender, EventArgs e)
         {
-            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                          (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             this.txtMatKhauCu.PasswordChar = '*';
             this.txtMatKhauMoi.PasswordChar = '*';
             this.txtXacNhanMatKhau.PasswordChar = '*';
             btnAn.Hide();
             btnHien.Show();
-            txtEmail.Text = _Email;
+            txtEmail.Text = _Email; // load form với email được lấy từ form chính
             txtEmail.Enabled = false;
         }
         BUS_NhanVien busNhanVien = new BUS_NhanVien();
@@ -58,26 +56,27 @@ namespace GUI_QLNH.FORMS
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
+            // kiểm tra các textbox có trống hay không
             if (!Utils.KiemTraTextBox(txtMatKhauCu, "Mật khẩu củ") || !Utils.KiemTraTextBox(txtMatKhauMoi, "Mật khẩu mới") ||
                !Utils.KiemTraTextBox(txtXacNhanMatKhau, "Xác nhận lại mật khẩu"))
             {
                 return;
             }
-            if(txtMatKhauMoi.Text.Trim().Length!=txtXacNhanMatKhau.Text.Trim().Length)
+            if(txtMatKhauMoi.Text.Trim().Length!=txtXacNhanMatKhau.Text.Trim().Length) // kiểm tra mật khẩu mới và xác nhận có giống nhau không
             {
                 Utils.HienError("Xác nhận mật khẩu không khớp");
             }    
             else
             {
-                string PassMoi = Utils.MaHoa(txtMatKhauMoi.Text);
+                string PassMoi = Utils.MaHoa(txtMatKhauMoi.Text);// mã hóa mật khẩu mới  và củ
                 string PassCu = Utils.MaHoa(txtMatKhauCu.Text);
                 if (Utils.XacNhan("Bạn muốn cập nhật mật khẩu"))
                 {
-                    if (busNhanVien.DoiMatKhau(txtEmail.Text, PassCu, PassMoi))
+                    if (busNhanVien.DoiMatKhau(txtEmail.Text, PassCu, PassMoi))// cập nhật mật khẩu mới
                     {
-                        FORMS.frmQuanLyNhanVien.sendEmail(txtEmail.Text, txtMatKhauMoi.Text);
+                        FORMS.frmQuanLyNhanVien.sendEmail(txtEmail.Text, txtMatKhauMoi.Text);// gửi email mật khẩu mới
                         Utils.HienThongBao("Cập nhật mật khẩu thành công. Đăng nhập lại để sử dụng hệ thống");
-                        Application.Restart();
+                        Application.Restart();// chạy lại chương trình
 
                     }
                 }   

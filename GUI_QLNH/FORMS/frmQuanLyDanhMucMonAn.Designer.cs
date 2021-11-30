@@ -31,6 +31,8 @@ namespace GUI_QLNH.FORMS
         {
             this.dtgvDanhMuc = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnBoQua = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
@@ -42,8 +44,6 @@ namespace GUI_QLNH.FORMS
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txttimkiem = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnBoQua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhMuc)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,44 @@ namespace GUI_QLNH.FORMS
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(719, 686);
             this.panel1.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::GUI_QLNH.Properties.Resources.phuchoi;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(405, 585);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(214, 69);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "Phục Hồi DM";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnBoQua
+            // 
+            this.btnBoQua.BackColor = System.Drawing.Color.White;
+            this.btnBoQua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBoQua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBoQua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBoQua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBoQua.Image = global::GUI_QLNH.Properties.Resources.skip;
+            this.btnBoQua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBoQua.Location = new System.Drawing.Point(139, 585);
+            this.btnBoQua.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBoQua.Name = "btnBoQua";
+            this.btnBoQua.Size = new System.Drawing.Size(167, 69);
+            this.btnBoQua.TabIndex = 16;
+            this.btnBoQua.Text = "Bỏ qua";
+            this.btnBoQua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBoQua.UseVisualStyleBackColor = false;
+            this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
             // 
             // label3
             // 
@@ -190,6 +228,7 @@ namespace GUI_QLNH.FORMS
             this.txtTenDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDanhMuc.Location = new System.Drawing.Point(296, 375);
             this.txtTenDanhMuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTenDanhMuc.MaxLength = 30;
             this.txtTenDanhMuc.Name = "txtTenDanhMuc";
             this.txtTenDanhMuc.Size = new System.Drawing.Size(271, 32);
             this.txtTenDanhMuc.TabIndex = 5;
@@ -228,47 +267,10 @@ namespace GUI_QLNH.FORMS
             this.txttimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttimkiem.Location = new System.Drawing.Point(139, 174);
             this.txttimkiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txttimkiem.MaxLength = 30;
             this.txttimkiem.Name = "txttimkiem";
             this.txttimkiem.Size = new System.Drawing.Size(312, 36);
             this.txttimkiem.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::GUI_QLNH.Properties.Resources.phuchoi;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(405, 585);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(214, 69);
-            this.button2.TabIndex = 47;
-            this.button2.Text = "Phục Hồi DM";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnBoQua
-            // 
-            this.btnBoQua.BackColor = System.Drawing.Color.White;
-            this.btnBoQua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBoQua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBoQua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBoQua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBoQua.Image = global::GUI_QLNH.Properties.Resources.skip;
-            this.btnBoQua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBoQua.Location = new System.Drawing.Point(139, 585);
-            this.btnBoQua.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBoQua.Name = "btnBoQua";
-            this.btnBoQua.Size = new System.Drawing.Size(167, 69);
-            this.btnBoQua.TabIndex = 16;
-            this.btnBoQua.Text = "Bỏ qua";
-            this.btnBoQua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBoQua.UseVisualStyleBackColor = false;
-            this.btnBoQua.Click += new System.EventHandler(this.btnBoQua_Click);
             // 
             // frmQuanLyDanhMucMonAn
             // 

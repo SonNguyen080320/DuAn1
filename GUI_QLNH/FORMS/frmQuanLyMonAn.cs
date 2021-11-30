@@ -25,8 +25,6 @@ namespace GUI_QLNH.FORMS
         BUS_DanhMuc busDanhMucMonAn = new BUS_DanhMuc();
         private void frmQuanLyMonAn_Load(object sender, EventArgs e)
         {
-            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
-                        (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             load();
             ResetValues();
             loadgridview_MonAn();
@@ -61,14 +59,14 @@ namespace GUI_QLNH.FORMS
             cbTenDM.Focus();
         }
         void load()
-        {
+        {// hiển thị combobox danh sách danh mục món ăn
             busDanhMucMonAn.HienThiDanhMucMonAN();
             cbTenDM.DisplayMember = "TenDM";
             cbTenDM.ValueMember = "MaDM";
             cbTenDM.DataSource = busDanhMucMonAn.HienThiDanhMucMonAN();
         }
         private void loadgridview_MonAn()
-        {
+        {// load dữ liệu danh sách món ăn lên datagridview
             txtMaMon.Enabled = false;
             dtgvMonAn.DataSource = busMonAn.HienThiMonAN();
             dtgvMonAn.Columns[0].HeaderText = "MÃ  MÓN";
@@ -79,7 +77,7 @@ namespace GUI_QLNH.FORMS
             dtgvMonAn.Columns[5].HeaderText = "TÌNH TRẠNG";
             dtgvMonAn.Columns[6].HeaderText = "TÊN DANH MỤC";
             this.dtgvMonAn.Columns["dg"].DefaultCellStyle
-                .Alignment = DataGridViewContentAlignment.MiddleRight;
+                .Alignment = DataGridViewContentAlignment.MiddleRight;//đơn giá định dạng nằm bên phải
         }
         private void ResetValues()
         {
@@ -103,7 +101,7 @@ namespace GUI_QLNH.FORMS
         private void dtgvMonAn_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
-            {
+            {//hiển thị các thông tin ra các vị trí tương ứng khi click 
                 DataGridViewRow rows = this.dtgvMonAn.Rows[e.RowIndex];
                 if (rows.Cells[1].Value.ToString().Count() == 0)
                 {
@@ -150,12 +148,12 @@ namespace GUI_QLNH.FORMS
             if (rdoConPhucVu.Checked)
             {
                 tinhtrang = 1;
-            }
+            }// lấy tình trạng món ăn
             else
             {
                 tinhtrang = 0;
             }
-            if (cbTenDM.Text.Trim().Length == 0)
+            if (cbTenDM.Text.Trim().Length == 0)//kiểm tra trống
             {
                 MessageBox.Show("Bạn phải nhập tên danh mục !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTenMon.Focus();
@@ -190,7 +188,7 @@ namespace GUI_QLNH.FORMS
                 txtTenMon.Focus();
                 return;
             }
-            else if (txtHinh == null)
+            else if (txtHinh == null)// kiểm tra troongs hình ảnh
             {
                 MessageBox.Show("Bạn phải nhập hình ảnh hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTenMon.Focus();
@@ -206,7 +204,7 @@ namespace GUI_QLNH.FORMS
                 DTO_MonAn monan = new DTO_MonAn(tenMon, donvitinh, donGiaBan, "\\Images\\" +filename, tinhtrang, danhmuc);
                 if (MessageBox.Show("Bạn muốn thêm món ăn này?", "Lưu ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (busMonAn.ThemMonAn(monan))
+                    if (busMonAn.ThemMonAn(monan))// thêm món ăn
                     {
                             Utils.HienThongBao("Thêm món thành công");
                             File.Copy(fileaddress, filesavepath, true);
@@ -215,7 +213,7 @@ namespace GUI_QLNH.FORMS
                     }
                     else
                     {
-                        Utils.HienWarning("Tên món đã tồn tại. Vui lòng nhập tên mới");
+                        Utils.HienWarning("Thêm thất bại");
                     }
                 }
             }
@@ -294,7 +292,7 @@ namespace GUI_QLNH.FORMS
                     }
                     else
                     {
-                        Utils.HienWarning("Tên món đã tồn tại. Vui lòng nhập tên mới");
+                        Utils.HienWarning("Cập nhật thất bại");
                     }
                 }
                 else
@@ -316,7 +314,7 @@ namespace GUI_QLNH.FORMS
                     loadgridview_MonAn();
                 }
                 else
-                {
+                {// món ăn đang có trong hóa đơn chưa thanh toán khoogn cho xóa
                     Utils.HienWarning("Món ăn đang có trong hóa đơn chưa thanh toán. Không được xóa");
                 }
             }
@@ -329,10 +327,10 @@ namespace GUI_QLNH.FORMS
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string tenmon = txtTimKiem.Text;
-            DataTable ds = busMonAn.TimMonAn(tenmon);
+            DataTable ds = busMonAn.TimMonAn(tenmon);//load dữ liệu lên datatable khi tìm kiếm
 
             if (ds.Rows.Count > 0)
-            {
+            {// load dữ liệu lên datagridview từ datatable ds
                 dtgvMonAn.DataSource = ds;
                 dtgvMonAn.Columns[0].HeaderText = "MÃ MÓN";
                 dtgvMonAn.Columns[1].HeaderText = "TÊN  MÓN";
@@ -354,31 +352,31 @@ namespace GUI_QLNH.FORMS
         }
 
         private void btnMoHinh_Click(object sender, EventArgs e)
-        {
+        {//chọn hình ảnh
             OpenFileDialog dlgOpen = new OpenFileDialog();
             dlgOpen.Filter = " JPEG(*jpg)|*.jpg|Bitmap(*.bmp)|*.bmp|GIF(*.gif)|*.gif|All Files(*.*)|*.*";
-            dlgOpen.FilterIndex = 1;
-            dlgOpen.Title = "Chọn hình minh họa cho sản phẩm";
+            dlgOpen.FilterIndex = 1;//khi mở lên sẽ chọn đuôi file là jepg hoặc jpg
+            dlgOpen.Title = "Chọn hình minh họa cho sản phẩm";//tiêu đề
             dlgOpen.RestoreDirectory = true;
             if (dlgOpen.ShowDialog() == DialogResult.OK)
             {
                 fileaddress = dlgOpen.FileName;
-                filename = Path.GetFileName(dlgOpen.FileName);
-                saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-                filesavepath = saveDirectory + "\\Images\\" + filename;
+                filename = Path.GetFileName(dlgOpen.FileName);//tên file được chọn
+                saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));//vị trí của phần mềm
+                filesavepath = saveDirectory + "\\Images\\" + filename;// lưu dữ liệu vào thư mục images
                 if (File.Exists(filesavepath))
-                {
+                {// nếu hình được chọn đã có trong hệ thống sẽ không cho. muốn chọn hình đó thì cần đổi tên
                     Utils.HienWarning("Hình đã tồn tại. Vui lòng chọn hình mới");
                 }
                 else
                 { 
                     txtHinh = "\\Images\\" + filename;
-                    picMonAn.Image = Image.FromFile(fileaddress);
+                    picMonAn.Image = Image.FromFile(fileaddress);// hiển thị hình ảnh ra picturebox
                 }
             }
         }
         void goiyten()
-        {
+        {// gợi ý tên món ăn khi nhập tìm kiếm
             AutoCompleteStringCollection auto1 = new AutoCompleteStringCollection();
             txtTimKiem.AutoCompleteMode = AutoCompleteMode.Append;
             txtTimKiem.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -401,7 +399,7 @@ namespace GUI_QLNH.FORMS
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+        {// button phục hồi
             frmPhucHoi f1 = new frmPhucHoi("Danh Sách Món Ăn Đã Xóa");
             if(f1.ShowDialog()==DialogResult.Cancel)
             {
@@ -409,6 +407,12 @@ namespace GUI_QLNH.FORMS
                 loadgridview_MonAn();
                 txtTimKiem.Text = "";
             }    
+        }
+
+        private void numGia_KeyPress(object sender, KeyPressEventArgs e)
+        {// chỉ cho phép nhập từ 0 đến 9 và nút backspace
+            if ((e.KeyChar < '0') || (e.KeyChar > '9')) e.Handled = true;
+            if (e.KeyChar == 8) e.Handled = false;
         }
     }
 }

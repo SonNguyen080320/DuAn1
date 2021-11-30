@@ -29,6 +29,7 @@ namespace GUI_QLNH.FORMS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPhucHoi));
             this.txtMa = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnPhucHoi = new Guna.UI2.WinForms.Guna2Button();
             this.lbMa = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -55,14 +56,14 @@ namespace GUI_QLNH.FORMS
             this.txtMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMa.HoverState.Parent = this.txtMa;
-            this.txtMa.Location = new System.Drawing.Point(256, 124);
+            this.txtMa.Location = new System.Drawing.Point(226, 124);
             this.txtMa.Margin = new System.Windows.Forms.Padding(4);
             this.txtMa.Name = "txtMa";
             this.txtMa.PasswordChar = '\0';
             this.txtMa.PlaceholderText = "";
             this.txtMa.SelectedText = "";
             this.txtMa.ShadowDecoration.Parent = this.txtMa;
-            this.txtMa.Size = new System.Drawing.Size(197, 44);
+            this.txtMa.Size = new System.Drawing.Size(257, 44);
             this.txtMa.TabIndex = 2;
             // 
             // btnPhucHoi
@@ -124,21 +125,21 @@ namespace GUI_QLNH.FORMS
             this.txtTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTen.HoverState.Parent = this.txtTen;
-            this.txtTen.Location = new System.Drawing.Point(256, 204);
+            this.txtTen.Location = new System.Drawing.Point(226, 204);
             this.txtTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtTen.Name = "txtTen";
             this.txtTen.PasswordChar = '\0';
             this.txtTen.PlaceholderText = "";
             this.txtTen.SelectedText = "";
             this.txtTen.ShadowDecoration.Parent = this.txtTen;
-            this.txtTen.Size = new System.Drawing.Size(197, 44);
+            this.txtTen.Size = new System.Drawing.Size(257, 44);
             this.txtTen.TabIndex = 6;
             // 
             // lbEmail
             // 
             this.lbEmail.BackColor = System.Drawing.Color.Transparent;
             this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(587, 141);
+            this.lbEmail.Location = new System.Drawing.Point(528, 141);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(69, 27);
             this.lbEmail.TabIndex = 9;
@@ -158,14 +159,14 @@ namespace GUI_QLNH.FORMS
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.HoverState.Parent = this.txtEmail;
-            this.txtEmail.Location = new System.Drawing.Point(725, 124);
+            this.txtEmail.Location = new System.Drawing.Point(604, 124);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.SelectedText = "";
             this.txtEmail.ShadowDecoration.Parent = this.txtEmail;
-            this.txtEmail.Size = new System.Drawing.Size(268, 44);
+            this.txtEmail.Size = new System.Drawing.Size(389, 44);
             this.txtEmail.TabIndex = 8;
             // 
             // dtgvPhucHoi
@@ -197,9 +198,10 @@ namespace GUI_QLNH.FORMS
             this.Controls.Add(this.lbMa);
             this.Controls.Add(this.btnPhucHoi);
             this.Controls.Add(this.txtMa);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPhucHoi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPhucHoi";
+            this.Text = "Phục hồi";
             this.Load += new System.EventHandler(this.frmPhucHoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPhucHoi)).EndInit();
             this.ResumeLayout(false);
