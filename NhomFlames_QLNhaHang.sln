@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_QLNH", "DAL_QLNH\DAL_QL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO_QLNH", "DTO_QLNH\DTO_QLNH.csproj", "{1CEB97C7-C4F9-45A6-A58E-77BF07A72261}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Flames Restaurant", "Flames Restaurant\Flames Restaurant.vdproj", "{5A0F6412-21AD-4729-87AA-BAF9184E3D37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{1CEB97C7-C4F9-45A6-A58E-77BF07A72261}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CEB97C7-C4F9-45A6-A58E-77BF07A72261}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CEB97C7-C4F9-45A6-A58E-77BF07A72261}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A0F6412-21AD-4729-87AA-BAF9184E3D37}.Debug|Any CPU.ActiveCfg = Debug
+		{5A0F6412-21AD-4729-87AA-BAF9184E3D37}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

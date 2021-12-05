@@ -307,6 +307,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\anh.jfif" />
+    <None Include="Resources\backgrounDangNhap.jpg" />
     <None Include="Resources\2486645.png" />
     <None Include="Resources\excel.png" />
     <None Include="Resources\pdf.jpg" />

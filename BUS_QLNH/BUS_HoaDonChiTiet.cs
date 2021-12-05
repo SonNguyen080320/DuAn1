@@ -29,5 +29,13 @@ namespace BUS_QLNH
         {
             return dalHoaDonCT.TenBan(maBan);
         }
+        public DataTable HienNam()
+        {
+            return dalHoaDonCT.HienNam();
+        }
+        public DataTable ThongKeTheoNam(int nam)
+        {
+            return dalHoaDonCT.ThongKeTheoNam(nam);
+        }
     }
 }

@@ -393,10 +393,6 @@ namespace DAL_QLNH
                 if (Convert.ToInt16(cmd.ExecuteScalar()) > 0)
                     return true;
             }
-            catch (Exception n)
-            {
-
-            }
             finally
             {
                 conn.Close();
@@ -416,10 +412,6 @@ namespace DAL_QLNH
                 cmd.Parameters.AddWithValue("Matkhau", matkhaumoi);
                 if (cmd.ExecuteNonQuery() > 0)
                     return true;
-            }
-            catch (Exception e)
-            {
-                
             }
             finally
             {

@@ -93,6 +93,16 @@ namespace GUI_QLNH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backgrounDangNhap {
+            get {
+                object obj = ResourceManager.GetObject("backgrounDangNhap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backrouddangnhap {
             get {
                 object obj = ResourceManager.GetObject("backrouddangnhap", resourceCulture);

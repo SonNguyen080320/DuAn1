@@ -55,7 +55,7 @@ namespace GUI_QLNH.FORMS
         string filesavepath;
         string fileaddress;
         string txtHinh;
-        string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+        string saveDirectory = Path.GetDirectoryName(Application.ExecutablePath);
         void loadForm()
         {
             pichinhcanhan.Image = Image.FromFile(saveDirectory + busNhanVien.HinhAnh(_Email));
@@ -80,7 +80,7 @@ namespace GUI_QLNH.FORMS
                 fileaddress = dlgOpen.FileName;
                 
                 filename = Path.GetFileName(dlgOpen.FileName);
-                saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                saveDirectory = Path.GetDirectoryName(Application.ExecutablePath);
                 filesavepath = saveDirectory + "\\Images\\" + filename;
                 if (File.Exists(filesavepath))
                 {

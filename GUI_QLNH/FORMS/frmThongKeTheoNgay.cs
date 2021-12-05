@@ -23,20 +23,16 @@ namespace GUI_QLNH.FORMS
             InitializeComponent();
         }
         BUS_HoaDon busHoaDon = new BUS_HoaDon();
-        public static bool TrangThai;
         private void frmThongKeTheoNgay_Load(object sender, EventArgs e)
         {
             btnXuatExcel.Enabled = false;
             dtpTuNgay.Value = DateTime.Now.AddDays(-7).Date;// ngày bắt đầu được trừ đi 7 ngày
             btnPDF.Enabled = false;
-            btnChart.Enabled = false;
         }
 
         private void btnTongHop_Click(object sender, EventArgs e)
         {
-            TrangThai = true;
             btnXuatExcel.Enabled = true;
-            btnChart.Enabled = true;
             btnPDF.Enabled = true;
             if (txtMaNV.Text.Trim().Length == 0)
             {// hiển thị thống kê chi tiết theo ngày và theo ca
@@ -59,9 +55,9 @@ namespace GUI_QLNH.FORMS
                 .Alignment = DataGridViewContentAlignment.MiddleRight;
             }
             double tongtien = 0;
-            for (int i = 0; i < dtgvThongKeTheoNgay.Rows.Count - 1; i++)
+            for (int i = 0; i < dtgvThongKeTheoNgay.Rows.Count; i++)
             {// hiển thị tổng doanh thu 
-               double tien = Convert.ToDouble(dtgvThongKeTheoNgay.Rows[i].Cells["Tổng tiền"].Value);
+                double tien = Convert.ToDouble(dtgvThongKeTheoNgay.Rows[i].Cells["Tổng tiền"].Value);
                 tongtien += tien;
             }
             txtTongTien.Text = tongtien.ToString("#,#", CultureInfo.InvariantCulture) + " VNĐ";
@@ -70,8 +66,6 @@ namespace GUI_QLNH.FORMS
         
         private void btnChiTiet_Click(object sender, EventArgs e)
         {// hiển thị thống kê tổng hợp theo ngày
-            TrangThai = false;
-            btnChart.Enabled = true;
             btnXuatExcel.Enabled = true;
             btnPDF.Enabled = true;
             dtgvThongKeTheoNgay.DataSource = busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value);
@@ -84,9 +78,10 @@ namespace GUI_QLNH.FORMS
             this.dtgvThongKeTheoNgay.Columns["Tổng Tiền Có VAT"].DefaultCellStyle
             .Alignment = DataGridViewContentAlignment.MiddleRight;
             double tongtien = 0;
-            for (int i = 0; i < dtgvThongKeTheoNgay.Rows.Count - 1; i++)
+            DataTable ds= busHoaDon.ThongKeChiTiet(dtpTuNgay.Value, dtpDenNgay.Value);
+            for (int i = 0; i < ds.Rows.Count; i++)
             {// hiển thị tổng doanh thu có thuế
-                double tien = Convert.ToDouble(dtgvThongKeTheoNgay.Rows[i].Cells["Tổng Tiền Có VAT"].Value);
+                double tien = Convert.ToDouble(ds.Rows[i]["Tổng Tiền Có VAT"].ToString());
                 tongtien += tien;
             }
             txtTongTien.Text =tongtien.ToString("#,#", CultureInfo.InvariantCulture) + " VNĐ";
@@ -95,15 +90,11 @@ namespace GUI_QLNH.FORMS
 
         private void btnXuatExcel_Click(object sender, EventArgs e)
         {// xuất file excel
-            if (Utils.XacNhan("Bạn muốn xuất thống kê ra file excel?"))
-            {
-                Utils excel = new Utils();
-                // Lấy về nguồn dữ liệu cần Export là 1 DataTable
-                // gán trực tiếp vào DataGridView thì ép kiểu DataSource
-                DataTable dt = (DataTable)dtgvThongKeTheoNgay.DataSource;
-                excel.Export(dtgvThongKeTheoNgay, dt, "Thống kê", "Thống kê doanh thu");
-            }
-            
+            Utils excel = new Utils();
+            // Lấy về nguồn dữ liệu cần Export là 1 DataTable
+            // gán trực tiếp vào DataGridView thì ép kiểu DataSource
+            DataTable dt = (DataTable)dtgvThongKeTheoNgay.DataSource;
+            excel.Export(dtgvThongKeTheoNgay, dt, "Thống kê", "Thống kê doanh thu");
         }
         public void xuatpdf(DataGridView dgw, string filename) 
         {// xuát file PDF
@@ -132,6 +123,7 @@ namespace GUI_QLNH.FORMS
                     pdftable.AddCell(new Phrase(cell.Value.ToString(), text));
                 }
             }
+            
             var savefiledialoge = new SaveFileDialog();
             savefiledialoge.FileName = filename;//tên file muốn lưu
             savefiledialoge.DefaultExt = ".pdf";// khi sale sẽ chọn đuôi pdf
@@ -194,7 +186,7 @@ namespace GUI_QLNH.FORMS
                     tongtien.Add(p2);
 
                     // chèn hình 
-                    string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                    string saveDirectory = Path.GetDirectoryName(Application.ExecutablePath);
                     string ImagePath = saveDirectory + "\\Resources\\logo.png";
                     string logoFb = saveDirectory + "\\Resources\\fb.jpg";
                     string logoweb = saveDirectory + "\\Resources\\wb.png";
@@ -222,7 +214,6 @@ namespace GUI_QLNH.FORMS
                         pdfImage.SetAbsolutePosition(PositionX, PositionY);
                         pdfdoc.Add(pdfImage);
                     }
-
                     pdfdoc.Add(timePDF);
                     pdfdoc.Add(pName);
                     pdfdoc.Add(pAddresse);
@@ -243,16 +234,7 @@ namespace GUI_QLNH.FORMS
 
         private void btnChart_Click(object sender, EventArgs e)
         {
-            string manv;
-            if(txtMaNV.Text=="")
-            {
-                manv = "1";
-            }    
-            else
-            {
-                manv = txtMaNV.Text;
-            }
-            frmBieuDoChart f1 = new frmBieuDoChart(dtpTuNgay.Value, dtpDenNgay.Value, manv, cbCa.Text);
+            frmBieuDoChart f1 = new frmBieuDoChart();
             if (f1.ShowDialog() == DialogResult.Cancel)
             {
 

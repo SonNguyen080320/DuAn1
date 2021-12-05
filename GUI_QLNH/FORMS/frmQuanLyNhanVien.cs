@@ -51,8 +51,10 @@ namespace GUI_QLNH.FORMS
         string fileaddress="Images";
         string hinh;
         string txtHinh;
-        static string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-        string filesavepath = saveDirectory + "\\Images\\" + "macdinh.jpg";
+        //static string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+        //string filesavepath = saveDirectory + "\\Images\\" + "macdinh.jpg";
+        static string saveDirectory = Path.GetDirectoryName(Application.ExecutablePath);
+        string filesavepath= saveDirectory + "\\Images\\" + "macdinh.jpg";
         private void btnMoHinh_Click(object sender, EventArgs e)
         {// xem chú thích ở button mở hình form món ăn
             OpenFileDialog openFile = new OpenFileDialog();
@@ -64,7 +66,7 @@ namespace GUI_QLNH.FORMS
                 fileaddress = openFile.FileName;
                 picnhanvien.Image = Image.FromFile(fileaddress);
                 filename = Path.GetFileName(openFile.FileName);
-                saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                saveDirectory = Path.GetDirectoryName(Application.ExecutablePath); ;
                 filesavepath = saveDirectory + "\\Images\\" + filename;
                 if (File.Exists(filesavepath))
                 {
@@ -247,21 +249,14 @@ namespace GUI_QLNH.FORMS
                                                    GioiTinh, txtDiaChi.Text, txtSDT.Text, VaiTro, TrangThai,  txtHinh);
                     if (busNhanVien.ThemNhanVien(dtoNhanVien))// thêm nhân viên vào database
                     {
-                        if (File.Exists(filesavepath))
+                        sendEmail(dtoNhanVien.Email, "abc123");
+                        Utils.HienThongBao("Thêm nhân viên thành công");
+                        if (txtHinh != @"\Images\macdinh.jpg")
                         {
-                            Utils.HienWarning("Hình ảnh đã tồn tại. Vui lòng chọn ảnh khác");
+                            File.Copy(fileaddress, filesavepath, true);
                         }
-                        else
-                        {
-                            sendEmail(dtoNhanVien.Email, "abc123");
-                            Utils.HienThongBao("Thêm nhân viên thành công");
-                            if (txtHinh != @"\Images\macdinh.jpg")
-                            {
-                                File.Copy(fileaddress, filesavepath, true);
-                            }
-                            ResetValue();
-                            LoadGridView();
-                        }
+                        ResetValue();
+                        LoadGridView();
                     }
                     else
                     {// email trùng sẽ không được thêm

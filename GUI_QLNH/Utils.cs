@@ -114,7 +114,7 @@ namespace GUI_QLNH
 
             // Tạo phần đầu 
 
-            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "F1");
+            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A3", "F3");
 
             head.MergeCells = true;
 
@@ -127,43 +127,45 @@ namespace GUI_QLNH
             head.Font.Size = "18";
 
             head.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
-
+            //chèn logo
+            string saveDirectory = Path.GetDirectoryName(Application.ExecutablePath); ;
+            oSheet.Shapes.AddPicture(saveDirectory + "\\Resources\\logo.png", Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoCTrue, 1, 1, 60, 60);
             // Tạo tiêu đề cột 
             for (int i = 0; i < dtgv.ColumnCount; i++)
             {
-                Microsoft.Office.Interop.Excel.Range cl1 = oSheet.get_Range("A3", "A3");
+                Microsoft.Office.Interop.Excel.Range cl1 = oSheet.get_Range("A5", "A5");
 
                 cl1.Value2 = dtgv.Columns[0].HeaderText;
 
                 cl1.ColumnWidth = 13.5;
-                Microsoft.Office.Interop.Excel.Range cl2 = oSheet.get_Range("B3", "B3");
+                Microsoft.Office.Interop.Excel.Range cl2 = oSheet.get_Range("B5", "B5");
 
                 cl2.Value2 = dtgv.Columns[1].HeaderText;
 
                 cl2.ColumnWidth = 25.0;
 
-                Microsoft.Office.Interop.Excel.Range cl3 = oSheet.get_Range("C3", "C3");
+                Microsoft.Office.Interop.Excel.Range cl3 = oSheet.get_Range("C5", "C5");
 
                 cl3.Value2 = dtgv.Columns[2].HeaderText;
 
                 cl3.ColumnWidth = 15.0;
-                Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D3", "D3");
+                Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D5", "D5");
 
                 cl4.Value2 = dtgv.Columns[3].HeaderText;
 
                 cl4.ColumnWidth = 25.0;
-                Microsoft.Office.Interop.Excel.Range cl5 = oSheet.get_Range("E3", "E3");
+                Microsoft.Office.Interop.Excel.Range cl5 = oSheet.get_Range("E5", "E5");
 
                 cl5.Value2 = dtgv.Columns[4].HeaderText;
 
                 cl5.ColumnWidth = 25.0;
-                Microsoft.Office.Interop.Excel.Range cl6= oSheet.get_Range("F3", "F3");
+                Microsoft.Office.Interop.Excel.Range cl6= oSheet.get_Range("F5", "F5");
 
                 cl6.Value2 = dtgv.Columns[5].HeaderText;
 
                 cl6.ColumnWidth = 25.0;
             }
-            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "F3");
+            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A5", "F5");
 
             rowHead.Font.Bold = true;
 
@@ -173,7 +175,7 @@ namespace GUI_QLNH
 
             // Thiết lập màu nền
 
-            rowHead.Interior.ColorIndex = 15;
+            rowHead.Interior.ColorIndex = 20;
 
             rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
@@ -194,10 +196,10 @@ namespace GUI_QLNH
                     arr[r, c] = dr[c];
                 }
             }
-
+            
             //Thiết lập vùng điền dữ liệu
 
-            int rowStart = 4;
+            int rowStart = 6;
 
             int columnStart = 1;
 
@@ -232,6 +234,12 @@ namespace GUI_QLNH
             Microsoft.Office.Interop.Excel.Range c4 = oSheet.get_Range(c1, c3);
 
             oSheet.get_Range(c3, c4).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+            // căn giữa cột ngày
+            Microsoft.Office.Interop.Excel.Range c7 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[6, 2];
+            Microsoft.Office.Interop.Excel.Range c9 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, 2];
+            Microsoft.Office.Interop.Excel.Range c10 = oSheet.get_Range(c7, c9);
+            oSheet.get_Range(c9, c10).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
         }
     }
 }

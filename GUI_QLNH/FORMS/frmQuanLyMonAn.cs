@@ -35,7 +35,7 @@ namespace GUI_QLNH.FORMS
         string fileaddress;
         string hinh;
         string txtHinh;
-        string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+        string saveDirectory = Path.GetDirectoryName(Application.ExecutablePath);
         private void btnThem_Click(object sender, EventArgs e)
         {
             txtMaMon.Text = null;
@@ -276,7 +276,7 @@ namespace GUI_QLNH.FORMS
                 string donvitinh = cbDonViTinh.Text;
                 float donGiaBan = float.Parse(numGia.Text);
                 string hinhAnh = txtHinh;
-                string saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+                string saveDirectory = Path.GetDirectoryName(Application.ExecutablePath); ;
                 DTO_MonAn monan = new DTO_MonAn(mamon, tenmonan, donvitinh, donGiaBan, hinhAnh, tinhtrang, danhmuc);
                 if (MessageBox.Show("Bạn có chắc chắn muốn sửa", "Lưu ý", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -362,7 +362,7 @@ namespace GUI_QLNH.FORMS
             {
                 fileaddress = dlgOpen.FileName;
                 filename = Path.GetFileName(dlgOpen.FileName);//tên file được chọn
-                saveDirectory = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));//vị trí của phần mềm
+                saveDirectory = Path.GetDirectoryName(Application.ExecutablePath); ;//vị trí của phần mềm
                 filesavepath = saveDirectory + "\\Images\\" + filename;// lưu dữ liệu vào thư mục images
                 if (File.Exists(filesavepath))
                 {// nếu hình được chọn đã có trong hệ thống sẽ không cho. muốn chọn hình đó thì cần đổi tên

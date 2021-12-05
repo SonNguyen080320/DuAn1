@@ -98,5 +98,40 @@ namespace DAL_QLNH
             }
             finally { conn.Close(); }
         }
+        public DataTable HienNam()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "sp_HienNam"
+                };
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+            }
+            finally { conn.Close(); }
+        }
+        public DataTable ThongKeTheoNam(int nam)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = "sp_DoanhThuCacThangTheoNam"
+                };
+                cmd.Parameters.AddWithValue("Nam", nam);
+                DataTable dt = new DataTable();
+                dt.Load(cmd.ExecuteReader());
+                return dt;
+            }
+            finally { conn.Close(); }
+        }    
     }
 }
